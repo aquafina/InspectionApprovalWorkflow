@@ -1,0 +1,25 @@
+<?binding.jca getInspectionData_db.jca?>
+<wsdl:definitions name="getInspectionData" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/getInspectionData" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/getInspectionData" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/getInspectionData">
+    <plt:partnerLinkType name="getInspectionData_plt">
+        <plt:role name="getInspectionData_role">
+            <plt:portType name="tns:getInspectionData_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/getInspectionData" schemaLocation="xsd/getInspectionData_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="getInspectionDataSelect_inputParameters">
+        <wsdl:part name="getInspectionDataSelect_inputParameters" element="top:getInspectionDataSelect_shidInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxInspectionDataCollection_msg">
+        <wsdl:part name="XxInspectionDataCollection" element="top:XxInspectionDataCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="getInspectionData_ptt">
+        <wsdl:operation name="getInspectionDataSelect">
+            <wsdl:input message="tns:getInspectionDataSelect_inputParameters"/>
+            <wsdl:output message="tns:XxInspectionDataCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

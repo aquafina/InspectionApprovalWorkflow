@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="InspectionApproverTaskPayloadType"
+          Package="UI_inpectionApproval_InspectionApproverTask"
+          BeanClass="UI_inpectionApproval_InspectionApproverTask.InspectionApproverTaskPayloadType"
+          isJavaBased="false">
+  <AccessorAttribute id="RcvTransactionsCollection" IsCollection="true"
+                     BeanClass="UI_inpectionApproval_InspectionApproverTask.RcvTransactionsCollection"
+                     CollectionBeanClass="UI_inpectionApproval_InspectionApproverTask.RcvTransactionsCollection_RcvTransactionsCollection_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Rcv Transactions Collection"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="RcvTransactionsCollection"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>
