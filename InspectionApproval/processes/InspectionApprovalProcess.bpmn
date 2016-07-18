@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<definitions fileRevision="20120217" version="11.1.1.7.0.1.61" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns5="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<definitions fileRevision="20120217" version="11.1.1.7.0.2.22" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns5="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <process processType="Public" isExecutable="true" name="InspectionApprovalProcess" id="InspectionApprovalProcess">
         <extensionElements>
             <ns5:OracleExtensions>
@@ -22,7 +22,7 @@
                     <ns5:Conversation id="CONVERSATION167081223601" type="use_interface">
                         <ns5:UseInterfaceConversationDefinition reference="References.Externals.InvokeInspectionApprovalService"/>
                     </ns5:Conversation>
-                    <ns5:Conversation id="CONVERSATION167226715071" type="service_call">
+                    <ns5:Conversation id="CONVERSATION167264945276" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.GetInspectionData"/>
                     </ns5:Conversation>
                 </ns5:Conversations>
@@ -53,7 +53,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="375" y="98"/>
+                        <ns5:Position x="361" y="108"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -113,7 +113,7 @@
                 <extensionElements>
                     <ns5:OracleExtensions/>
                 </extensionElements>
-                <sourceRef>DO_xxInspectionDataCollection</sourceRef>
+                <sourceRef>DO_InspectionData</sourceRef>
                 <targetRef>xxInspectionDataCollection</targetRef>
                 <assignment>
                     <extensionElements>
@@ -121,7 +121,7 @@
                             <ns5:DataAssignment operation="copy"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_xxInspectionDataCollection')
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_InspectionData')
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -139,11 +139,11 @@
             </dataInputAssociation>
             <resourceRole name="Role" id="lane1"/>
         </userTask>
-        <serviceTask implementation="Services.Externals.GetInspectionData" operationRef="getInspectionDataSelect" isForCompensation="false" name="GetInspectionData" id="ACT16722669206710">
+        <serviceTask implementation="Services.Externals.GetInspectionData" operationRef="getInspectionDataSelect" isForCompensation="false" name="ServiceTask" id="ACT16726493730075">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="222" y="104"/>
+                        <ns5:Position x="224" y="106"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -153,7 +153,7 @@
                         <ns5:StringFeature value="Begin Level" name="level"/>
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </ns5:FeatureSet>
-                    <ns5:Conversational conversation="CONVERSATION167226715071">
+                    <ns5:Conversational conversation="CONVERSATION167264945276">
                         <ns5:ServiceCallConversationalDefinition operation="getInspectionDataSelect"/>
                     </ns5:Conversational>
                     <ns5:LogHandlers/>
@@ -174,10 +174,10 @@
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataOutput>
-                <inputSet id="ACT16722669206710_uniqueInputSet">
+                <inputSet id="ACT16726493730075_uniqueInputSet">
                     <dataInputRefs>getInspectionDataSelectShidInputParameters</dataInputRefs>
                 </inputSet>
-                <outputSet id="ACT16722669206710_uniqueOutputSet">
+                <outputSet id="ACT16726493730075_uniqueOutputSet">
                     <dataOutputRefs>xxInspectionDataCollection</dataOutputRefs>
                 </outputSet>
             </ioSpecification>
@@ -193,10 +193,10 @@
                             <ns5:DataAssignment operation="copy"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_SHID')
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">number(bpmn:getDataObject('DO_SHID'))
                         <extensionElements>
                             <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
+                                <ns5:Expression mode="xpath"/>
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
@@ -214,7 +214,7 @@
                     <ns5:OracleExtensions/>
                 </extensionElements>
                 <sourceRef>xxInspectionDataCollection</sourceRef>
-                <targetRef>DO_xxInspectionDataCollection</targetRef>
+                <targetRef>DO_InspectionData</targetRef>
                 <assignment>
                     <extensionElements>
                         <ns5:OracleExtensions>
@@ -228,7 +228,7 @@
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_xxInspectionDataCollection')
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_InspectionData')
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -242,7 +242,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="108" y="108"/>
+                        <ns5:Position x="109" y="108"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="catchAllErrors"/>
@@ -318,16 +318,14 @@
             </extensionElements>
             <inputSet/>
         </endEvent>
-        <sequenceFlow sourceRef="EVT16707813096572" targetRef="ACT16722669206710" name="sf65" id="sf65">
+        <sequenceFlow sourceRef="EVT16707813096572" targetRef="ACT16726493730075" name="sf65" id="sf65">
             <extensionElements>
                 <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="131" y="104"/>
-                    </ns5:SequenceFlowAttributes>
+                    <ns5:SequenceFlowAttributes/>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="131,104" name="curve"/>
-                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -346,7 +344,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow sourceRef="ACT16722669206710" targetRef="ACT16707813096620" name="sf56" id="sf56">
+        <sequenceFlow sourceRef="ACT16726493730075" targetRef="ACT16707813096620" name="sf6" id="sf6">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -367,7 +365,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </dataObject>
-        <dataObject name="DO_xxInspectionDataCollection" id="DO_xxInspectionDataCollection">
+        <dataObject name="DO_InspectionData" id="DO_InspectionData">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">

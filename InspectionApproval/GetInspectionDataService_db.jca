@@ -1,0 +1,14 @@
+<adapter-config name="GetInspectionDataService" adapter="Database Adapter" wsdlLocation="GetInspectionDataService.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/WL_Connection" UIConnectionName="WL_Connection" adapterRef=""/>
+  <endpoint-interaction portType="GetInspectionDataService_ptt" operation="GetInspectionDataServiceSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="GetInspectionDataService.XxInspectionData"/>
+      <property name="QueryName" value="GetInspectionDataServiceSelect"/>
+      <property name="MappingsMetaDataURL" value="GetInspectionDataService-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

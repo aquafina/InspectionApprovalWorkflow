@@ -15,8 +15,8 @@
   <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
           location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl"
           importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/getInspectionData"
-          location="getInspectionData.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData"
+          location="GetInspectionData.wsdl" importType="wsdl"/>
   <service name="InvokeInspectionApprovalService"
            ui:wsdlLocation="InvokeInspectionApprovalService.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApprovalService#wsdl.interface(execute_ptt)"
@@ -36,9 +36,9 @@
   <component name="InspectionApproverTask">
     <implementation.workflow src="InspectionApproverTask.task"/>
   </component>
-  <reference name="getInspectionData" ui:wsdlLocation="getInspectionData.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/getInspectionData#wsdl.interface(getInspectionData_ptt)"/>
-    <binding.jca config="getInspectionData_db.jca"/>
+  <reference name="GetInspectionData" ui:wsdlLocation="GetInspectionData.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
+    <binding.jca config="GetInspectionData_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false"
               override="may">1</property>
@@ -54,5 +54,9 @@
   <wire>
     <source.uri>InspectionApprovalProcess/HumanTasks.InspectionApproverTask.reference</source.uri>
     <target.uri>InspectionApproverTask/TaskService</target.uri>
+  </wire>
+  <wire>
+    <source.uri>InspectionApprovalProcess/Services.Externals.GetInspectionData.reference</source.uri>
+    <target.uri>GetInspectionData</target.uri>
   </wire>
 </composite>

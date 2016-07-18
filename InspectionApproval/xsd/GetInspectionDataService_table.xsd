@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionDataService" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionDataService" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
    <xs:element name="XxInspectionDataCollection" type="XxInspectionDataCollection"/>
    <xs:complexType name="XxInspectionDataCollection">
       <xs:sequence>
@@ -215,10 +215,10 @@
          </xs:element>
       </xs:sequence>
    </xs:complexType>
-   <xs:element name="GetInspectionDataSelect_shidInputParameters" type="GetInspectionDataSelect_shid"/>
-   <xs:complexType name="GetInspectionDataSelect_shid">
+   <xs:element name="GetInspectionDataServiceSelect_SHIDInputParameters" type="GetInspectionDataServiceSelect_SHID"/>
+   <xs:complexType name="GetInspectionDataServiceSelect_SHID">
       <xs:sequence>
-         <xs:element name="shid" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="SHID" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 </xs:schema>
