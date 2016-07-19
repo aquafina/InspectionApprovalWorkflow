@@ -14,19 +14,14 @@
          <querying>
             <queries>
                <query name="GetInspectionDataSelect" xsi:type="read-all-query">
-                  <criteria operator="equal" xsi:type="relation-expression">
-                     <left name="shipmentHeaderId" xsi:type="query-key-expression">
-                        <base xsi:type="base-expression"/>
-                     </left>
-                     <right xsi:type="parameter-expression">
-                        <parameter name="shid" xsi:type="column"/>
-                     </right>
-                  </criteria>
                   <arguments>
                      <argument name="shid">
                         <type>java.lang.String</type>
                      </argument>
                   </arguments>
+                  <call xsi:type="sql-call">
+                     <sql>SELECT GRNNo, ORGANIZATION_NAME, ORG_ID, ORG, ATTRIBUTE3, USER_NAME, EMAIL_ADDRESS, TRANSACTION_ID, SHIPMENT_HEADER_ID, DC_NO, DC_DATE, IGP_NO, IGP_DATE, NO_OF_CARTONS, BUILTY_NO, PACKING_SLIP, WAYBILL_AIRBILL_NUM, GRN_DATE, PO_NUM, VEH_NO, VENDOR_SITE_CODE, CREATION_DATE, DESCRIPTION, UOM, CARRIER, Item_Code, descr, ITMID, ORGID, QuantityReceived, PRIMARY_UOM_CODE, DEPTLINE, GATEPASS_NO, PO_HEADER_ID, REMARKS, PO_LINE_ID, SupplierName, DEPT, COMMENTS, SHIPMENT_LINE_ID, DEPARTMENT, SET_OF_BOOKS_ID, NOTE_TO_RECEIVER FROM XX_INSPECTION_DATA WHERE (SHIPMENT_HEADER_ID = #shid)</sql>
+                  </call>
                   <reference-class>GetInspectionData.XxInspectionData</reference-class>
                   <container xsi:type="list-container-policy">
                      <collection-type>java.util.Vector</collection-type>
