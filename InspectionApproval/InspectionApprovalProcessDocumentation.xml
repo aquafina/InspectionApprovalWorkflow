@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?oracleBPM version="11.1.1.7.0.2.22" fileRevision="20120217"?>
+<?oracleBPM version="11.1.1.7.0.1.61" fileRevision="20120217"?>
 <processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
     <component name="InspectionApprovalProcess">
         <topicDocumentations>
@@ -11,6 +11,14 @@
             <topicDocumentation name="ACT16707813096620">
                 <labels>
                     <label locale="en">InspectionApproverTask</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16726493730075">
+                <labels>
+                    <label locale="en">ServiceTask</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -29,9 +37,9 @@
                     <label locale="en">End</label>
                 </labels>
             </topicDocumentation>
-            <topicDocumentation name="ACT16726493730075">
+            <topicDocumentation name="ACT16785293459822">
                 <labels>
-                    <label locale="en">ServiceTask</label>
+                    <label locale="en">SetApprovedStatus</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -40,6 +48,7 @@
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf66"/>
             <topicDocumentation name="sf6"/>
+            <topicDocumentation name="sf7"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

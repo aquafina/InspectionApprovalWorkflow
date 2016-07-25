@@ -18,4 +18,8 @@
              ui:wsdlLocation="GetInspectionData.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
   </reference>
+  <reference name="Services.Externals.SetApprovedStatus.reference"
+             ui:wsdlLocation="SetApprovedStatus.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SetApprovedStatus#wsdl.interface(SetApprovedStatus_ptt)"/>
+  </reference>
 </componentType>
