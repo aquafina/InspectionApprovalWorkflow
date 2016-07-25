@@ -1,0 +1,21 @@
+<?binding.jca SetApprovedStatus_db.jca?>
+<wsdl:definitions name="SetApprovedStatus" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SetApprovedStatus" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SetApprovedStatus" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/SetApprovedStatus">
+    <plt:partnerLinkType name="SetApprovedStatus_plt">
+        <plt:role name="SetApprovedStatus_role">
+            <plt:portType name="tns:SetApprovedStatus_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SetApprovedStatus" schemaLocation="xsd/SetApprovedStatus_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="RcvTransactionsCollection_msg">
+        <wsdl:part name="RcvTransactionsCollection" element="top:RcvTransactionsCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="SetApprovedStatus_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:RcvTransactionsCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
