@@ -153,172 +153,17 @@
               <f:facet name="separator">
                 <af:spacer width="15" height="15" id="s11"/>
               </f:facet>
-              <af:showDetailHeader size="2" id="dtHead"
-                                   text="#{resources.DETAILS}"
-                                   shortDesc="#{resources.TASK_HEADER}"
-                                   icon="/hw_images/singleapprover_35x35.png"
-                                   disclosed="#{actionAvailable.discloseHeader}">
-                <f:facet name="context">
-                  <af:commandImageLink icon="/hw_images/info.png" id="button"
-                                       clientComponent="true"
-                                       rendered="#{!empty bindings.activityId.inputValue}">
-                    <af:showPopupBehavior popupId="helpPopup" align="afterEnd"
-                                          alignId="button"/>
-                  </af:commandImageLink>
-                </f:facet>
-                <f:facet name="toolbar"/>
-                <!--trh:tableLayout id="detailTableLayout" width="98%">
-                        <trh:rowLayout>
-                            <trh:cellFormat width="50%" valign="top"-->
-                <af:panelFormLayout maxColumns="3" rows="4" id="pfl9">
-                  <af:switcher facetName="#{bindings.taskViewContext == 'FYI'}"
-                               id="s8">
-                    <f:facet name="false">
-                      <af:panelLabelAndMessage id="assignees"
-                                               label="#{resources.ASSIGNEES}">
-                        <af:iterator var="assignees"
-                                     value="#{bindings.assignees.collectionModel}"
-                                     id="i2">
-                          <af:switcher facetName="#{!empty assignees.displayName}"
-                                       id="s1">
-                            <f:facet name="true">
-                              <af:outputText value="#{assignees.displayName}"
-                                             id="ot14"/>
-                            </f:facet>
-                            <f:facet name="false">
-                              <af:outputText value="#{assignees.id}" id="ot19"/>
-                            </f:facet>
-                          </af:switcher>
-                          <af:spacer width="2" id="s18"/>
-                        </af:iterator>
-                      </af:panelLabelAndMessage>
-                    </f:facet>
-                  </af:switcher>
-                  <af:panelLabelAndMessage id="creator"
-                                           label="#{resources.CREATOR}">
-                    <af:outputText value="#{bindings.creatorDisplayName.inputValue}"
-                                   id="ot7"/>
-                  </af:panelLabelAndMessage>
-                  <af:panelLabelAndMessage id="createdDate"
-                                           label="#{resources.CREATE_DATE}">
-                    <af:outputText value="#{bindings.createdDate.inputValue}"
-                                   noWrap="true" id="ot16">
-                      <f:convertDateTime type="#{pageFlowScope.dt}"
-                                         timeZone="#{pageFlowScope.tz}"
-                                         dateStyle="#{pageFlowScope.df}"
-                                         timeStyle="#{pageFlowScope.tf}"
-                                         pattern="#{pageFlowScope.dateTimePattern}"/>
-                    </af:outputText>
-                  </af:panelLabelAndMessage>
-                  <af:panelLabelAndMessage id="updatedDate"
-                                           label="#{resources.UPDATE_DATE}">
-                    <af:outputText value="#{bindings.updatedDate.inputValue}"
-                                   noWrap="true" id="ot3">
-                      <f:convertDateTime type="#{pageFlowScope.dt}"
-                                         timeZone="#{pageFlowScope.tz}"
-                                         dateStyle="#{pageFlowScope.df}"
-                                         timeStyle="#{pageFlowScope.tf}"
-                                         pattern="#{pageFlowScope.dateTimePattern}"/>
-                    </af:outputText>
-                  </af:panelLabelAndMessage>
-                  <af:panelLabelAndMessage id="expirationDate"
-                                           label="#{resources.EXPIRATION_DATE}">
-                    <af:outputText value="#{bindings.expirationDate.inputValue}"
-                                   id="ot12">
-                      <f:convertDateTime type="#{pageFlowScope.dt}"
-                                         timeZone="#{pageFlowScope.tz}"
-                                         dateStyle="#{pageFlowScope.df}"
-                                         timeStyle="#{pageFlowScope.tf}"
-                                         pattern="#{pageFlowScope.dateTimePattern}"/>
-                    </af:outputText>
-                  </af:panelLabelAndMessage>
-                  <af:panelLabelAndMessage id="acquiredBy"
-                                           label="#{resources.ACQUIRED_BY}">
-                    <af:outputText value="#{bindings.acquiredBy.inputValue}"
-                                   id="ot13"/>
-                  </af:panelLabelAndMessage>
-                  <af:panelLabelAndMessage id="dueDate"
-                                           label="#{resources.DUE_DATE}"
-                                           rendered="#{!empty bindings.dueDate.inputValue}">
-                    <af:outputText value="#{bindings.dueDate.inputValue}"
-                                   noWrap="true" id="ot21">
-                      <f:convertDateTime type="#{pageFlowScope.dt}"
-                                         timeZone="#{pageFlowScope.tz}"
-                                         dateStyle="#{pageFlowScope.df}"
-                                         timeStyle="#{pageFlowScope.tf}"
-                                         pattern="#{pageFlowScope.dateTimePattern}"/>
-                    </af:outputText>
-                  </af:panelLabelAndMessage>
-                  <af:panelLabelAndMessage id="outcome"
-                                           label="#{resources.OUTCOME}"
-                                           rendered="#{!empty bindings.actionDisplayName.inputValue}">
-                    <af:outputText value="#{bindings.actionDisplayName.inputValue}"
-                                   id="ot4"/>
-                  </af:panelLabelAndMessage>
-                  <af:panelLabelAndMessage id="taskNumber"
-                                           label="#{resources.TASK_NUMBER}">
-                    <af:outputText value="#{bindings.taskNumber.inputValue}"
-                                   id="ot18"/>
-                  </af:panelLabelAndMessage>
-                  <af:inputText id="priority"
-                                value="#{bindings.priority.inputValue}"
-                                label="#{resources.PRIORITY}"
-                                required="#{bindings.priority.mandatory}"
-                                columns="3"
-                                validator="#{actionAvailable.validatePriorityValue}"/>
-                  <af:panelLabelAndMessage id="state"
-                                           label="#{resources.STATE}">
-                    <af:outputText value="#{resources[bindings.state.inputValue]}"
-                                   id="ot5"/>
-                  </af:panelLabelAndMessage>
-                </af:panelFormLayout>
-                <!--/trh:cellFormat>
-                            <trh:cellFormat>
-                                <af:spacer width="15" height="15"/>
-                            </trh:cellFormat>
-                            <trh:cellFormat width="50%" valign="top">
-                                <af:panelFormLayout>
-                                    <f:facet name="footer"/>
-                                </af:panelFormLayout>
-                            </trh:cellFormat>
-                        </trh:rowLayout>
-                    </trh:tableLayout-->
-              </af:showDetailHeader>
               <af:showDetailHeader size="2" id="apCntHd"
                                    text="#{resources.CONTENTS}"
                                    disclosed="#{actionAvailable.discloseContents}">
                 <af:panelGroupLayout id="plPnl76" layout="horizontal"
                                      shortDesc="#{resources.CONTENTS}">
-                  <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
-                                    text="CreateInsert"
-                                    disabled="#{!bindings.CreateInsert.enabled}"
-                                    visible="#{actionAvailable.updateAvailable}"
-                                    id="cb2"/>
-                  <af:commandButton actionListener="#{bindings.Delete.execute}"
-                                    text="Delete"
-                                    disabled="#{!bindings.Delete.enabled}"
-                                    visible="#{actionAvailable.updateAvailable}"
-                                    id="cb1"/>
                   <af:table value="#{bindings.XxInspectionData.collectionModel}"
                             var="row"
                             rows="#{bindings.XxInspectionData.rangeSize}"
                             emptyText="#{bindings.XxInspectionData.viewable ? 'No data to display.' : 'Access Denied.'}"
                             fetchSize="#{bindings.XxInspectionData.rangeSize}"
-                            rowBandingInterval="0" id="t5">
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.GRNNo.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.GRNNo.label}"
-                               id="c29">
-                      <af:inputText value="#{row.bindings.GRNNo.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.GRNNo.label}"
-                                    required="#{bindings.XxInspectionData.hints.GRNNo.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.GRNNo.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.GRNNo.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.GRNNo.tooltip}"
-                                    id="it15">
-                        <f:validator binding="#{row.bindings.GRNNo.validator}"/>
-                      </af:inputText>
-                    </af:column>
+                            rowBandingInterval="0" id="t5" width="100%">
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.organizationName.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.organizationName.label}"
@@ -331,20 +176,6 @@
                                     shortDesc="#{bindings.XxInspectionData.hints.organizationName.tooltip}"
                                     id="it21">
                         <f:validator binding="#{row.bindings.organizationName.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.orgId.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.orgId.label}"
-                               id="c14">
-                      <af:inputText value="#{row.bindings.orgId.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.orgId.label}"
-                                    required="#{bindings.XxInspectionData.hints.orgId.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.orgId.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.orgId.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.orgId.tooltip}"
-                                    id="it11">
-                        <f:validator binding="#{row.bindings.orgId.validator}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.org.name}"
@@ -389,62 +220,6 @@
                         <f:validator binding="#{row.bindings.userName.validator}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.emailAddress.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.emailAddress.label}"
-                               id="c17">
-                      <af:inputText value="#{row.bindings.emailAddress.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.emailAddress.label}"
-                                    required="#{bindings.XxInspectionData.hints.emailAddress.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.emailAddress.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.emailAddress.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.emailAddress.tooltip}"
-                                    id="it36">
-                        <f:validator binding="#{row.bindings.emailAddress.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.transactionId.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.transactionId.label}"
-                               id="c32">
-                      <af:inputText value="#{row.bindings.transactionId.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.transactionId.label}"
-                                    required="#{bindings.XxInspectionData.hints.transactionId.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.transactionId.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.transactionId.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.transactionId.tooltip}"
-                                    id="it29">
-                        <f:validator binding="#{row.bindings.transactionId.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.shipmentHeaderId.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.shipmentHeaderId.label}"
-                               id="c28">
-                      <af:inputText value="#{row.bindings.shipmentHeaderId.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.shipmentHeaderId.label}"
-                                    required="#{bindings.XxInspectionData.hints.shipmentHeaderId.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.shipmentHeaderId.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.shipmentHeaderId.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.shipmentHeaderId.tooltip}"
-                                    id="it28">
-                        <f:validator binding="#{row.bindings.shipmentHeaderId.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.dcNo.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.dcNo.label}"
-                               id="c47">
-                      <af:inputText value="#{row.bindings.dcNo.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.dcNo.label}"
-                                    required="#{bindings.XxInspectionData.hints.dcNo.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.dcNo.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.dcNo.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.dcNo.tooltip}"
-                                    id="it37">
-                        <f:validator binding="#{row.bindings.dcNo.validator}"/>
-                      </af:inputText>
-                    </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.dcDate.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.dcDate.label}"
@@ -457,20 +232,6 @@
                         <f:validator binding="#{row.bindings.dcDate.validator}"/>
                         <af:convertDateTime pattern="#{bindings.XxInspectionData.hints.dcDate.format}"/>
                       </af:inputDate>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.igpNo.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.igpNo.label}"
-                               id="c15">
-                      <af:inputText value="#{row.bindings.igpNo.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.igpNo.label}"
-                                    required="#{bindings.XxInspectionData.hints.igpNo.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.igpNo.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.igpNo.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.igpNo.tooltip}"
-                                    id="it7">
-                        <f:validator binding="#{row.bindings.igpNo.validator}"/>
-                      </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.igpDate.name}"
                                sortable="false"
@@ -498,89 +259,6 @@
                                     shortDesc="#{bindings.XxInspectionData.hints.noOfCartons.tooltip}"
                                     id="it23">
                         <f:validator binding="#{row.bindings.noOfCartons.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.builtyNo.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.builtyNo.label}"
-                               id="c6">
-                      <af:inputText value="#{row.bindings.builtyNo.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.builtyNo.label}"
-                                    required="#{bindings.XxInspectionData.hints.builtyNo.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.builtyNo.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.builtyNo.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.builtyNo.tooltip}"
-                                    id="it31">
-                        <f:validator binding="#{row.bindings.builtyNo.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.packingSlip.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.packingSlip.label}"
-                               id="c39">
-                      <af:inputText value="#{row.bindings.packingSlip.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.packingSlip.label}"
-                                    required="#{bindings.XxInspectionData.hints.packingSlip.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.packingSlip.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.packingSlip.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.packingSlip.tooltip}"
-                                    id="it35">
-                        <f:validator binding="#{row.bindings.packingSlip.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.waybillAirbillNum.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.waybillAirbillNum.label}"
-                               id="c20">
-                      <af:inputText value="#{row.bindings.waybillAirbillNum.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.waybillAirbillNum.label}"
-                                    required="#{bindings.XxInspectionData.hints.waybillAirbillNum.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.waybillAirbillNum.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.waybillAirbillNum.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.waybillAirbillNum.tooltip}"
-                                    id="it19">
-                        <f:validator binding="#{row.bindings.waybillAirbillNum.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.grnDate.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.grnDate.label}"
-                               id="c33">
-                      <af:inputDate value="#{row.bindings.grnDate.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.grnDate.label}"
-                                    required="#{bindings.XxInspectionData.hints.grnDate.mandatory}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.grnDate.tooltip}"
-                                    id="id2">
-                        <f:validator binding="#{row.bindings.grnDate.validator}"/>
-                        <af:convertDateTime pattern="#{bindings.XxInspectionData.hints.grnDate.format}"/>
-                      </af:inputDate>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.poNum.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.poNum.label}"
-                               id="c35">
-                      <af:inputText value="#{row.bindings.poNum.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.poNum.label}"
-                                    required="#{bindings.XxInspectionData.hints.poNum.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.poNum.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.poNum.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.poNum.tooltip}"
-                                    id="it18">
-                        <f:validator binding="#{row.bindings.poNum.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.vehNo.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.vehNo.label}"
-                               id="c34">
-                      <af:inputText value="#{row.bindings.vehNo.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.vehNo.label}"
-                                    required="#{bindings.XxInspectionData.hints.vehNo.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.vehNo.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.vehNo.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.vehNo.tooltip}"
-                                    id="it42">
-                        <f:validator binding="#{row.bindings.vehNo.validator}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.vendorSiteCode.name}"
@@ -680,34 +358,6 @@
                         <f:validator binding="#{row.bindings.desc.validator}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.itmid.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.itmid.label}"
-                               id="c12">
-                      <af:inputText value="#{row.bindings.itmid.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.itmid.label}"
-                                    required="#{bindings.XxInspectionData.hints.itmid.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.itmid.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.itmid.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.itmid.tooltip}"
-                                    id="it10">
-                        <f:validator binding="#{row.bindings.itmid.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.orgid.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.orgid.label}"
-                               id="c43">
-                      <af:inputText value="#{row.bindings.orgid.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.orgid.label}"
-                                    required="#{bindings.XxInspectionData.hints.orgid.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.orgid.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.orgid.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.orgid.tooltip}"
-                                    id="it24">
-                        <f:validator binding="#{row.bindings.orgid.validator}"/>
-                      </af:inputText>
-                    </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.QuantityReceived.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.QuantityReceived.label}"
@@ -720,20 +370,6 @@
                                     shortDesc="#{bindings.XxInspectionData.hints.QuantityReceived.tooltip}"
                                     id="it22">
                         <f:validator binding="#{row.bindings.QuantityReceived.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.primaryUomCode.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.primaryUomCode.label}"
-                               id="c26">
-                      <af:inputText value="#{row.bindings.primaryUomCode.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.primaryUomCode.label}"
-                                    required="#{bindings.XxInspectionData.hints.primaryUomCode.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.primaryUomCode.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.primaryUomCode.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.primaryUomCode.tooltip}"
-                                    id="it41">
-                        <f:validator binding="#{row.bindings.primaryUomCode.validator}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.deptline.name}"
@@ -750,34 +386,6 @@
                         <f:validator binding="#{row.bindings.deptline.validator}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.gatepassNo.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.gatepassNo.label}"
-                               id="c8">
-                      <af:inputText value="#{row.bindings.gatepassNo.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.gatepassNo.label}"
-                                    required="#{bindings.XxInspectionData.hints.gatepassNo.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.gatepassNo.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.gatepassNo.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.gatepassNo.tooltip}"
-                                    id="it9">
-                        <f:validator binding="#{row.bindings.gatepassNo.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.poHeaderId.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.poHeaderId.label}"
-                               id="c24">
-                      <af:inputText value="#{row.bindings.poHeaderId.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.poHeaderId.label}"
-                                    required="#{bindings.XxInspectionData.hints.poHeaderId.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.poHeaderId.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.poHeaderId.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.poHeaderId.tooltip}"
-                                    id="it27">
-                        <f:validator binding="#{row.bindings.poHeaderId.validator}"/>
-                      </af:inputText>
-                    </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.remarks.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.remarks.label}"
@@ -790,20 +398,6 @@
                                     shortDesc="#{bindings.XxInspectionData.hints.remarks.tooltip}"
                                     id="it3">
                         <f:validator binding="#{row.bindings.remarks.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.poLineId.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.poLineId.label}"
-                               id="c7">
-                      <af:inputText value="#{row.bindings.poLineId.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.poLineId.label}"
-                                    required="#{bindings.XxInspectionData.hints.poLineId.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.poLineId.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.poLineId.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.poLineId.tooltip}"
-                                    id="it2">
-                        <f:validator binding="#{row.bindings.poLineId.validator}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.SupplierName.name}"
@@ -820,20 +414,6 @@
                         <f:validator binding="#{row.bindings.SupplierName.validator}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.dept.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.dept.label}"
-                               id="c21">
-                      <af:inputText value="#{row.bindings.dept.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.dept.label}"
-                                    required="#{bindings.XxInspectionData.hints.dept.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.dept.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.dept.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.dept.tooltip}"
-                                    id="it17">
-                        <f:validator binding="#{row.bindings.dept.validator}"/>
-                      </af:inputText>
-                    </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.comments.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.comments.label}"
@@ -848,20 +428,6 @@
                         <f:validator binding="#{row.bindings.comments.validator}"/>
                       </af:inputText>
                     </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.shipmentLineId.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.shipmentLineId.label}"
-                               id="c36">
-                      <af:inputText value="#{row.bindings.shipmentLineId.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.shipmentLineId.label}"
-                                    required="#{bindings.XxInspectionData.hints.shipmentLineId.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.shipmentLineId.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.shipmentLineId.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.shipmentLineId.tooltip}"
-                                    id="it34">
-                        <f:validator binding="#{row.bindings.shipmentLineId.validator}"/>
-                      </af:inputText>
-                    </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.department.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.department.label}"
@@ -874,22 +440,6 @@
                                     shortDesc="#{bindings.XxInspectionData.hints.department.tooltip}"
                                     id="it8">
                         <f:validator binding="#{row.bindings.department.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.setOfBooksId.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.setOfBooksId.label}"
-                               id="c37">
-                      <af:inputText value="#{row.bindings.setOfBooksId.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.setOfBooksId.label}"
-                                    required="#{bindings.XxInspectionData.hints.setOfBooksId.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.setOfBooksId.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.setOfBooksId.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.setOfBooksId.tooltip}"
-                                    id="it20">
-                        <f:validator binding="#{row.bindings.setOfBooksId.validator}"/>
-                        <af:convertNumber groupingUsed="false"
-                                          pattern="#{bindings.XxInspectionData.hints.setOfBooksId.format}"/>
                       </af:inputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.noteToReceiver.name}"
@@ -910,365 +460,19 @@
                 </af:panelGroupLayout>
               </af:showDetailHeader>
               <af:switcher facetName="#{actionAvailable.showHistory}" id="s13">
-                <f:facet name="true">
-                  <af:showDetailHeader size="2" id="histHd"
-                                       text="#{resources.HISTORY}"
-                                       disclosureListener="#{pageFlowScope.aleComponentBean.toggle}"
-                                       disclosed="false">
-                    <f:facet name="info"/>
-                    <f:facet name="legend"/>
-                    <f:facet name="menuBar"/>
-                    <f:facet name="toolbar"/>
-                    <f:facet name="context"/>
-                    <af:panelGroupLayout layout="vertical"
-                                         binding="#{pageFlowScope.aleComponentBean.historyPanel}"
-                                         id="historyPanel">
-                      <wlc:taskHistory initParam="#{pageFlowScope.aleComponentBean.comp}"
-                                       showTabularView="true"
-                                       showGraphicalView="true" id="taskHst"/>
-                    </af:panelGroupLayout>
-                  </af:showDetailHeader>
-                </f:facet>
+                <f:facet name="true"/>
               </af:switcher>
               <af:switcher facetName="#{pageFlowScope.ADFHumanTaskBean.hasSubTasks}"
                            id="sw7" binding="#{invokeActionBean.subTaskPanel}">
-                <f:facet name="true">
-                  <af:showDetailHeader size="2" id="decompHd"
-                                       text="#{resources.SUB_TASKS}"
-                                       disclosed="false">
-                    <af:panelGroupLayout layout="vertical" id="pgl20">
-                      <wlc:taskDecompose initParam="#{pageFlowScope.ADFHumanTaskBean.subTaskComp}"
-                                         id="th1"/>
-                    </af:panelGroupLayout>
-                  </af:showDetailHeader>
-                </f:facet>
+                <f:facet name="true"/>
               </af:switcher>
               <trh:tableLayout id="cmAtTbL" width="98%">
                 <trh:rowLayout id="rl1">
-                  <trh:cellFormat width="47%" valign="top" id="cf1">
-                    <af:showDetailHeader size="2" text="#{resources.COMMENTS}"
-                                         disclosed="#{actionAvailable.discloseCommentsAttach}"
-                                         contentStyle="padding: 5px;"
-                                         partialTriggers="cmtDlg" id="sdh1">
-                      <f:facet name="info"/>
-                      <f:facet name="legend"/>
-                      <f:facet name="menuBar"/>
-                      <f:facet name="toolbar">
-                        <af:toolbar visible="#{actionAvailable.isCommentUpdatable}"
-                                    id="t2">
-                          <af:commandImageLink partialSubmit="true"
-                                               actionListener="#{bindings.CreateInsert1.execute}"
-                                               action="#{popupBean.showCommentDialog}"
-                                               shortDesc="#{resources.CREATE}"
-                                               hoverIcon="/hw_images/new_ovr.png"
-                                               visible="#{actionAvailable.isCommentUpdatable}"
-                                               icon="/hw_images/new_ena.png"
-                                               disabledIcon="/hw_images/new_dis.png"
-                                               depressedIcon="/hw_images/new_dwn.png"
-                                               id="cil1"/>
-                        </af:toolbar>
-                      </f:facet>
-                      <f:facet name="context"/>
-                      <af:switcher facetName="#{actionAvailable.inNotificationClient}"
-                                   id="s27">
-                        <f:facet name="false">
-                          <af:table verticalGridVisible="false"
-                                    horizontalGridVisible="false"
-                                    value="#{bindings.userComment.children}"
-                                    var="row"
-                                    rows="#{bindings.userComment.rangeSize}"
-                                    first="#{bindings.userComment.rangeStart}"
-                                    emptyText="#{bindings.userComment.viewable ? resources.NO_ROWS_YET : resources.ACCESS_DENIED}"
-                                    selectedRowKeys="#{bindings.userComment.collectionModel.selectedRow}"
-                                    selectionListener="#{bindings.userComment.collectionModel.makeCurrent}"
-                                    rowSelection="none" immediate="true"
-                                    contentDelivery="immediate"
-                                    inlineStyle="border-width:1px;height:10em;width:95%;"
-                                    columnStretching="last"
-                                    summary="resources.COMMENTS_FOR_WORKLIST_TASK"
-                                    partialTriggers="::cmtOK" id="t1">
-                            <af:column noWrap="false" separateRows="true"
-                                       headerText="#{null}"
-                                       rowHeader="unstyled" id="c31">
-                              <af:panelGroupLayout layout="horizontal"
-                                                   id="pgl14">
-                                <af:outputText value="#{row.updatedDate}"
-                                               truncateAt="9999"
-                                               inlineStyle="font-weight:bold"
-                                               id="ot20">
-                                  <f:convertDateTime type="#{pageFlowScope.dt}"
-                                                     timeZone="#{pageFlowScope.tz}"
-                                                     dateStyle="#{pageFlowScope.df}"
-                                                     timeStyle="#{pageFlowScope.tf}"
-                                                     pattern="#{pageFlowScope.dateTimePattern}"/>
-                                </af:outputText>
-                                <af:spacer width="12" id="s21"/>
-                                <af:outputText value="#{row.updatedBy.displayName}"
-                                               truncateAt="9999"
-                                               inlineStyle="font-weight:bold"
-                                               id="ot9"/>
-                              </af:panelGroupLayout>
-                              <af:outputText value="#{row.comment}"
-                                             truncateAt="9999" id="ot2"/>
-                            </af:column>
-                          </af:table>
-                        </f:facet>
-                        <f:facet name="true">
-                          <af:table verticalGridVisible="false"
-                                    horizontalGridVisible="false"
-                                    value="#{bindings.userComment.children}"
-                                    var="row"
-                                    rows="#{bindings.userComment.rangeSize}"
-                                    first="#{bindings.userComment.rangeStart}"
-                                    selectedRowKeys="#{bindings.userComment.collectionModel.selectedRow}"
-                                    selectionListener="#{bindings.userComment.collectionModel.makeCurrent}"
-                                    rowSelection="none" immediate="true"
-                                    contentDelivery="immediate"
-                                    inlineStyle="border-width:1px;height:10em;width:95%;"
-                                    columnStretching="last"
-                                    summary="resources.COMMENTS_FOR_WORKLIST_TASK"
-                                    partialTriggers="::cmtOK" id="t4">
-                            <af:column noWrap="false" separateRows="true"
-                                       headerText="#{null}"
-                                       rowHeader="unstyled" id="c44">
-                              <af:panelGroupLayout layout="horizontal"
-                                                   id="pgl17">
-                                <af:outputText value="#{row.updatedDate}"
-                                               truncateAt="9999"
-                                               inlineStyle="font-weight:bold"
-                                               id="ot8">
-                                  <f:convertDateTime type="#{pageFlowScope.dt}"
-                                                     timeZone="#{pageFlowScope.tz}"
-                                                     dateStyle="#{pageFlowScope.df}"
-                                                     timeStyle="#{pageFlowScope.tf}"
-                                                     pattern="#{pageFlowScope.dateTimePattern}"/>
-                                </af:outputText>
-                                <af:spacer width="12" id="s26"/>
-                                <af:outputText value="#{row.updatedBy.displayName}"
-                                               truncateAt="9999"
-                                               inlineStyle="font-weight:bold"
-                                               id="ot1"/>
-                              </af:panelGroupLayout>
-                              <af:outputText value="#{row.comment}"
-                                             truncateAt="9999" id="ot15"/>
-                            </af:column>
-                          </af:table>
-                        </f:facet>
-                      </af:switcher>
-                    </af:showDetailHeader>
-                  </trh:cellFormat>
+                  <trh:cellFormat width="47%" valign="top" id="cf1"/>
                   <trh:cellFormat id="cf2">
                     <af:spacer width="15" height="15" id="s17"/>
                   </trh:cellFormat>
-                  <trh:cellFormat width="47%" valign="top" id="cf3">
-                    <af:showDetailHeader size="2" id="attHd"
-                                         text="#{resources.ATTACHMENTS}"
-                                         disclosed="#{actionAvailable.discloseCommentsAttach}"
-                                         contentStyle="padding: 5px;">
-                      <f:facet name="info"/>
-                      <f:facet name="legend"/>
-                      <f:facet name="menuBar"/>
-                      <f:facet name="toolbar">
-                        <af:toolbar visible="#{actionAvailable.isAttachmentUpdatable and pageFlowScope.ADFHumanTaskBean.isDocStoreAvailable}"
-                                    partialTriggers="addAtOK delAtOK" id="t3">
-                          <af:commandImageLink id="addAtBt" partialSubmit="true"
-                                               actionListener="#{bindings.CreateInsert2.execute}"
-                                               action="#{popupBean.showAttachmentDialog}"
-                                               shortDesc="#{resources.ADD}"
-                                               icon="/hw_images/add_ena.png"
-                                               visible="#{actionAvailable.isAttachmentUpdatable}"
-                                               disabledIcon="/hw_images/add_dis.png"
-                                               depressedIcon="/hw_images/add_dwn.png"
-                                               hoverIcon="/hw_images/add_ovr.png"/>
-                          <f:facet name="separator">
-                            <af:spacer width="3" id="s4"/>
-                          </f:facet>
-                          <af:commandImageLink id="delAtBt" partialSubmit="true"
-                                               action="#{popupBean.showAttachmentDeleteDialog}"
-                                               disabled="#{!pageFlowScope.ADFHumanTaskBean.attachDeleteEnabled or pageFlowScope.ADFHumanTaskBean.isCaseTask}"
-                                               visible="#{actionAvailable.isAttachmentUpdatable}"
-                                               icon="/hw_images/delete_ena.png"
-                                               shortDesc="#{resources.DELETE}"
-                                               disabledIcon="/hw_images/delete_dis.png"
-                                               hoverIcon="/hw_images/delete_ovr.png"
-                                               inlineStyle="margin-left:3px"
-                                               depressedIcon="/hw_images/delete_dwn.png"/>
-                        </af:toolbar>
-                      </f:facet>
-                      <f:facet name="context"/>
-                      <af:switcher facetName="#{actionAvailable.inNotificationClient}"
-                                   id="s6">
-                        <f:facet name="false">
-                          <af:table verticalGridVisible="false"
-                                    horizontalGridVisible="false"
-                                    value="#{bindings.attachment.collectionModel}"
-                                    var="row"
-                                    rows="#{bindings.attachment.rangeSize}"
-                                    first="#{bindings.attachment.rangeStart}"
-                                    emptyText="#{bindings.attachment.viewable ? resources.NO_ROWS_YET : resources.ACCESS_DENIED}"
-                                    selectedRowKeys="#{bindings.attachment.collectionModel.selectedRow}"
-                                    selectionListener="#{bindings.attachment.collectionModel.makeCurrent}"
-                                    inlineStyle="width:95%; height:10em; border-width:1px;"
-                                    id="attTb1"
-                                    partialTriggers="::addAtOK ::delAtOK"
-                                    columnStretching="last"
-                                    summary="#{resources.ATTACHMENTS_FOR_WORKLIST_TASK}"
-                                    contentDelivery="immediate"
-                                    rowSelection="single"
-                                    visible="#{pageFlowScope.ADFHumanTaskBean.isDocStoreAvailable}">
-                            <af:column noWrap="false"
-                                       headerText="#{resources.NAME}"
-                                       rowHeader="unstyled" id="c13">
-                              <af:panelGroupLayout id="pgl8">
-                                <af:switcher facetName="#{row.attachmentScope eq 'BPM'}"
-                                             id="s5">
-                                  <f:facet name="true">
-                                    <af:switcher facetName="#{row.updatedBy eq pageFlowScope.ADFHumanTaskBean.user}"
-                                                 id="s7">
-                                      <f:facet name="false">
-                                        <af:goImageLink text="#{row.name}"
-                                                        destination="#{pageFlowScope.readAttachmentBean.URL}"
-                                                        icon="/hw_images/bpm_icon_16x16.png"
-                                                        shortDesc="#{resources.CANNOT_DEL_ATTACH}"
-                                                        targetFrame="_blank"
-                                                        id="gil1"/>
-                                      </f:facet>
-                                      <f:facet name="true">
-                                        <af:goImageLink text="#{row.name}"
-                                                        destination="#{pageFlowScope.readAttachmentBean.URL}"
-                                                        icon="/hw_images/bpm_icon_16x16.png"
-                                                        targetFrame="_blank"
-                                                        id="gilx1"/>
-                                      </f:facet>
-                                    </af:switcher>
-                                  </f:facet>
-                                  <f:facet name="false">
-                                    <af:goImageLink text="#{row.name}"
-                                                    destination="#{pageFlowScope.readAttachmentBean.URL}"
-                                                    icon="/hw_images/humantask_ena.png"
-                                                    targetFrame="_blank"
-                                                    id="gil4"/>
-                                  </f:facet>
-                                </af:switcher>
-                              </af:panelGroupLayout>
-                            </af:column>
-                            <af:column noWrap="false"
-                                       headerText="#{resources.UPDATED_BY}"
-                                       rowHeader="unstyled" id="uTypeu1">
-                              <af:panelGroupLayout id="uPgTypeu1">
-                                <af:switcher facetName="#{!empty row.updatedByDisplayName}"
-                                             id="s19">
-                                  <f:facet name="true">
-                                    <af:outputText value="#{row.updatedByDisplayName}"
-                                                   id="uFieldu11"/>
-                                  </f:facet>
-                                  <f:facet name="false">
-                                    <af:outputText value="#{row.updatedBy}"
-                                                   id="uFieldu12"/>
-                                  </f:facet>
-                                </af:switcher>
-                              </af:panelGroupLayout>
-                            </af:column>
-                            <af:column noWrap="false"
-                                       headerText="#{resources.DATE_UPDATED}"
-                                       rowHeader="unstyled" id="udTypeu1">
-                              <af:panelGroupLayout id="udPgTypeu1">
-                                <af:outputText value="#{row.updatedDate}"
-                                               id="udFieldu1"/>
-                              </af:panelGroupLayout>
-                            </af:column>
-                          </af:table>
-                        </f:facet>
-                        <f:facet name="true">
-                          <af:table verticalGridVisible="false"
-                                    horizontalGridVisible="false"
-                                    value="#{bindings.attachment.collectionModel}"
-                                    var="row"
-                                    rows="#{bindings.attachment.rangeSize}"
-                                    first="#{bindings.attachment.rangeStart}"
-                                    selectedRowKeys="#{bindings.attachment.collectionModel.selectedRow}"
-                                    selectionListener="#{bindings.attachment.collectionModel.makeCurrent}"
-                                    inlineStyle="width:95%; height:10em; border-width:1px;"
-                                    id="attTb2"
-                                    partialTriggers="::addAtOK ::delAtOK"
-                                    columnStretching="last"
-                                    summary="#{resources.ATTACHMENTS_FOR_WORKLIST_TASK}"
-                                    contentDelivery="immediate"
-                                    rowSelection="single"
-                                    visible="#{pageFlowScope.ADFHumanTaskBean.isDocStoreAvailable}">
-                            <af:column noWrap="false"
-                                       headerText="#{resources.NAME}"
-                                       rowHeader="unstyled" id="c22">
-                              <af:panelGroupLayout id="pgl4">
-                                <af:switcher facetName="#{row.attachmentScope eq 'BPM'}"
-                                             id="s25">
-                                  <f:facet name="true">
-                                    <af:switcher facetName="#{row.updatedBy eq pageFlowScope.ADFHumanTaskBean.user}"
-                                                 id="s28">
-                                      <f:facet name="false">
-                                        <af:goImageLink text="#{row.name}"
-                                                        destination="#{pageFlowScope.readAttachmentBean.URL}"
-                                                        icon="/hw_images/bpm_icon_16x16.png"
-                                                        shortDesc="#{resources.CANNOT_DEL_ATTACH}"
-                                                        targetFrame="_blank"
-                                                        id="gil2"/>
-                                      </f:facet>
-                                      <f:facet name="true">
-                                        <af:goImageLink text="#{row.name}"
-                                                        destination="#{pageFlowScope.readAttachmentBean.URL}"
-                                                        icon="/hw_images/bpm_icon_16x16.png"
-                                                        targetFrame="_blank"
-                                                        id="gilx2"/>
-                                      </f:facet>
-                                    </af:switcher>
-                                  </f:facet>
-                                  <f:facet name="false">
-                                    <af:goImageLink text="#{row.name}"
-                                                    destination="#{pageFlowScope.readAttachmentBean.URL}"
-                                                    icon="/hw_images/humantask_ena.png"
-                                                    targetFrame="_blank"
-                                                    id="gil3"/>
-                                  </f:facet>
-                                </af:switcher>
-                              </af:panelGroupLayout>
-                            </af:column>
-                            <af:column noWrap="false"
-                                       headerText="#{resources.UPDATED_BY}"
-                                       rowHeader="unstyled" id="uTypeu2">
-                              <af:panelGroupLayout id="uPgTypeu2">
-                                <af:switcher facetName="#{!empty row.updatedByDisplayName}"
-                                             id="s2">
-                                  <f:facet name="true">
-                                    <af:outputText value="#{row.updatedByDisplayName}"
-                                                   id="uFieldu21"/>
-                                  </f:facet>
-                                  <f:facet name="false">
-                                    <af:outputText value="#{row.updatedBy}"
-                                                   id="uFieldu22"/>
-                                  </f:facet>
-                                </af:switcher>
-                              </af:panelGroupLayout>
-                            </af:column>
-                            <af:column noWrap="false"
-                                       headerText="#{resources.DATE_UPDATED}"
-                                       rowHeader="unstyled" id="udTypeu2">
-                              <af:panelGroupLayout id="udPgTypeu2">
-                                <af:outputText value="#{row.updatedDate}"
-                                               id="udFieldu2"/>
-                              </af:panelGroupLayout>
-                            </af:column>
-                          </af:table>
-                        </f:facet>
-                      </af:switcher>
-                      <af:panelBox text="#{resources.ERR_MSG}" id="pb41"
-                                   visible="#{!pageFlowScope.ADFHumanTaskBean.isDocStoreAvailable}">
-                        <af:panelFormLayout id="pfl5">
-                          <af:outputText value="#{resources.DOC_STORE_NA}"
-                                         id="of1"/>
-                        </af:panelFormLayout>
-                      </af:panelBox>
-                    </af:showDetailHeader>
-                  </trh:cellFormat>
+                  <trh:cellFormat width="47%" valign="top" id="cf3"/>
                 </trh:rowLayout>
               </trh:tableLayout>
               <af:popup id="popupAddCommentDialog"
