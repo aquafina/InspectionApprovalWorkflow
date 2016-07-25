@@ -49,7 +49,7 @@
       <allowInitiatorEditParticipants>false</allowInitiatorEditParticipants>
       <allowParticipantsEditParticipants>false</allowParticipantsEditParticipants>
       <globalCreationTask>false</globalCreationTask>
-      <taskFlowFileLocation>file:/D:/Usman/Development Workspace/BPM/InspectionApprovalWorkflow/UI_inpectionApproval/public_html/WEB-INF/InspectionApproverTask_TaskFlow.xml</taskFlowFileLocation>
+      <taskFlowFileLocation>file:/D:/Sarmad Data/GRNApproval/Paperless/InspectionApprovalWorkflow/UIInspectionApproval/public_html/WEB-INF/InspectionApproverTask_TaskFlow.xml</taskFlowFileLocation>
       <enableAutoClaim>true</enableAutoClaim>
       <workflowConditions/>
       <taskSequenceTypes>FUTURE</taskSequenceTypes>

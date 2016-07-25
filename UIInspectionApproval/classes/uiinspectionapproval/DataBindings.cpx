@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="uiinspectionapproval" ClientType="Generic">
+  <pageMap>
+    <page path="/taskDetails1.jspx"
+          usageId="uiinspectionapproval_taskDetails1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="uiinspectionapproval_taskDetails1PageDef"
+          path="uiinspectionapproval.pageDefs.taskDetails1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="UIInspectionApproval_InspectionApproverTask"
+        path="uiinspectionapproval.UIInspectionApproval_InspectionApproverTask"/>
+  </dataControlUsages>
+</Application>

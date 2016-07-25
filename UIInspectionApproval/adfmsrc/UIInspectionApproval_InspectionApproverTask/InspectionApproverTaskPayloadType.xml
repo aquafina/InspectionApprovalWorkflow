@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="InspectionApproverTaskPayloadType"
+          Package="UIInspectionApproval_InspectionApproverTask"
+          BeanClass="UIInspectionApproval_InspectionApproverTask.InspectionApproverTaskPayloadType"
+          isJavaBased="false">
+  <AccessorAttribute id="XxInspectionDataCollection" IsCollection="true"
+                     BeanClass="UIInspectionApproval_InspectionApproverTask.XxInspectionDataCollection"
+                     CollectionBeanClass="UIInspectionApproval_InspectionApproverTask.XxInspectionDataCollection_XxInspectionDataCollection_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Xx Inspection Data Collection"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="XxInspectionDataCollection"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>
