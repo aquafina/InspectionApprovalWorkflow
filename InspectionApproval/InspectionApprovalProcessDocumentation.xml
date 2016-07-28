@@ -18,7 +18,15 @@
             </topicDocumentation>
             <topicDocumentation name="ACT16726493730075">
                 <labels>
-                    <label locale="en">ServiceTask</label>
+                    <label locale="en">GetInspectionData</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16785293459822">
+                <labels>
+                    <label locale="en">SetApprovedStatus</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -36,10 +44,13 @@
                 <labels>
                     <label locale="en">End</label>
                 </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT16785293459822">
+            <topicDocumentation name="ACT16802186072034">
                 <labels>
-                    <label locale="en">SetApprovedStatus</label>
+                    <label locale="en">CallGRNApprovalProcess</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -49,6 +60,7 @@
             <topicDocumentation name="sf66"/>
             <topicDocumentation name="sf6"/>
             <topicDocumentation name="sf7"/>
+            <topicDocumentation name="sf13"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

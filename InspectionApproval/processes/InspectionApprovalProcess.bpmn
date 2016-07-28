@@ -28,6 +28,9 @@
                     <ns5:Conversation id="CONVERSATION167852955093" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.SetApprovedStatus"/>
                     </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION168021020707" type="service_call">
+                        <ns5:ServiceCallConversationDefinition service="Services.Externals.CallGRNApprovalProcess"/>
+                    </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
                     <ns5:AppLinkName/>
@@ -69,6 +72,7 @@
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <ns5:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <ns5:StringFeature value="" name="reinitiateSource"/>
                     </ns5:FeatureSet>
                     <ns5:HumanTask humanTaskReference="HumanTasks.InspectionApproverTask"/>
                     <ns5:LogHandlers/>
@@ -170,7 +174,7 @@
             </dataOutputAssociation>
             <resourceRole name="Role" id="lane1"/>
         </userTask>
-        <serviceTask implementation="Services.Externals.GetInspectionData" operationRef="getInspectionDataSelect" isForCompensation="false" name="ServiceTask" id="ACT16726493730075">
+        <serviceTask implementation="Services.Externals.GetInspectionData" operationRef="getInspectionDataSelect" isForCompensation="false" name="GetInspectionData" id="ACT16726493730075">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
@@ -273,7 +277,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="532" y="109"/>
+                        <ns5:Position x="517" y="108"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -423,6 +427,67 @@
                 </assignment>
             </dataOutputAssociation>
         </serviceTask>
+        <serviceTask implementation="Services.Externals.CallGRNApprovalProcess" operationRef="startProcess" isForCompensation="false" name="CallGRNApprovalProcess" id="ACT16802186072034">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="646" y="108"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational conversation="CONVERSATION168021020707">
+                        <ns5:ServiceCallConversationalDefinition operation="startProcess"/>
+                    </ns5:Conversational>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="singleString" id="singleString">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/singleString" element="singleString" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <inputSet id="ACT16802186072034_uniqueInputSet">
+                    <dataInputRefs>singleString</dataInputRefs>
+                </inputSet>
+            </ioSpecification>
+            <dataInputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>DO_SHID</sourceRef>
+                <targetRef>singleString</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_SHID')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('singleString')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataInputAssociation>
+        </serviceTask>
         <startEvent isInterrupting="false" name="Start" id="EVT16707813096572">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -490,7 +555,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="683" y="112"/>
+                        <ns5:Position x="779" y="106"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -541,7 +606,19 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow sourceRef="ACT16785293459822" targetRef="EVT16707813096667" name="sf7" id="sf7">
+        <sequenceFlow sourceRef="ACT16785293459822" targetRef="ACT16802186072034" name="sf7" id="sf7">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="ACT16802186072034" targetRef="EVT16707813096667" name="sf13" id="sf13">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>

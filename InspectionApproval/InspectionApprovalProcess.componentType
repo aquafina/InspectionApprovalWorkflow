@@ -22,4 +22,9 @@
              ui:wsdlLocation="SetApprovedStatus.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SetApprovedStatus#wsdl.interface(SetApprovedStatus_ptt)"/>
   </reference>
+  <reference name="Services.Externals.CallGRNApprovalProcess.reference"
+             ui:wsdlLocation="http://fmw.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
+                    callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
+  </reference>
 </componentType>
