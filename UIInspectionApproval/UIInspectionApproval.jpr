@@ -463,6 +463,8 @@
             </hash>
             <value n="jspVersion" v="2.1"/>
             <value n="name" v="Workflow Tags"/>
+            <value n="runInEditor" v="false"/>
+            <value n="showInPalette" v="true"/>
             <value n="tldURL" v="@oracle.home@soa/modules/oracle.soa.workflow_11.1.1/bpm-workflow-datacontrol.jar!/META-INF/workflow-taglib.tld"/>
             <value n="URI" v="http://xmlns.oracle.com/bpel/workflow/workflow-taglib.tld"/>
             <value n="version" v="1.0"/>
