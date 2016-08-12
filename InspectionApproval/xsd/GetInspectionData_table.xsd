@@ -4,6 +4,8 @@
    <xs:complexType name="XxInspectionDataCollection">
       <xs:sequence>
          <xs:element name="XxInspectionData" type="XxInspectionData" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="Approver" type="xs:string"/>
+         <xs:element name="userid" type="xs:string"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="XxInspectionData">
@@ -218,7 +220,7 @@
    <xs:element name="GetInspectionDataSelect_shidInputParameters" type="GetInspectionDataSelect_shid"/>
    <xs:complexType name="GetInspectionDataSelect_shid">
       <xs:sequence>
-         <xs:element name="shid" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="shid" type="xs:string" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 </xs:schema>

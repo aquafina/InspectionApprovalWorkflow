@@ -474,5 +474,11 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="XxInspectionDataCollectionIterator"
+                     id="userid">
+      <AttrNames>
+        <Item Value="userid"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

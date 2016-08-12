@@ -26,4 +26,9 @@
       <to-activity-id id="__18">Empty1_jspx</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <managed-bean id="__19">
+    <managed-bean-name id="__20">UserWLProfileBean</managed-bean-name>
+    <managed-bean-class id="__21">uiinspectionapproval.UserWLProfile</managed-bean-class>
+    <managed-bean-scope id="__22">request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveApproverHistory" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveApproverHistory" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxInspectionApproverHistoryCollection" type="XxInspectionApproverHistoryCollection"/>
+   <xs:complexType name="XxInspectionApproverHistoryCollection">
+      <xs:sequence>
+         <xs:element name="XxInspectionApproverHistory" type="XxInspectionApproverHistory" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxInspectionApproverHistory">
+      <xs:sequence>
+         <xs:element name="shipmentHeaderId" type="xs:decimal" nillable="true"/>
+         <xs:element name="shipmentLineId" type="xs:decimal" nillable="true"/>
+         <xs:element name="approverId" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="approverName" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="50"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="historyId" type="xs:decimal" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

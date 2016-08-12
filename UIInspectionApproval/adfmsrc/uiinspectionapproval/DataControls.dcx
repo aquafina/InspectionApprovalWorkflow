@@ -13,7 +13,7 @@
                       xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <Source>
       <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
-                      SchemaLocation="file:/D:/Sarmad Data/GRNApproval/Paperless/InspectionApprovalWorkflow/InspectionApproval/xsd/InspectionApproverTaskWorkflowTask.xsd"
+                      SchemaLocation="file:/D:/Sarmad Data/GRNApproval/Paperless/InspectionApprovalWorkflow/UIInspectionApproval/../InspectionApproval/xsd/InspectionApproverTaskWorkflowTask.xsd"
                       RootElement="task"
                       rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
                       taskLoc="../InspectionApproval/InspectionApproverTask.task"

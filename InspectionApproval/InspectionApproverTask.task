@@ -1,5 +1,14 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<taskDefinition targetNamespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/InspectionApproverTask" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:task="http://xmlns.oracle.com/bpel/workflow/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpel/workflow/taskDefinition" xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions">
+<taskDefinition targetNamespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/InspectionApproverTask" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:task="http://xmlns.oracle.com/bpel/workflow/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpel/workflow/taskDefinition" xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+                xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:ns0="http://xmlns.oracle.com/bpel/workflow/common"
+                xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+                xmlns:evidence="http://xmlns.oracle.com/bpel/workflow/TaskEvidenceService"
+                xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+                xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"
+                xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+                xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions">
    <name>InspectionApproverTask</name>
    <id>${domain_id}_${process_id}_${process_revision}_InspectionApproverTask</id>
    <title type="STATIC"><value>Inspected Items</value></title>
@@ -14,9 +23,13 @@
       </globalConfiguration>
       <participants isAdhocRoutingSupported="false">
          <stage name="Stage1">
-            <participant name="default.DefaultPerformer">
-               <resource identityType="application_role" type="XPATH">bpm:getPerformer()</resource>
-            </participant>
+            <parallel collaboration="false" name="default.DefaultPerformer">
+               <vote>
+                  <defaultOutcome type="STATIC">APPROVE</defaultOutcome>
+                  <outcomePercentage type="STATIC">100</outcomePercentage>
+               </vote>
+               <resource type="XPATH" identityType="user">/task:task/task:payload/ns1:XxInspectionDataCollection/ns1:Approver</resource>
+            </parallel>
          </stage>
       </participants>
       <notification includeTaskAttachments="false" actionable="false"
@@ -29,7 +42,9 @@
          <groupNotificationConfiguration>SEND_INDIVIDUAL_NOTIFICATION</groupNotificationConfiguration>
       </notification>
    </routingSlip>
-   <workflowConfiguration features="ucm" xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration">
+   <workflowConfiguration features="ucm" xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration"
+                          xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers"
+                          xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <outcomes>
          <outcome>APPROVE</outcome>
          <outcome>REJECT</outcome>

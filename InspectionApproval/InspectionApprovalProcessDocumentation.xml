@@ -48,6 +48,22 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT16923282558156">
+                <labels>
+                    <label locale="en">GetApproverService</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16931789259863">
+                <labels>
+                    <label locale="en">SaveApproverHistory</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT16707813096572">
                 <labels>
                     <label locale="en">Start</label>
@@ -103,6 +119,8 @@
             </topicDocumentation>
             <topicDocumentation name="sf141"/>
             <topicDocumentation name="sf142"/>
+            <topicDocumentation name="sf14"/>
+            <topicDocumentation name="sf67"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

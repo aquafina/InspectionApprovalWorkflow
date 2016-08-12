@@ -1,0 +1,25 @@
+<?binding.jca Get_Entity_Approvers_db.jca?>
+<wsdl:definitions name="Get_Entity_Approvers" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/Get_Entity_Approvers" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/Get_Entity_Approvers" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers">
+    <plt:partnerLinkType name="Get_Entity_Approvers_plt">
+        <plt:role name="Get_Entity_Approvers_role">
+            <plt:portType name="tns:Get_Entity_Approvers_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers" schemaLocation="xsd/Get_Entity_Approvers_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="Get_Entity_ApproversSelect_inputParameters">
+        <wsdl:part name="Get_Entity_ApproversSelect_inputParameters" element="top:Get_Entity_ApproversSelect_entity_idInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxInspectionApproversCollection_msg">
+        <wsdl:part name="XxInspectionApproversCollection" element="top:XxInspectionApproversCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="Get_Entity_Approvers_ptt">
+        <wsdl:operation name="Get_Entity_ApproversSelect">
+            <wsdl:input message="tns:Get_Entity_ApproversSelect_inputParameters"/>
+            <wsdl:output message="tns:XxInspectionApproversCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

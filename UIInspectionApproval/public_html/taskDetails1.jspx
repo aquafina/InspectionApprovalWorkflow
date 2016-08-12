@@ -10,6 +10,7 @@
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <f:view>
     <af:document id="d1" title="#{bindings.title.inputValue}">
+      <af:messages id="m1"/>
       <af:resource type="javascript" source="/jsLibs/taskDetails.js"/>
       <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
       <af:form id="f1" usesUpload="true">
@@ -24,28 +25,51 @@
                 <af:switcher id="customActionButtons"
                              facetName="#{actionAvailable.isCustomActionButtons}">
                   <f:facet name="true">
-                    <af:panelGroupLayout layout="horizontal" id="pgl5">
-                      <af:commandToolbarButton actionListener="#{invokeActionBean.setOperation}"
-                                               text="#{wf:getResourceValue('APPROVE', 'bindings.customActions')}"
-                                               disabled="#{!bindings.APPROVE.enabled}"
-                                               action="#{invokeActionBean.invokeOperation}"
-                                               partialSubmit="false"
-                                               visible="#{wf:isCustomActionAvailable('APPROVE', 'bindings.customActions')}"
-                                               id="ctb2">
-                        <f:attribute name="DC_OPERATION_BINDING"
-                                     value="bindings.APPROVE"/>
-                      </af:commandToolbarButton>
-                      <af:commandToolbarButton actionListener="#{invokeActionBean.setOperation}"
-                                               text="#{wf:getResourceValue('REJECT', 'bindings.customActions')}"
-                                               disabled="#{!bindings.REJECT.enabled}"
-                                               action="#{invokeActionBean.invokeOperation}"
-                                               partialSubmit="false"
-                                               visible="#{wf:isCustomActionAvailable('REJECT', 'bindings.customActions')}"
-                                               id="ctb1">
-                        <f:attribute name="DC_OPERATION_BINDING"
-                                     value="bindings.REJECT"/>
-                      </af:commandToolbarButton>
-                    </af:panelGroupLayout>
+                    <af:group id="g6">
+                      <af:panelGroupLayout layout="horizontal" id="pgl5">
+                        <af:commandToolbarButton actionListener="#{invokeActionBean.setOperation}"
+                                                 text="#{wf:getResourceValue('APPROVE', 'bindings.customActions')}"
+                                                 disabled="#{!bindings.APPROVE.enabled}"
+                                                 action="#{invokeActionBean.invokeOperation}"
+                                                 partialSubmit="false"
+                                                 visible="#{wf:isCustomActionAvailable('APPROVE', 'bindings.customActions')}"
+                                                 id="ctb2">
+                          <f:attribute name="DC_OPERATION_BINDING"
+                                       value="bindings.APPROVE"/>
+                          <af:setPropertyListener from="#{UserWLProfileBean.userID}"
+                                                  to="#{bindings.userid.inputValue}"
+                                                  type="action"/>
+                        </af:commandToolbarButton>
+                        <af:commandToolbarButton actionListener="#{invokeActionBean.setOperation}"
+                                                 text="#{wf:getResourceValue('REJECT', 'bindings.customActions')}"
+                                                 disabled="#{!bindings.REJECT.enabled}"
+                                                 action="#{invokeActionBean.invokeOperation}"
+                                                 partialSubmit="false"
+                                                 visible="#{wf:isCustomActionAvailable('REJECT', 'bindings.customActions')}"
+                                                 id="ctb1">
+                          <f:attribute name="DC_OPERATION_BINDING"
+                                       value="bindings.REJECT"/>
+                          <af:setPropertyListener from="#{UserWLProfileBean.userID}"
+                                                  to="#{bindings.userid.inputValue}"
+                                                  type="action"/>
+                        </af:commandToolbarButton>
+                      </af:panelGroupLayout>
+                      <af:commandButton text="test btn" id="cb1">
+                        <af:setPropertyListener from="#{UserWLProfileBean.userID}"
+                                                to="#{bindings.userid.inputValue}"
+                                                type="action"/>
+                      </af:commandButton>
+                      <af:inputText label="#{bindings.userid.hints.label}" id="it2"
+                                    value="#{bindings.userid.inputValue}"
+                                    required="#{bindings.userid.hints.mandatory}"
+                                    columns="#{bindings.userid.hints.displayWidth}"
+                                    maximumLength="#{bindings.userid.hints.precision}"
+                                    partialTriggers="cb1">
+                        <f:validator binding="#{bindings.userid.validator}"/>
+                      </af:inputText>
+                      <af:outputText value="#{bindings.userid.inputValue}"
+                                     id="ot1"/>
+                    </af:group>
                   </f:facet>
                 </af:switcher>
                 <af:commandToolbarButton actionListener="#{invokeActionBean.setOperation}"
