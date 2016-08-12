@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateIsSentForApproval" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateIsSentForApproval" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="RcvTransactionsCollection" type="RcvTransactionsCollection"/>
+   <xs:complexType name="RcvTransactionsCollection">
+      <xs:sequence>
+         <xs:element name="RcvTransactions" type="RcvTransactions" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="RcvTransactions">
+      <xs:sequence>
+         <xs:element name="transactionId" type="xs:decimal"/>
+         <xs:element name="shipmentHeaderId" type="xs:decimal"/>
+         <xs:element name="attribute6" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="150"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

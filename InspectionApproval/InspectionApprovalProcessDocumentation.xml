@@ -96,6 +96,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT16942100587377">
+                <labels>
+                    <label locale="en">SetIsSentForApproval</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf66"/>
             <topicDocumentation name="sf6"/>
@@ -121,6 +129,7 @@
             <topicDocumentation name="sf142"/>
             <topicDocumentation name="sf14"/>
             <topicDocumentation name="sf67"/>
+            <topicDocumentation name="sf210"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
