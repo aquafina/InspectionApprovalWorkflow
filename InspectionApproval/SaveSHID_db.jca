@@ -1,6 +1,6 @@
 <adapter-config name="SaveSHID" adapter="Database Adapter" wsdlLocation="SaveSHID.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/applive" UIConnectionName="WL_Connection" adapterRef=""/>
+  <connection-factory location="eis/DB/PROD" UIConnectionName="WLConn" adapterRef=""/>
   <endpoint-interaction portType="SaveSHID_ptt" operation="insert">
     <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
       <property name="DescriptorName" value="SaveSHID.TestTableShipment"/>

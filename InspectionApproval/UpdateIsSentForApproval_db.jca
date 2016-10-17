@@ -1,6 +1,6 @@
 <adapter-config name="UpdateIsSentForApproval" adapter="Database Adapter" wsdlLocation="UpdateIsSentForApproval.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/applive" UIConnectionName="WL_Connection" adapterRef=""/>
+  <connection-factory location="eis/DB/PROD" UIConnectionName="WLConn" adapterRef=""/>
   <endpoint-interaction portType="UpdateIsSentForApproval_ptt" operation="merge">
     <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
       <property name="DescriptorName" value="UpdateIsSentForApproval.RcvTransactions"/>

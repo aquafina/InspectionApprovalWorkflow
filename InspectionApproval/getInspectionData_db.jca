@@ -1,6 +1,6 @@
 <adapter-config name="GetInspectionData" adapter="Database Adapter" wsdlLocation="GetInspectionData.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/applive" UIConnectionName="WL_Connection" adapterRef=""/>
+  <connection-factory location="eis/DB/PROD" UIConnectionName="PROD" adapterRef=""/>
   <endpoint-interaction portType="GetInspectionData_ptt" operation="GetInspectionDataSelect">
     <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
       <property name="DescriptorName" value="GetInspectionData.XxInspectionData"/>
