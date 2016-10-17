@@ -64,6 +64,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT16942100587377">
+                <labels>
+                    <label locale="en">SetIsSentForApproval</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT16707813096572">
                 <labels>
                     <label locale="en">Start</label>
@@ -91,14 +99,6 @@
             <topicDocumentation name="GTW16810030670527">
                 <labels>
                     <label locale="en">doesRecordExist</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT16942100587377">
-                <labels>
-                    <label locale="en">SetIsSentForApproval</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
