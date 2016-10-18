@@ -50,7 +50,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT16923282558156">
                 <labels>
-                    <label locale="en">GetApproverService</label>
+                    <label locale="en">GetApproverServicePerpetual</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -104,6 +104,22 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="GTW17517203174351">
+                <labels>
+                    <label locale="en">isPerpetual</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT17517437690521">
+                <labels>
+                    <label locale="en">GetApproverServicePeriodic_FIFO</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf66"/>
             <topicDocumentation name="sf6"/>
@@ -130,6 +146,23 @@
             <topicDocumentation name="sf14"/>
             <topicDocumentation name="sf67"/>
             <topicDocumentation name="sf210"/>
+            <topicDocumentation name="sf120">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf123">
+                <labels>
+                    <label locale="en">No</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf125"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
