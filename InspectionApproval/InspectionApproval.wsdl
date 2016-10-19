@@ -1,10 +1,10 @@
 <?xml version= '1.0' encoding= 'UTF-8' ?>
 <wsdl:definitions
-     name="InvokeInspectionApproval"
-     targetNamespace="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApproval"
+     name="InspectionApproval"
+     targetNamespace="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval"
      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
      xmlns:inp1="http://xmlns.oracle.com/singleString"
-     xmlns:tns="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApproval"
+     xmlns:tns="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval"
     >
     <wsdl:types>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -12,10 +12,10 @@
         </xsd:schema>
     </wsdl:types>
     <wsdl:message name="callbackMessage">
-        <wsdl:part name="outcome" element="inp1:singleString"/>
+        <wsdl:part name="output" element="inp1:singleString"/>
     </wsdl:message>
     <wsdl:message name="requestMessage">
-        <wsdl:part name="shid" element="inp1:singleString"/>
+        <wsdl:part name="input" element="inp1:singleString"/>
     </wsdl:message>
     <wsdl:portType name="callback_ptt">
         <wsdl:operation name="callback">

@@ -4,10 +4,10 @@
                xmlns="http://xmlns.oracle.com/sca/1.0"
                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                xmlns:ui="http://xmlns.oracle.com/soa/designer/">
-  <service name="References.Externals.InvokeInspectionApprovalService.service"
-           ui:wsdlLocation="InvokeInspectionApprovalService.wsdl">
-    <interface.wsdl interface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApprovalService#wsdl.interface(execute_ptt)"
-                    callbackInterface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApprovalService#wsdl.interface(callback_ptt)"/>
+  <service name="References.Externals.InspectionApproval.service"
+           ui:wsdlLocation="InspectionApproval.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.interface(execute_ptt)"
+                    callbackInterface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.interface(callback_ptt)"/>
   </service>
   <reference name="HumanTasks.InspectionApproverTask.reference"
              ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
@@ -35,12 +35,12 @@
              ui:wsdlLocation="UpdateIsSentForApproval.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/UpdateIsSentForApproval#wsdl.interface(UpdateIsSentForApproval_ptt)"/>
   </reference>
-  <reference name="Services.Externals.GetInspectionData.reference"
-             ui:wsdlLocation="GetInspectionData.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
-  </reference>
   <reference name="Services.Externals.SaveSHID.reference"
              ui:wsdlLocation="SaveSHID.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SaveSHID#wsdl.interface(SaveSHID_ptt)"/>
+  </reference>
+  <reference name="Services.Externals.GetInspectionData.reference"
+             ui:wsdlLocation="GetInspectionData.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
   </reference>
 </componentType>

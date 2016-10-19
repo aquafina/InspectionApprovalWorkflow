@@ -2,7 +2,7 @@
 <measurements xmlns="http://xmlns.oracle.com/bpm/analytics/measurement">
     <compositeDN>InspectionApproval</compositeDN>
     <measurementElements>
-        <measurementElement enabled="true" type="COMPOSITE" name="InspectionApproval">
+        <measurementElement name="InspectionApproval" type="COMPOSITE" enabled="true">
             <elementSelection>INTERACTIVE</elementSelection>
             <elementStates>
                 <elementState>ALL</elementState>

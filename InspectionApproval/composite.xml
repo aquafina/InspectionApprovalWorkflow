@@ -10,8 +10,6 @@
            xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
-  <import namespace="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApprovalService"
-          location="InvokeInspectionApprovalService.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
           location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl"
           importType="wsdl"/>
@@ -23,23 +21,24 @@
           location="SaveApproverHistory.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/UpdateIsSentForApproval"
           location="UpdateIsSentForApproval.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetInspectionData"
-          location="GetInspectionData.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SaveSHID"
           location="SaveSHID.wsdl" importType="wsdl"/>
   <import namespace="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient"
           location="http://fmwdev.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl"
           importType="wsdl"/>
-  <service name="InvokeInspectionApprovalService"
-           ui:wsdlLocation="InvokeInspectionApprovalService.wsdl">
-    <interface.wsdl interface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApprovalService#wsdl.interface(execute_ptt)"
-                    callbackInterface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApprovalService#wsdl.interface(callback_ptt)"/>
-    <binding.ws port="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApprovalService#wsdl.endpoint(InvokeInspectionApprovalService/execute_pt)">
+  <import namespace="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval"
+          location="InspectionApproval.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData"
+          location="GetInspectionData.wsdl" importType="wsdl"/>
+  <service name="InspectionApproval" ui:wsdlLocation="InspectionApproval.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.interface(execute_ptt)"
+                    callbackInterface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.interface(callback_ptt)"/>
+    <binding.ws port="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.endpoint(InspectionApproval/execute_pt)">
       <property name="weblogic.wsee.wsat.transaction.flowOption"
                 type="xs:string" many="false">NEVER</property>
     </binding.ws>
     <callback>
-      <binding.ws port="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InvokeInspectionApprovalService#wsdl.endpoint(InvokeInspectionApprovalService/callback_pt)"/>
+      <binding.ws port="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.endpoint(InspectionApproval/callback_pt)"/>
     </callback>
   </service>
   <property name="productVersion" type="xs:string" many="false">11.1.1.7.0</property>
@@ -110,17 +109,6 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
-  <reference name="GetInspectionData" ui:wsdlLocation="GetInspectionData.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GrnApprovalWorkflow/GrnApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
-    <binding.jca config="GetInspectionData_db.jca"/>
-    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
-    <property name="jca.retry.interval" type="xs:int" many="false"
-              override="may">1</property>
-    <property name="jca.retry.backoff" type="xs:int" many="false"
-              override="may">2</property>
-    <property name="jca.retry.maxInterval" type="xs:string" many="false"
-              override="may">120</property>
-  </reference>
   <reference name="SaveSHID" ui:wsdlLocation="SaveSHID.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SaveSHID#wsdl.interface(SaveSHID_ptt)"/>
     <binding.jca config="SaveSHID_db.jca"/>
@@ -132,10 +120,17 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
-  <wire>
-    <source.uri>InvokeInspectionApprovalService</source.uri>
-    <target.uri>InspectionApprovalProcess/References.Externals.InvokeInspectionApprovalService.service</target.uri>
-  </wire>
+  <reference name="GetInspectionData" ui:wsdlLocation="GetInspectionData.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
+    <binding.jca config="GetInspectionData_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>InspectionApprovalProcess/HumanTasks.InspectionApproverTask.reference</source.uri>
     <target.uri>InspectionApproverTask/TaskService</target.uri>
@@ -161,11 +156,15 @@
     <target.uri>UpdateIsSentForApproval</target.uri>
   </wire>
   <wire>
-    <source.uri>InspectionApprovalProcess/Services.Externals.GetInspectionData.reference</source.uri>
-    <target.uri>GetInspectionData</target.uri>
-  </wire>
-  <wire>
     <source.uri>InspectionApprovalProcess/Services.Externals.SaveSHID.reference</source.uri>
     <target.uri>SaveSHID</target.uri>
+  </wire>
+  <wire>
+    <source.uri>InspectionApproval</source.uri>
+    <target.uri>InspectionApprovalProcess/References.Externals.InspectionApproval.service</target.uri>
+  </wire>
+  <wire>
+    <source.uri>InspectionApprovalProcess/Services.Externals.GetInspectionData.reference</source.uri>
+    <target.uri>GetInspectionData</target.uri>
   </wire>
 </composite>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <definitions fileRevision="20120217" version="11.1.1.7.0.2.22" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns5="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <process isExecutable="true" processType="Public" name="InspectionApprovalProcess" id="InspectionApprovalProcess">
+    <process processType="Public" isExecutable="true" name="InspectionApprovalProcess" id="InspectionApprovalProcess">
         <extensionElements>
             <ns5:OracleExtensions>
                 <ns5:FeatureSet>
@@ -19,29 +19,29 @@
                     <ns5:StringFeature value="REGULAR" name="sealType"/>
                 </ns5:FeatureSet>
                 <ns5:Conversations>
-                    <ns5:Conversation type="use_interface" id="CONVERSATION167081223601">
-                        <ns5:UseInterfaceConversationDefinition reference="References.Externals.InvokeInspectionApprovalService"/>
-                    </ns5:Conversation>
-                    <ns5:Conversation type="service_call" id="CONVERSATION168021020707">
+                    <ns5:Conversation id="CONVERSATION168021020707" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.CallGRNApprovalProcess"/>
                     </ns5:Conversation>
-                    <ns5:Conversation type="service_call" id="CONVERSATION169387804882">
+                    <ns5:Conversation id="CONVERSATION169387804882" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.SaveApproverHistory"/>
                     </ns5:Conversation>
-                    <ns5:Conversation type="service_call" id="CONVERSATION174848255200">
+                    <ns5:Conversation id="CONVERSATION174848255200" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.SaveSHID"/>
                     </ns5:Conversation>
-                    <ns5:Conversation type="service_call" id="CONVERSATION175107134411">
-                        <ns5:ServiceCallConversationDefinition service="Services.Externals.GetInspectionData"/>
-                    </ns5:Conversation>
-                    <ns5:Conversation type="service_call" id="CONVERSATION175112807860">
+                    <ns5:Conversation id="CONVERSATION175112807860" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.SetApprovedStatus"/>
                     </ns5:Conversation>
-                    <ns5:Conversation type="service_call" id="CONVERSATION175112929347">
+                    <ns5:Conversation id="CONVERSATION175112929347" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.UpdateIsSentForApproval"/>
                     </ns5:Conversation>
-                    <ns5:Conversation type="service_call" id="CONVERSATION175112938956">
+                    <ns5:Conversation id="CONVERSATION175112938956" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.Get_Entity_Approvers"/>
+                    </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION175268654848" type="use_interface">
+                        <ns5:UseInterfaceConversationDefinition reference="References.Externals.InspectionApproval"/>
+                    </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION175277577388" type="service_call">
+                        <ns5:ServiceCallConversationDefinition service="Services.Externals.GetInspectionData"/>
                     </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
@@ -58,8 +58,8 @@
                 <extensionElements>
                     <ns5:OracleExtensions>
                         <ns5:GraphicsAttributes backgroundColor="-1761607681">
-                            <ns5:Position y="0" x="0"/>
-                            <ns5:Size height="0" width="344"/>
+                            <ns5:Position x="0" y="0"/>
+                            <ns5:Size width="344" height="0"/>
                         </ns5:GraphicsAttributes>
                         <ns5:LaneAttributes roleId="Role"/>
                         <ns5:FeatureSet/>
@@ -71,7 +71,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="108" x="831"/>
+                        <ns5:Position x="831" y="108"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -94,28 +94,28 @@
                 <dataInput name="xxInspectionDataCollection" id="xxInspectionDataCollection">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="XxInspectionDataCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" element="XxInspectionDataCollection" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
                 <dataInput name="execData" id="execData">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="task" namespace="http://xmlns.oracle.com/bpel/workflow/task"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
                 <dataOutput name="outcome" id="outcome">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" type="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+                            <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataOutput>
                 <dataOutput name="execData" id="execData">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="task" namespace="http://xmlns.oracle.com/bpel/workflow/task"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataOutput>
@@ -236,110 +236,11 @@
             </dataOutputAssociation>
             <resourceRole name="Role" id="lane1"/>
         </userTask>
-        <serviceTask operationRef="getInspectionDataSelect" implementation="Services.Externals.GetInspectionData" isForCompensation="false" name="GetInspectionData" id="ACT16726493730075">
+        <serviceTask implementation="Services.Externals.SetApprovedStatus" operationRef="merge" isForCompensation="false" name="SetApprovedStatus" id="ACT16785293459822">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="106" x="361"/>
-                    </ns5:GraphicsAttributes>
-                    <ns5:FeatureSet>
-                        <ns5:BooleanFeature value="false" name="isDraft"/>
-                        <ns5:BooleanFeature value="false" name="inputValidation"/>
-                        <ns5:BooleanFeature value="false" name="outputValidation"/>
-                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
-                        <ns5:StringFeature value="Begin Level" name="level"/>
-                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
-                    </ns5:FeatureSet>
-                    <ns5:Conversational conversation="CONVERSATION175107134411">
-                        <ns5:ServiceCallConversationalDefinition operation="getInspectionDataSelect"/>
-                    </ns5:Conversational>
-                    <ns5:LogHandlers/>
-                </ns5:OracleExtensions>
-            </extensionElements>
-            <ioSpecification>
-                <dataInput name="getInspectionDataSelectShidInputParameters" id="getInspectionDataSelectShidInputParameters">
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="GetInspectionDataSelect_shidInputParameters" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                </dataInput>
-                <dataOutput name="xxInspectionDataCollection" id="xxInspectionDataCollection">
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="XxInspectionDataCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                </dataOutput>
-                <inputSet id="ACT16726493730075_uniqueInputSet">
-                    <dataInputRefs>getInspectionDataSelectShidInputParameters</dataInputRefs>
-                </inputSet>
-                <outputSet id="ACT16726493730075_uniqueOutputSet">
-                    <dataOutputRefs>xxInspectionDataCollection</dataOutputRefs>
-                </outputSet>
-            </ioSpecification>
-            <dataInputAssociation>
-                <extensionElements>
-                    <ns5:OracleExtensions/>
-                </extensionElements>
-                <sourceRef>DO_SHID</sourceRef>
-                <targetRef>getInspectionDataSelectShidInputParameters</targetRef>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">number(bpmn:getDataObject('DO_SHID'))
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="xpath"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getInspectionDataSelectShidInputParameters')/ns:shid
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-            </dataInputAssociation>
-            <dataOutputAssociation>
-                <extensionElements>
-                    <ns5:OracleExtensions/>
-                </extensionElements>
-                <sourceRef>xxInspectionDataCollection</sourceRef>
-                <targetRef>DO_InspectionData</targetRef>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('xxInspectionDataCollection')
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_InspectionData')
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-            </dataOutputAssociation>
-        </serviceTask>
-        <serviceTask operationRef="merge" implementation="Services.Externals.SetApprovedStatus" isForCompensation="false" name="SetApprovedStatus" id="ACT16785293459822">
-            <extensionElements>
-                <ns5:OracleExtensions>
-                    <ns5:GraphicsAttributes>
-                        <ns5:Position y="110" x="952"/>
+                        <ns5:Position x="952" y="110"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -359,7 +260,7 @@
                 <dataInput name="rcvTransactionsCollection" id="rcvTransactionsCollection">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="RcvTransactionsCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SetApprovedStatus"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SetApprovedStatus" element="RcvTransactionsCollection" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
@@ -518,11 +419,11 @@
                 </assignment>
             </dataOutputAssociation>
         </serviceTask>
-        <serviceTask operationRef="startProcess" implementation="Services.Externals.CallGRNApprovalProcess" isForCompensation="false" name="CallGRNApprovalProcess" id="ACT16802186072034">
+        <serviceTask implementation="Services.Externals.CallGRNApprovalProcess" operationRef="startProcess" isForCompensation="false" name="CallGRNApprovalProcess" id="ACT16802186072034">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="111" x="1077"/>
+                        <ns5:Position x="1077" y="111"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -542,7 +443,7 @@
                 <dataInput name="singleString" id="singleString">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="singleString" namespace="http://xmlns.oracle.com/singleString"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/singleString" element="singleString" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
@@ -608,11 +509,11 @@
                 </assignment>
             </dataOutputAssociation>
         </serviceTask>
-        <serviceTask operationRef="insert" implementation="Services.Externals.SaveSHID" isForCompensation="false" name="SaveSHID" id="ACT16811260874781">
+        <serviceTask implementation="Services.Externals.SaveSHID" operationRef="insert" isForCompensation="false" name="SaveSHID" id="ACT16811260874781">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="106" x="240"/>
+                        <ns5:Position x="240" y="106"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -632,7 +533,7 @@
                 <dataInput name="testTableShipmentCollection" id="testTableShipmentCollection">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="TestTableShipmentCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveSHID"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveSHID" element="TestTableShipmentCollection" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
@@ -690,11 +591,11 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
-        <serviceTask operationRef="getEntityApproversSelect" implementation="Services.Externals.Get_Entity_Approvers" isForCompensation="false" name="GetApproverServicePerpetual" id="ACT16923282558156">
+        <serviceTask implementation="Services.Externals.Get_Entity_Approvers" operationRef="getEntityApproversSelect" isForCompensation="false" name="GetApproverServicePerpetual" id="ACT16923282558156">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="106" x="705"/>
+                        <ns5:Position x="705" y="106"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -714,14 +615,14 @@
                 <dataInput name="getEntityApproversSelectEntityIdInputParameters" id="getEntityApproversSelectEntityIdInputParameters">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="Get_Entity_ApproversSelect_entity_idInputParameters" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers" element="Get_Entity_ApproversSelect_entity_idInputParameters" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
                 <dataOutput name="xxInspectionApproversCollection" id="xxInspectionApproversCollection">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="XxInspectionApproversCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers" element="XxInspectionApproversCollection" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataOutput>
@@ -789,11 +690,11 @@
                 </assignment>
             </dataOutputAssociation>
         </serviceTask>
-        <serviceTask operationRef="merge" implementation="Services.Externals.SaveApproverHistory" isForCompensation="false" name="SaveApproverHistory" id="ACT16931789259863">
+        <serviceTask implementation="Services.Externals.SaveApproverHistory" operationRef="merge" isForCompensation="false" name="SaveApproverHistory" id="ACT16931789259863">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="111" x="1202"/>
+                        <ns5:Position x="1202" y="111"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -813,7 +714,7 @@
                 <dataInput name="xxInspectionApproverHistoryCollection" id="xxInspectionApproverHistoryCollection">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="XxInspectionApproverHistoryCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveApproverHistory"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveApproverHistory" element="XxInspectionApproverHistoryCollection" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
@@ -913,11 +814,11 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
-        <serviceTask operationRef="merge" implementation="Services.Externals.UpdateIsSentForApproval" isForCompensation="false" name="SetIsSentForApproval" id="ACT16942100587377">
+        <serviceTask implementation="Services.Externals.UpdateIsSentForApproval" operationRef="merge" isForCompensation="false" name="SetIsSentForApproval" id="ACT16942100587377">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="105" x="580"/>
+                        <ns5:Position x="580" y="105"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -937,7 +838,7 @@
                 <dataInput name="rcvTransactionsCollection" id="rcvTransactionsCollection">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="RcvTransactionsCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateIsSentForApproval"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateIsSentForApproval" element="RcvTransactionsCollection" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
@@ -1016,11 +917,11 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
-        <serviceTask operationRef="getEntityApproversSelect" implementation="Services.Externals.Get_Entity_Approvers" isForCompensation="false" name="GetApproverServicePeriodic_FIFO" id="ACT17517437690521">
+        <serviceTask implementation="Services.Externals.Get_Entity_Approvers" operationRef="getEntityApproversSelect" isForCompensation="false" name="GetApproverServicePeriodic_FIFO" id="ACT17517437690521">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="26" x="829"/>
+                        <ns5:Position x="829" y="26"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -1040,14 +941,14 @@
                 <dataInput name="getEntityApproversSelectEntityIdInputParameters" id="getEntityApproversSelectEntityIdInputParameters">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="Get_Entity_ApproversSelect_entity_idInputParameters" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers" element="Get_Entity_ApproversSelect_entity_idInputParameters" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
                 <dataOutput name="xxInspectionApproversCollection" id="xxInspectionApproversCollection">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef isArray="false" element="XxInspectionApproversCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers" element="XxInspectionApproversCollection" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataOutput>
@@ -1087,11 +988,111 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
+        <serviceTask implementation="Services.Externals.GetInspectionData" operationRef="getInspectionDataSelect" isForCompensation="false" name="GetInspectionData" id="ACT17527737983451">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="361" y="106"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational conversation="CONVERSATION175277577388">
+                        <ns5:ServiceCallConversationalDefinition operation="getInspectionDataSelect"/>
+                    </ns5:Conversational>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="getInspectionDataSelectShidInputParameters" id="getInspectionDataSelectShidInputParameters">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" element="GetInspectionDataSelect_shidInputParameters" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataOutput name="xxInspectionDataCollection" id="xxInspectionDataCollection">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" element="XxInspectionDataCollection" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <inputSet id="ACT17527737983451_uniqueInputSet">
+                    <dataInputRefs>getInspectionDataSelectShidInputParameters</dataInputRefs>
+                </inputSet>
+                <outputSet id="ACT17527737983451_uniqueOutputSet">
+                    <dataOutputRefs>xxInspectionDataCollection</dataOutputRefs>
+                </outputSet>
+            </ioSpecification>
+            <dataInputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>DO_InspectionData</sourceRef>
+                <targetRef>getInspectionDataSelectShidInputParameters</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_InspectionData')/ns:XxInspectionData[1]/ns:shipmentHeaderId
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getInspectionDataSelectShidInputParameters')/ns:shid
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataInputAssociation>
+            <dataOutputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:OtherRef>DO_InspectionData</ns5:OtherRef>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+                <targetRef>DO_InspectionData</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_InspectionData')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_InspectionData')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataOutputAssociation>
+        </serviceTask>
         <startEvent isInterrupting="false" name="Start" id="EVT16707813096572">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="104" x="52"/>
+                        <ns5:Position x="52" y="104"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="catchAllErrors"/>
@@ -1102,7 +1103,7 @@
                         <ns5:StringFeature value="Begin Level" name="level"/>
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </ns5:FeatureSet>
-                    <ns5:Conversational conversation="CONVERSATION167081223601">
+                    <ns5:Conversational conversation="CONVERSATION175268654848">
                         <ns5:UseInterfaceConversationalDefinition operation="execute"/>
                     </ns5:Conversational>
                     <ns5:LogHandlers/>
@@ -1111,7 +1112,7 @@
             <dataOutput name="singleString" id="singleString">
                 <extensionElements>
                     <ns5:OracleExtensions>
-                        <ns5:TypeRef isArray="false" element="singleString" namespace="http://xmlns.oracle.com/singleString"/>
+                        <ns5:TypeRef namespace="http://xmlns.oracle.com/singleString" element="singleString" isArray="false"/>
                     </ns5:OracleExtensions>
                 </extensionElements>
             </dataOutput>
@@ -1146,7 +1147,7 @@
             <outputSet id="EVT16707813096572_uniqueOutputSet">
                 <dataOutputRefs>singleString</dataOutputRefs>
             </outputSet>
-            <messageEventDefinition messageRef="References.Externals.InvokeInspectionApprovalService">
+            <messageEventDefinition messageRef="References.Externals.InspectionApproval">
                 <operationRef>execute</operationRef>
             </messageEventDefinition>
         </startEvent>
@@ -1154,7 +1155,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="110" x="1286"/>
+                        <ns5:Position x="1286" y="110"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -1171,7 +1172,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="105" x="134"/>
+                        <ns5:Position x="134" y="105"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -1204,7 +1205,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="107" x="477"/>
+                        <ns5:Position x="477" y="107"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -1218,7 +1219,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="26" x="624"/>
+                        <ns5:Position x="624" y="26"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -1228,7 +1229,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </exclusiveGateway>
-        <sequenceFlow targetRef="EVT16810758033940" sourceRef="EVT16707813096572" name="sf65" id="sf65">
+        <sequenceFlow sourceRef="EVT16707813096572" targetRef="EVT16810758033940" name="sf65" id="sf65">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1240,11 +1241,11 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16785293459822" sourceRef="ACT16707813096620" name="sf66" id="sf66">
+        <sequenceFlow sourceRef="ACT16707813096620" targetRef="ACT16785293459822" name="sf66" id="sf66">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions y="111" x="873"/>
+                        <ns5:Positions x="873" y="111"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
@@ -1254,7 +1255,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="GTW16810030670527" sourceRef="ACT16726493730075" name="sf6" id="sf6">
+        <sequenceFlow sourceRef="ACT16785293459822" targetRef="ACT16802186072034" name="sf7" id="sf7">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1266,7 +1267,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16802186072034" sourceRef="ACT16785293459822" name="sf7" id="sf7">
+        <sequenceFlow sourceRef="ACT16802186072034" targetRef="ACT16931789259863" name="sf13" id="sf13">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1278,23 +1279,11 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16931789259863" sourceRef="ACT16802186072034" name="sf13" id="sf13">
-            <extensionElements>
-                <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes/>
-                    <ns5:FeatureSet>
-                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
-                    </ns5:FeatureSet>
-                </ns5:OracleExtensions>
-            </extensionElements>
-        </sequenceFlow>
-        <sequenceFlow targetRef="ACT16942100587377" sourceRef="GTW16810030670527" name="sf128" id="sf128">
+        <sequenceFlow sourceRef="GTW16810030670527" targetRef="ACT16942100587377" name="sf128" id="sf128">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions y="108" x="526"/>
+                        <ns5:Positions x="526" y="108"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
@@ -1313,11 +1302,11 @@
                 </extensionElements>
             </conditionExpression>
         </sequenceFlow>
-        <sequenceFlow targetRef="EVT16707813096667" sourceRef="GTW16810030670527" name="sf131" id="sf131">
+        <sequenceFlow sourceRef="GTW16810030670527" targetRef="EVT16707813096667" name="sf131" id="sf131">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions y="174" x="756"/>
+                        <ns5:Positions x="756" y="174"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
@@ -1328,7 +1317,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16811260874781" sourceRef="EVT16810758033940" name="sf141" id="sf141">
+        <sequenceFlow sourceRef="EVT16810758033940" targetRef="ACT16811260874781" name="sf141" id="sf141">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1340,7 +1329,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16726493730075" sourceRef="ACT16811260874781" name="sf142" id="sf142">
+        <sequenceFlow sourceRef="ACT16811260874781" targetRef="ACT17527737983451" name="sf142" id="sf142">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1352,11 +1341,11 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16707813096620" sourceRef="ACT16923282558156" name="sf14" id="sf14">
+        <sequenceFlow sourceRef="ACT16923282558156" targetRef="ACT16707813096620" name="sf14" id="sf14">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions y="103" x="689"/>
+                        <ns5:Positions x="689" y="103"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
@@ -1366,7 +1355,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="EVT16707813096667" sourceRef="ACT16931789259863" name="sf67" id="sf67">
+        <sequenceFlow sourceRef="ACT16931789259863" targetRef="EVT16707813096667" name="sf67" id="sf67">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1378,11 +1367,11 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="GTW17517203174351" sourceRef="ACT16942100587377" name="sf210" id="sf210">
+        <sequenceFlow sourceRef="ACT16942100587377" targetRef="GTW17517203174351" name="sf210" id="sf210">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions y="26" x="593"/>
+                        <ns5:Positions x="593" y="26"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
@@ -1392,7 +1381,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16923282558156" sourceRef="GTW17517203174351" name="sf120" id="sf120">
+        <sequenceFlow sourceRef="GTW17517203174351" targetRef="ACT16923282558156" name="sf120" id="sf120">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1413,11 +1402,11 @@
                 </extensionElements>
             </conditionExpression>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT17517437690521" sourceRef="GTW17517203174351" name="sf123" id="sf123">
+        <sequenceFlow sourceRef="GTW17517203174351" targetRef="ACT17517437690521" name="sf123" id="sf123">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions y="26" x="727"/>
+                        <ns5:Positions x="727" y="26"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
@@ -1428,11 +1417,11 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16707813096620" sourceRef="ACT17517437690521" name="sf125" id="sf125">
+        <sequenceFlow sourceRef="ACT17517437690521" targetRef="ACT16707813096620" name="sf125" id="sf125">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions y="67" x="830"/>
+                        <ns5:Positions x="830" y="67"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
@@ -1442,11 +1431,23 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
+        <sequenceFlow sourceRef="ACT17527737983451" targetRef="GTW16810030670527" name="sf97" id="sf97">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
         <dataObject name="DO_SHID" id="DO_SHID">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">
-                        <ns5:TypeRef isArray="false" type="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+                        <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
                     </ns5:DataObjectType>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -1455,7 +1456,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">
-                        <ns5:TypeRef isArray="false" element="XxInspectionDataCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+                        <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" element="XxInspectionDataCollection" isArray="false"/>
                     </ns5:DataObjectType>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -1464,7 +1465,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">
-                        <ns5:TypeRef isArray="false" type="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+                        <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
                     </ns5:DataObjectType>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -1473,7 +1474,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">
-                        <ns5:TypeRef isArray="false" type="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+                        <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
                     </ns5:DataObjectType>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -1482,7 +1483,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">
-                        <ns5:TypeRef isArray="false" type="string" namespace="http://www.w3.org/2001/XMLSchema"/>
+                        <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="string" isArray="false"/>
                     </ns5:DataObjectType>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -1491,7 +1492,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">
-                        <ns5:TypeRef isArray="false" element="Get_Entity_ApproversSelect_entity_idInputParameters" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers"/>
+                        <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/Get_Entity_Approvers" element="Get_Entity_ApproversSelect_entity_idInputParameters" isArray="false"/>
                     </ns5:DataObjectType>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -1500,7 +1501,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">
-                        <ns5:TypeRef isArray="false" type="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+                        <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="int" isArray="false"/>
                     </ns5:DataObjectType>
                 </ns5:OracleExtensions>
             </extensionElements>
