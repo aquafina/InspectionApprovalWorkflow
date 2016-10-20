@@ -205,7 +205,7 @@
                </xs:restriction>
             </xs:simpleType>
          </xs:element>
-         <xs:element name="shipmentLineId" type="xs:decimal" minOccurs="0"/>
+         <xs:element name="shipmentLineId" type="xs:decimal"/>
          <xs:element name="department" minOccurs="0" nillable="true">
             <xs:simpleType>
                <xs:restriction base="xs:string">
