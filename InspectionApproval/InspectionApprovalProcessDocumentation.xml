@@ -72,6 +72,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT17527977625426">
+                <labels>
+                    <label locale="en">GetInspectionData</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT16707813096572">
                 <labels>
                     <label locale="en">Start</label>
@@ -107,14 +115,6 @@
             <topicDocumentation name="GTW17517203174351">
                 <labels>
                     <label locale="en">isPerpetual</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT17527737983451">
-                <labels>
-                    <label locale="en">GetInspectionData</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -162,7 +162,7 @@
                 </descriptions>
             </topicDocumentation>
             <topicDocumentation name="sf125"/>
-            <topicDocumentation name="sf97"/>
+            <topicDocumentation name="sf21"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
