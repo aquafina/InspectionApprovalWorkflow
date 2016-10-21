@@ -120,6 +120,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT1753637248327">
+                <labels>
+                    <label locale="en">EmailApproved</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf66"/>
             <topicDocumentation name="sf7"/>
@@ -163,6 +171,7 @@
             </topicDocumentation>
             <topicDocumentation name="sf125"/>
             <topicDocumentation name="sf21"/>
+            <topicDocumentation name="sf74"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

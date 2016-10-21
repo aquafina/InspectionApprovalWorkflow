@@ -37,11 +37,14 @@
                     <ns5:Conversation type="use_interface" id="CONVERSATION175268654848">
                         <ns5:UseInterfaceConversationDefinition reference="References.Externals.InspectionApproval"/>
                     </ns5:Conversation>
-                    <ns5:Conversation type="service_call" id="CONVERSATION175284882717">
-                        <ns5:ServiceCallConversationDefinition service="Services.Externals.GetInspectionData"/>
-                    </ns5:Conversation>
                     <ns5:Conversation type="service_call" id="CONVERSATION175347745184">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.UpdateIsSentForApproval"/>
+                    </ns5:Conversation>
+                    <ns5:Conversation type="service_call" id="CONVERSATION175362375214">
+                        <ns5:ServiceCallConversationDefinition service="Services.Externals.GetInspectionData"/>
+                    </ns5:Conversation>
+                    <ns5:Conversation type="service_call" id="CONVERSATION175363746680">
+                        <ns5:ServiceCallConversationDefinition service="Services.BPEL.BPELEmail.Bpelemail_client"/>
                     </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
@@ -423,7 +426,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="111" x="1077"/>
+                        <ns5:Position y="109" x="1208"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -694,7 +697,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="111" x="1202"/>
+                        <ns5:Position y="111" x="1347"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -1030,7 +1033,7 @@
                         <ns5:StringFeature value="Begin Level" name="level"/>
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                     </ns5:FeatureSet>
-                    <ns5:Conversational conversation="CONVERSATION175284882717">
+                    <ns5:Conversational conversation="CONVERSATION175362375214">
                         <ns5:ServiceCallConversationalDefinition operation="getInspectionDataSelect"/>
                     </ns5:Conversational>
                     <ns5:LogHandlers/>
@@ -1115,6 +1118,38 @@
                 </assignment>
             </dataOutputAssociation>
         </serviceTask>
+        <serviceTask operationRef="process" implementation="Services.BPEL.BPELEmail.Bpelemail_client" isForCompensation="false" name="EmailApproved" id="ACT1753637248327">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position y="112" x="1077"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational conversation="CONVERSATION175363746680">
+                        <ns5:ServiceCallConversationalDefinition operation="process"/>
+                    </ns5:Conversational>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="process" id="process">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef isArray="false" element="process" namespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <inputSet id="ACT1753637248327_uniqueInputSet">
+                    <dataInputRefs>process</dataInputRefs>
+                </inputSet>
+            </ioSpecification>
+        </serviceTask>
         <startEvent isInterrupting="false" name="Start" id="EVT16707813096572">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -1182,7 +1217,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position y="110" x="1286"/>
+                        <ns5:Position y="111" x="1448"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -1282,7 +1317,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow targetRef="ACT16802186072034" sourceRef="ACT16785293459822" name="sf7" id="sf7">
+        <sequenceFlow targetRef="ACT1753637248327" sourceRef="ACT16785293459822" name="sf7" id="sf7">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1459,6 +1494,18 @@
             </extensionElements>
         </sequenceFlow>
         <sequenceFlow targetRef="GTW16810030670527" sourceRef="ACT17527977625426" name="sf21" id="sf21">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow targetRef="ACT16802186072034" sourceRef="ACT1753637248327" name="sf74" id="sf74">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
