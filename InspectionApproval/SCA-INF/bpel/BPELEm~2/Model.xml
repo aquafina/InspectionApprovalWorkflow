@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<process name="BPELEmail" targetNamespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://xmlns.oracle.com/ias/pcbpel/NotificationService" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" id="BpPrc0">
+<process name="BPELEmail" targetNamespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail" xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:client="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:bpelx="http://schemas.oracle.com/bpel/extension" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:ns1="http://xmlns.oracle.com/ias/pcbpel/NotificationService" xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk" xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions" xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath" xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions" id="BpPrc0">
 
     <!-- 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15,6 +15,7 @@
     -->
         <partnerLink name="bpelemail_client" partnerLinkType="client:BPELEmail" myRole="BPELEmailProvider" partnerRole="BPELEmailRequester"/>
         <partnerLink name="NotificationService1" partnerLinkType="ns1:NotificationServiceLink" partnerRole="NotificationServiceProvider"/>
+        <partnerLink name="NotificationService2" partnerLinkType="ns1:NotificationServiceLink" partnerRole="NotificationServiceProvider"/>
     </partnerLinks>
 
     <!-- 
@@ -41,61 +42,126 @@
     <sequence name="main" id="BpSeq0">
         <!-- Receive input from requestor. (Note: This maps to operation defined in BPELEmail.wsdl) -->
         <receive name="receiveInput" partnerLink="bpelemail_client" portType="client:BPELEmail" operation="process" variable="inputVariable" createInstance="yes" id="BpRcv0"/>
-        <scope name="Email1" id="BpScp0">
-            <bpelx:annotation>
-                <bpelx:pattern patternName="bpelx:email"/>
-            </bpelx:annotation>
-            <variables>
-                <variable name="varNotificationReq" messageType="ns1:EmailNotificationRequest"/>
-                <variable name="varNotificationResponse" messageType="ns1:ArrayOfResponse"/>
-                <variable name="NotificationServiceFaultVariable" messageType="ns1:NotificationServiceErrorMessage"/>
-            </variables>
-            <sequence name="Sequence1" id="BpSeq1">
-                <assign name="EmailParamsAssign" id="BpAss0">
-                    <copy>
-                        <from expression="string('Default')"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:FromAccountName"/>
-                    </copy>
-                    <copy>
-                        <from expression="string('')"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:FromUserName"/>
-                    </copy>
-                    <copy>
-                        <from expression="string('')"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Bcc"/>
-                    </copy>
-                    <copy>
-                        <from expression="string('')"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Cc"/>
-                    </copy>
-                    <copy>
-                        <from expression="string('')"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:ReplyToAddress"/>
-                    </copy>
-                    <copy>
-                        <from expression="string('Receipt Approved')"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Subject"/>
-                    </copy>
-                    <copy>
-                        <from expression="string('sarmad@nishat.net')"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:To"/>
-                    </copy>
-                    <copy>
-                        <from expression="concat(ora:toCDATA(&quot;&lt;html>&lt;head>&quot;), string('     '), ora:toCDATA(&quot;&lt;style>&quot;), string('       '), ora:toCDATA(&quot;tr{&quot;), string('          '), ora:toCDATA(&quot;background:#deebf6;&quot;), string('                '), ora:toCDATA(&quot;padding:8px;&quot;), string('       '), ora:toCDATA(&quot;}&quot;), string('   '), ora:toCDATA(&quot;#footer{&quot;), string('    '), ora:toCDATA(&quot;background:#ffffff;&quot;), string('    '), ora:toCDATA(&quot;color:#777879;&quot;), string('   '), ora:toCDATA(&quot;}&quot;), string('  '), ora:toCDATA(&quot;&lt;/style>&quot;), string('  '), ora:toCDATA(&quot;&lt;/head>&quot;), string('    '), ora:toCDATA(&quot;&lt;body>&quot;), string('   hello  '), ora:toCDATA(&quot;&lt;/body>&quot;), ora:toCDATA(&quot;&lt;/html>&quot;), string('    '))"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Content/ns1:ContentBody"/>
-                    </copy>
-                    <copy>
-                        <from expression="string('text/html; charset=UTF-8')"/>
-                        <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Content/ns1:MimeType"/>
-                    </copy>
-                </assign>
-                <invoke name="InvokeNotificationService" portType="ns1:NotificationService" partnerLink="NotificationService1" inputVariable="varNotificationReq" outputVariable="varNotificationResponse" operation="sendEmailNotification" id="BpInv0"/>
-            </sequence>
-        </scope>
+        <switch name="Switch1" id="BpSwt0">
+            <case condition="bpws:getVariableData('inputVariable','payload','/client:process/client:emailSubject') = &quot;APPROVE&quot;">
+                <bpelx:annotation>
+                    <bpelx:pattern>If Inspection is approved</bpelx:pattern>
+                    <bpelx:general>
+                        <bpelx:property name="userLabel">
+                            <![CDATA[Approved]]>
+                        </bpelx:property>
+                    </bpelx:general>
+                </bpelx:annotation>
+                <scope name="Email1" id="BpScp0">
+                    <bpelx:annotation>
+                        <bpelx:pattern patternName="bpelx:email"/>
+                    </bpelx:annotation>
+                    <variables>
+                        <variable name="varNotificationReq" messageType="ns1:EmailNotificationRequest"/>
+                        <variable name="varNotificationResponse" messageType="ns1:ArrayOfResponse"/>
+                        <variable name="NotificationServiceFaultVariable" messageType="ns1:NotificationServiceErrorMessage"/>
+                    </variables>
+                    <sequence name="Sequence1" id="BpSeq1">
+                        <assign name="EmailParamsAssign" id="BpAss0">
+                            <copy>
+                                <from expression="string('Default')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:FromAccountName"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:FromUserName"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Bcc"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Cc"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:ReplyToAddress"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('Inspection Approved')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Subject"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('sarmad@nishat.net')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:To"/>
+                            </copy>
+                            <copy>
+                                <from expression="concat(ora:toCDATA(&quot;&lt;html>&lt;head>&quot;), string('     '), ora:toCDATA(&quot;&lt;style>&quot;), string('       '), ora:toCDATA(&quot;tr{&quot;), string('          '), ora:toCDATA(&quot;background:#deebf6;&quot;), string('                '), ora:toCDATA(&quot;padding:8px;&quot;), string('       '), ora:toCDATA(&quot;}&quot;), string('   '), ora:toCDATA(&quot;#footer{&quot;), string('    '), ora:toCDATA(&quot;background:#ffffff;&quot;), string('    '), ora:toCDATA(&quot;color:#777879;&quot;), string('   '), ora:toCDATA(&quot;}&quot;), string('  '), ora:toCDATA(&quot;&lt;/style>&quot;), string('  '), ora:toCDATA(&quot;&lt;/head>&quot;), string('    '), ora:toCDATA(&quot;&lt;body>&quot;), string('    '), ora:toCDATA(&quot;&lt;div id=main_div>&quot;), string('       '), ora:toCDATA(&quot;&lt;center>&quot;), string('       '), ora:toCDATA(&quot;&lt;table>&quot;), string('       '), ora:toCDATA(&quot;&lt;TR>&quot;), string('           '), ora:toCDATA(&quot;&lt;TD>&quot;), string('GRN # '), ora:toCDATA(&quot;&lt;/TD>&quot;), string('           '), ora:toCDATA(&quot;&lt;TD>&lt;p>&quot;), bpws:getVariableData('inputVariable','payload','/client:process/client:emailBody'), string('       '), ora:toCDATA(&quot;&lt;/TR>&quot;), string('  '), ora:toCDATA(&quot;&lt;TR>&quot;), string('           '), ora:toCDATA(&quot;&lt;TD>&quot;), string('ORG '), ora:toCDATA(&quot;&lt;/TD>&quot;), string('           '), ora:toCDATA(&quot;&lt;TD>&lt;p>&quot;), bpws:getVariableData('inputVariable','payload','/client:process/client:emailBodyOrg'), ora:toCDATA(&quot;&lt;/p>&lt;/TD>&quot;), string('       '), ora:toCDATA(&quot;&lt;/TR>&quot;), string('  '), ora:toCDATA(&quot;&lt;TR>&quot;), string('           '), ora:toCDATA(&quot;&lt;TD>&quot;), string('Approver(s) '), ora:toCDATA(&quot;&lt;/TD>&quot;), string('           '), ora:toCDATA(&quot;&lt;TD>&lt;p>&quot;), bpws:getVariableData('inputVariable','payload','/client:process/client:emailBodyApprover'), ora:toCDATA(&quot;&lt;/p>&lt;/TD>&quot;), string('       '), ora:toCDATA(&quot;&lt;/TR>&quot;), string('  '), ora:toCDATA(&quot;&lt;TR>&quot;), string('             '), ora:toCDATA(&quot;&lt;TD colspan=2 id=footer>&lt;/br>&lt;/br>&quot;), string('This is a system generated email'), ora:toCDATA(&quot;&lt;/TD>&quot;), string('         '), ora:toCDATA(&quot;&lt;/TR>&quot;), string('        '), ora:toCDATA(&quot;&lt;/table>&quot;), string('      '), ora:toCDATA(&quot;&lt;/h3>&lt;/center>&quot;), string('       '), ora:toCDATA(&quot;&lt;/div>&quot;), string('     '), ora:toCDATA(&quot;&lt;/body>&quot;), ora:toCDATA(&quot;&lt;/html>&quot;), string('    '))"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Content/ns1:ContentBody"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('text/html; charset=UTF-8')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Content/ns1:MimeType"/>
+                            </copy>
+                        </assign>
+                        <invoke name="InvokeNotificationService" portType="ns1:NotificationService" partnerLink="NotificationService1" inputVariable="varNotificationReq" outputVariable="varNotificationResponse" operation="sendEmailNotification" id="BpInv0"/>
+                    </sequence>
+                </scope>
+            </case>
+            <otherwise>
+                <scope name="Email2" id="BpScp1">
+                    <bpelx:annotation>
+                        <bpelx:pattern patternName="bpelx:email"/>
+                    </bpelx:annotation>
+                    <variables>
+                        <variable name="varNotificationReq" messageType="ns1:EmailNotificationRequest"/>
+                        <variable name="varNotificationResponse" messageType="ns1:ArrayOfResponse"/>
+                        <variable name="NotificationServiceFaultVariable" messageType="ns1:NotificationServiceErrorMessage"/>
+                    </variables>
+                    <sequence name="Sequence2" id="BpSeq2">
+                        <assign name="EmailParamsAssign" id="BpAss1">
+                            <copy>
+                                <from expression="string('Default')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:FromAccountName"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:FromUserName"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Bcc"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Cc"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:ReplyToAddress"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('Inspection Disapproved')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Subject"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('sarmad@nishat.net')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:To"/>
+                            </copy>
+                            <copy>
+                                <from expression="concat(ora:toCDATA(&quot;&lt;html>&lt;head>&quot;), string('     '), ora:toCDATA(&quot;&lt;style>&quot;), string('       '), ora:toCDATA(&quot;tr{&quot;), string('          '), ora:toCDATA(&quot;background:#deebf6;&quot;), string('                '), ora:toCDATA(&quot;padding:8px;&quot;), string('       '), ora:toCDATA(&quot;}&quot;), string('   '), ora:toCDATA(&quot;#footer{&quot;), string('    '), ora:toCDATA(&quot;background:#ffffff;&quot;), string('    '), ora:toCDATA(&quot;color:#777879;&quot;), string('   '), ora:toCDATA(&quot;}&quot;), string('  '), ora:toCDATA(&quot;&lt;/style>&quot;), string('  '), ora:toCDATA(&quot;&lt;/head>&quot;), string('    '), ora:toCDATA(&quot;&lt;body>&quot;), string('   hello  '), ora:toCDATA(&quot;&lt;/body>&quot;), ora:toCDATA(&quot;&lt;/html>&quot;), string('    '))"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Content/ns1:ContentBody"/>
+                            </copy>
+                            <copy>
+                                <from expression="string('text/html; charset=UTF-8')"/>
+                                <to variable="varNotificationReq" part="EmailPayload" query="/EmailPayload/ns1:Content/ns1:MimeType"/>
+                            </copy>
+                        </assign>
+                        <invoke name="InvokeNotificationService" portType="ns1:NotificationService" partnerLink="NotificationService2" inputVariable="varNotificationReq" outputVariable="varNotificationResponse" operation="sendEmailNotification" id="BpInv1"/>
+                    </sequence>
+                </scope>
+            </otherwise>
+        </switch>
         <!-- 
           Asynchronous callback to the requester. (Note: the callback location and correlation id is transparently handled using WS-addressing.)
         -->
-        <invoke name="callbackClient" partnerLink="bpelemail_client" portType="client:BPELEmailCallback" operation="processResponse" inputVariable="outputVariable" bpelx:invokeAsDetail="no" id="BpInv1"/>
+        <invoke name="callbackClient" partnerLink="bpelemail_client" portType="client:BPELEmailCallback" operation="processResponse" inputVariable="outputVariable" bpelx:invokeAsDetail="no" id="BpInv2"/>
     </sequence>
 </process><!--
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

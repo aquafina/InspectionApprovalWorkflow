@@ -1,28 +1,28 @@
-Oct 21, 2016 9:38:14 AM oracle.mds
+Oct 21, 2016 2:27:48 PM oracle.mds
 NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Oct 21, 2016 9:38:14 AM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+Oct 21, 2016 2:27:48 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
 SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Oct 21, 2016 9:38:14 AM oracle.mds
+Oct 21, 2016 2:27:48 PM oracle.mds
 NOTIFICATION: Auditing is disabled for component MDS.
-Oct 21, 2016 9:38:14 AM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
+Oct 21, 2016 2:27:48 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
 WARNING: Ignoring composite local workflow schema of file:/D:/Sarmad%20Data/Projects/BPM/GRNApproval/Paperless/InspectionApprovalWorkflow/InspectionApproval/NotificationService.xsd as there is an MDS shared version of the schema used by workflow engine oramds:/soa/shared/workflow/NotificationService.xsd
-Oct 21, 2016 9:38:14 AM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Oct 21, 2016 2:27:48 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
-Oct 21, 2016 9:38:18 AM com.collaxa.cube.CubeLogger info
+Oct 21, 2016 2:27:53 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BPELEmail.bpel" ...
-Oct 21, 2016 9:38:18 AM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+Oct 21, 2016 2:27:53 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Oct 21, 2016 9:38:18 AM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+Oct 21, 2016 2:27:53 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Oct 21, 2016 9:38:18 AM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
+Oct 21, 2016 2:27:53 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
 WARNING: Ignoring composite local workflow schema of file:/D:/Sarmad%20Data/Projects/BPM/GRNApproval/Paperless/InspectionApprovalWorkflow/InspectionApproval/NotificationService.xsd as there is an MDS shared version of the schema used by workflow engine oramds:/soa/shared/workflow/NotificationService.xsd
-Oct 21, 2016 9:38:18 AM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPELEmail" in 55.7 milliseconds [nodes 12=1+11, 215.3 nodes/sec]
-Oct 21, 2016 9:38:22 AM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPELEmail" in 3.681 seconds
-Oct 21, 2016 9:38:22 AM com.collaxa.cube.CubeLogger info
-INFO: Gathered 5 files in 1.8 milliseconds
+Oct 21, 2016 2:27:54 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BPELEmail" in 67.1 milliseconds [nodes 21=2+19, 313.0 nodes/sec]
+Oct 21, 2016 2:27:58 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BPELEmail" in 4.649 seconds
+Oct 21, 2016 2:27:58 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 6 files in 6.6 milliseconds
 
-Oct 21, 2016 9:38:22 AM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPELEmail" in 17.6 milliseconds
+Oct 21, 2016 2:27:58 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BPELEmail" in 19.6 milliseconds
 

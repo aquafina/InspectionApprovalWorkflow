@@ -39,13 +39,13 @@
              ui:wsdlLocation="SaveSHID.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SaveSHID#wsdl.interface(SaveSHID_ptt)"/>
   </reference>
-  <reference name="Services.Externals.GetInspectionData.reference"
-             ui:wsdlLocation="GetInspectionData.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
-  </reference>
   <reference name="Services.BPEL.BPELEmail.Bpelemail_client.reference"
              ui:wsdlLocation="BPELEmail.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail#wsdl.interface(BPELEmail)"
                     callbackInterface="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail#wsdl.interface(BPELEmailCallback)"/>
+  </reference>
+  <reference name="Services.Externals.GetInspectionData.reference"
+             ui:wsdlLocation="GetInspectionData.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
   </reference>
 </componentType>

@@ -12,4 +12,8 @@
              ui:wsdlLocation="NotificationService.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
   </reference>
+  <reference name="NotificationService2"
+             ui:wsdlLocation="NotificationService.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+  </reference>
 </componentType>

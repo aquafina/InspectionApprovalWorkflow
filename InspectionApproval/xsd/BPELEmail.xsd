@@ -6,8 +6,12 @@
 	<element name="process">
 		<complexType>
 			<sequence>
-				<element name="input" type="string"/>
-			</sequence>
+				<element name="emailAddress" type="string"/>
+    <element name="emailSubject" type="string"/>
+    <element name="emailBody" type="string"/>
+    <element name="emailBodyOrg" type="string"/>
+    <element name="emailBodyApprover" type="string"/>
+   </sequence>
 		</complexType>
 	</element>
 	<element name="processResponse">
