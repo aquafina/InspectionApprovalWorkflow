@@ -128,6 +128,22 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="GTW17571478380341">
+                <labels>
+                    <label locale="en">isApproved</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT17586809154260">
+                <labels>
+                    <label locale="en">UpdateBPMReadyFlag</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf66"/>
             <topicDocumentation name="sf7"/>
@@ -172,6 +188,16 @@
             <topicDocumentation name="sf125"/>
             <topicDocumentation name="sf21"/>
             <topicDocumentation name="sf74"/>
+            <topicDocumentation name="sf23">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf25"/>
+            <topicDocumentation name="sf94"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
