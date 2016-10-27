@@ -442,21 +442,22 @@
           <Item Value="igpNo"/>
           <Item Value="igpDate"/>
           <Item Value="noOfCartons"/>
+          <Item Value="builtyNo"/>
           <Item Value="grnDate"/>
+          <Item Value="vehNo"/>
           <Item Value="vendorSiteCode"/>
           <Item Value="creationDate"/>
           <Item Value="description"/>
           <Item Value="uom"/>
           <Item Value="carrier"/>
-          <Item Value="desc"/>
-          <Item Value="QuantityReceived"/>
+          <Item Value="primaryUomCode"/>
+          <Item Value="deptline"/>
+          <Item Value="gatepassNo"/>
           <Item Value="remarks"/>
-          <Item Value="SupplierName"/>
           <Item Value="dept"/>
           <Item Value="comments"/>
           <Item Value="department"/>
-          <Item Value="setOfBooksId"/>
-          <Item Value="noteToReceiver"/>
+          <Item Value="grnno"/>
           <Item Value="quantityreceived"/>
           <Item Value="suppliername"/>
         </AttrNames>
