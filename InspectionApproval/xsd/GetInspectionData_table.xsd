@@ -6,7 +6,6 @@
          <xs:element name="XxInspectionData" type="XxInspectionData" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="Approver" type="xs:string"/>
          <xs:element name="userid" type="xs:string"/>
-         <xs:element name="test" type="xs:string"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="XxInspectionData">
@@ -155,6 +154,8 @@
          <xs:element name="itmid" type="xs:decimal" minOccurs="0" nillable="true"/>
          <xs:element name="orgid" type="xs:decimal" minOccurs="0"/>
          <xs:element name="quantityreceived" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="quantityaccepted" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="quantityrejected" type="xs:decimal" minOccurs="0" nillable="true"/>
          <xs:element name="primaryUomCode" minOccurs="0" nillable="true">
             <xs:simpleType>
                <xs:restriction base="xs:string">

@@ -43,21 +43,6 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="test" IsUpdateable="0" Type="java.lang.String">
-    <Properties>
-      <CustomProperties>
-        <Property Name="minOccurs" Value="1"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Test"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="false"/>
-        <Property Name="originalName" Value="test"/>
-        <Property Name="targetNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="type" Value="java.lang.String"/>
-      </CustomProperties>
-    </Properties>
-  </Attribute>
   <AccessorAttribute id="XxInspectionData" IsCollection="true"
                      BeanClass="UIInspectionApproval_InspectionApproverTask.XxInspectionData"
                      CollectionBeanClass="UIInspectionApproval_InspectionApproverTask.XxInspectionData_XxInspectionData_Operations">

@@ -460,6 +460,8 @@
           <Item Value="grnno"/>
           <Item Value="quantityreceived"/>
           <Item Value="suppliername"/>
+          <Item Value="quantityaccepted"/>
+          <Item Value="quantityrejected"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
