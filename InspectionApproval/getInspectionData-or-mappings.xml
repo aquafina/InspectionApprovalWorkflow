@@ -186,6 +186,16 @@
                <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>quantityaccepted</attribute-name>
+               <field table="XX_INSPECTION_DATA" name="QUANTITYACCEPTED" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>quantityrejected</attribute-name>
+               <field table="XX_INSPECTION_DATA" name="QUANTITYREJECTED" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>primaryUomCode</attribute-name>
                <field table="XX_INSPECTION_DATA" name="PRIMARY_UOM_CODE" xsi:type="column"/>
                <attribute-classification>java.lang.String</attribute-classification>
