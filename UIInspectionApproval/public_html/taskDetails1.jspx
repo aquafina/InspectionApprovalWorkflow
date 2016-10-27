@@ -188,35 +188,41 @@
                             rows="#{bindings.XxInspectionData.rangeSize}"
                             emptyText="#{bindings.XxInspectionData.viewable ? 'No data to display.' : 'Access Denied.'}"
                             fetchSize="#{bindings.XxInspectionData.rangeSize}"
-                            rowBandingInterval="0" id="t1">
+                            rowBandingInterval="0" id="t1"
+                            inlineStyle="width:100%;">
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.organizationName.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.organizationName.label}"
-                               id="c21" width="247" align="center">
+                               id="c21" width="247" align="center"
+                               inlineStyle="border-color:Gray; background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.organizationName}" id="ot13"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.org.name}"
                                sortable="false"
                                headerText="Operating Unit"
-                               id="c18" width="188" align="center">
+                               id="c18" width="188" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.org}" id="ot8"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.userName.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.userName.label}"
-                               id="c16" width="130" align="center">
+                               id="c16" width="130" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.userName}" id="ot7"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.dcNo.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.dcNo.label}"
-                               id="c12" width="155" align="center">
+                               id="c12" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.dcNo}" id="ot4"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.dcDate.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.dcDate.label}"
-                               id="c15" width="155" align="center">
+                               id="c15" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.dcDate}" id="ot11">
                         <af:convertDateTime pattern="#{bindings.XxInspectionData.hints.dcDate.format}"/>
                       </af:outputText>
@@ -224,31 +230,36 @@
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.igpNo.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.igpNo.label}"
-                               id="c5" width="155" align="center">
+                               id="c5" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.igpNo}" id="ot12"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.igpDate.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.igpDate.label}"
-                               id="c24" width="155" align="center">
+                               id="c24" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.igpDate}" id="ot25"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.noOfCartons.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.noOfCartons.label}"
-                               id="c13" width="155" align="center">
+                               id="c13" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.noOfCartons}" id="ot22"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.builtyNo.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.builtyNo.label}"
-                               id="c14" width="155" align="center">
+                               id="c14" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.builtyNo}" id="ot20"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.grnDate.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.grnDate.label}"
-                               id="c23" width="155" align="center">
+                               id="c23" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.grnDate}" id="ot27">
                         <af:convertDateTime pattern="#{bindings.XxInspectionData.hints.grnDate.format}"/>
                       </af:outputText>
@@ -256,19 +267,22 @@
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.vehNo.name}"
                                sortable="false"
                                headerText="Vehicle No"
-                               id="c3" width="155" align="center">
+                               id="c3" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.vehNo}" id="ot2"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.vendorSiteCode.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.vendorSiteCode.label}"
-                               id="c7" width="155" align="center">
+                               id="c7" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.vendorSiteCode}" id="ot21"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.creationDate.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.creationDate.label}"
-                               id="c1" width="155" align="center">
+                               id="c1" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.creationDate}" id="ot18">
                         <af:convertDateTime pattern="#{bindings.XxInspectionData.hints.creationDate.format}"/>
                       </af:outputText>
@@ -276,67 +290,78 @@
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.description.name}"
                                sortable="false"
                                headerText="Item Description"
-                               id="c25" width="213" align="center">
+                               id="c25" width="213" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.description}" id="ot9"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.uom.name}"
                                sortable="false"
                                headerText="Unit of Measure"
-                               id="c8" width="93" align="center">
+                               id="c8" width="93" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.uom}" id="ot6"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.carrier.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.carrier.label}"
-                               id="c19" width="71" align="center">
+                               id="c19" width="71" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.carrier}" id="ot19"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.primaryUomCode.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.primaryUomCode.label}"
-                               id="c11" width="119" align="center">
+                               id="c11" width="119" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.primaryUomCode}" id="ot14"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.gatepassNo.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.gatepassNo.label}"
-                               id="c6" width="155" align="center">
+                               id="c6" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.gatepassNo}" id="ot10"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.remarks.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.remarks.label}"
-                               id="c17" width="155" align="center">
+                               id="c17" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.remarks}" id="ot23"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.comments.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.comments.label}"
-                               id="c9" width="155" align="center">
+                               id="c9" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.comments}" id="ot28"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.department.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.department.label}"
-                               id="c26" width="155" align="center">
+                               id="c26" width="155" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.department}" id="ot15"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.grnno.name}"
                                sortable="false"
                                headerText="GRN #"
-                               id="c4" width="102" align="center">
+                               id="c4" width="102" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.grnno}" id="ot26"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.quantityreceived.name}"
                                sortable="false"
                                headerText="Quantity Received"
-                               id="c10" width="106" align="center">
+                               id="c10" width="106" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.quantityreceived}" id="ot3"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.suppliername.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.suppliername.label}"
-                               id="c22" width="257" align="center">
+                               id="c22" width="257" align="center"
+                               inlineStyle="background-color:InfoBackground; font-weight:bold;">
                       <af:outputText value="#{row.suppliername}" id="ot5"/>
                     </af:column>
                   </af:table>
