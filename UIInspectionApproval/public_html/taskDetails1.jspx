@@ -187,298 +187,118 @@
                             rows="#{bindings.XxInspectionData.rangeSize}"
                             emptyText="#{bindings.XxInspectionData.viewable ? 'No data to display.' : 'Access Denied.'}"
                             fetchSize="#{bindings.XxInspectionData.rangeSize}"
-                            rowBandingInterval="0" id="t5" width="100%">
+                            rowBandingInterval="0" id="t1">
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.organizationName.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.organizationName.label}"
-                               id="c38">
-                      <af:inputText value="#{row.bindings.organizationName.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.organizationName.label}"
-                                    required="#{bindings.XxInspectionData.hints.organizationName.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.organizationName.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.organizationName.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.organizationName.tooltip}"
-                                    id="it21">
-                        <f:validator binding="#{row.bindings.organizationName.validator}"/>
-                      </af:inputText>
+                               id="c23" width="463" align="center">
+                      <af:outputText value="#{row.organizationName}" id="ot9"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.org.name}"
                                sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.org.label}"
-                               id="c45">
-                      <af:inputText value="#{row.bindings.org.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.org.label}"
-                                    required="#{bindings.XxInspectionData.hints.org.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.org.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.org.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.org.tooltip}"
-                                    id="it38">
-                        <f:validator binding="#{row.bindings.org.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.attribute3.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.attribute3.label}"
-                               id="c4">
-                      <af:inputText value="#{row.bindings.attribute3.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.attribute3.label}"
-                                    required="#{bindings.XxInspectionData.hints.attribute3.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.attribute3.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.attribute3.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.attribute3.tooltip}"
-                                    id="it12">
-                        <f:validator binding="#{row.bindings.attribute3.validator}"/>
-                      </af:inputText>
+                               headerText="Operating Unit"
+                               id="c5" width="366" align="center">
+                      <af:outputText value="#{row.org}" id="ot2"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.userName.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.userName.label}"
-                               id="c1">
-                      <af:inputText value="#{row.bindings.userName.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.userName.label}"
-                                    required="#{bindings.XxInspectionData.hints.userName.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.userName.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.userName.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.userName.tooltip}"
-                                    id="it26">
-                        <f:validator binding="#{row.bindings.userName.validator}"/>
-                      </af:inputText>
+                               id="c3" width="281" align="center">
+                      <af:outputText value="#{row.userName}" id="ot4"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.XxInspectionData.hints.dcNo.name}"
+                               sortable="false"
+                               headerText="#{bindings.XxInspectionData.hints.dcNo.label}"
+                               id="c13" width="336" align="center">
+                      <af:outputText value="#{row.dcNo}" id="ot13"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.dcDate.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.dcDate.label}"
-                               id="c9">
-                      <af:inputDate value="#{row.bindings.dcDate.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.dcDate.label}"
-                                    required="#{bindings.XxInspectionData.hints.dcDate.mandatory}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.dcDate.tooltip}"
-                                    id="id3">
-                        <f:validator binding="#{row.bindings.dcDate.validator}"/>
+                               id="c1" width="277" align="center">
+                      <af:outputText value="#{row.dcDate}" id="ot15">
                         <af:convertDateTime pattern="#{bindings.XxInspectionData.hints.dcDate.format}"/>
-                      </af:inputDate>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.XxInspectionData.hints.igpNo.name}"
+                               sortable="false"
+                               headerText="#{bindings.XxInspectionData.hints.igpNo.label}"
+                               id="c20" width="261" align="center">
+                      <af:outputText value="#{row.igpNo}" id="ot6"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.igpDate.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.igpDate.label}"
-                               id="c40">
-                      <af:inputText value="#{row.bindings.igpDate.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.igpDate.label}"
-                                    required="#{bindings.XxInspectionData.hints.igpDate.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.igpDate.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.igpDate.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.igpDate.tooltip}"
-                                    id="it16">
-                        <f:validator binding="#{row.bindings.igpDate.validator}"/>
-                      </af:inputText>
+                               id="c22" width="233" align="center">
+                      <af:outputText value="#{row.igpDate}" id="ot25"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.noOfCartons.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.noOfCartons.label}"
-                               id="c41">
-                      <af:inputText value="#{row.bindings.noOfCartons.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.noOfCartons.label}"
-                                    required="#{bindings.XxInspectionData.hints.noOfCartons.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.noOfCartons.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.noOfCartons.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.noOfCartons.tooltip}"
-                                    id="it23">
-                        <f:validator binding="#{row.bindings.noOfCartons.validator}"/>
-                      </af:inputText>
+                               id="c8" width="168" align="center">
+                      <af:outputText value="#{row.noOfCartons}" id="ot24"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.XxInspectionData.hints.grnDate.name}"
+                               sortable="false"
+                               headerText="#{bindings.XxInspectionData.hints.grnDate.label}"
+                               id="c17" width="192" align="center">
+                      <af:outputText value="#{row.grnDate}" id="ot18">
+                        <af:convertDateTime pattern="#{bindings.XxInspectionData.hints.grnDate.format}"/>
+                      </af:outputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.vendorSiteCode.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.vendorSiteCode.label}"
-                               id="c3">
-                      <af:inputText value="#{row.bindings.vendorSiteCode.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.vendorSiteCode.label}"
-                                    required="#{bindings.XxInspectionData.hints.vendorSiteCode.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.vendorSiteCode.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.vendorSiteCode.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.vendorSiteCode.tooltip}"
-                                    id="it40">
-                        <f:validator binding="#{row.bindings.vendorSiteCode.validator}"/>
-                      </af:inputText>
+                               id="c21" width="149" align="center">
+                      <af:outputText value="#{row.vendorSiteCode}" id="ot11"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.creationDate.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.creationDate.label}"
-                               id="c11">
-                      <af:inputDate value="#{row.bindings.creationDate.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.creationDate.label}"
-                                    required="#{bindings.XxInspectionData.hints.creationDate.mandatory}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.creationDate.tooltip}"
-                                    id="id1">
-                        <f:validator binding="#{row.bindings.creationDate.validator}"/>
+                               id="c14" width="2762" align="center">
+                      <af:outputText value="#{row.creationDate}" id="ot20">
                         <af:convertDateTime pattern="#{bindings.XxInspectionData.hints.creationDate.format}"/>
-                      </af:inputDate>
+                      </af:outputText>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.description.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.description.label}"
-                               id="c42">
-                      <af:inputText value="#{row.bindings.description.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.description.label}"
-                                    required="#{bindings.XxInspectionData.hints.description.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.description.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.description.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.description.tooltip}"
-                                    id="it14">
-                        <f:validator binding="#{row.bindings.description.validator}"/>
-                      </af:inputText>
+                               id="c4" width="510" align="center">
+                      <af:outputText value="#{row.description}" id="ot3"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.uom.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.uom.label}"
-                               id="c27">
-                      <af:inputText value="#{row.bindings.uom.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.uom.label}"
-                                    required="#{bindings.XxInspectionData.hints.uom.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.uom.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.uom.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.uom.tooltip}"
-                                    id="it4">
-                        <f:validator binding="#{row.bindings.uom.validator}"/>
-                      </af:inputText>
+                               id="c7" width="287" align="center">
+                      <af:outputText value="#{row.uom}" id="ot21"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.carrier.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.carrier.label}"
-                               id="c5">
-                      <af:inputText value="#{row.bindings.carrier.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.carrier.label}"
-                                    required="#{bindings.XxInspectionData.hints.carrier.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.carrier.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.carrier.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.carrier.tooltip}"
-                                    id="it33">
-                        <f:validator binding="#{row.bindings.carrier.validator}"/>
-                      </af:inputText>
+                               id="c11" width="282" align="center">
+                      <af:outputText value="#{row.carrier}" id="ot8"/>
                     </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.Item_Code.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.Item_Code.label}"
-                               id="c19">
-                      <af:inputText value="#{row.bindings.Item_Code.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.Item_Code.label}"
-                                    required="#{bindings.XxInspectionData.hints.Item_Code.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.Item_Code.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.Item_Code.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.Item_Code.tooltip}"
-                                    id="it32">
-                        <f:validator binding="#{row.bindings.Item_Code.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.desc.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.desc.label}"
-                               id="c16">
-                      <af:inputText value="#{row.bindings.desc.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.desc.label}"
-                                    required="#{bindings.XxInspectionData.hints.desc.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.desc.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.desc.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.desc.tooltip}"
-                                    id="it6">
-                        <f:validator binding="#{row.bindings.desc.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.QuantityReceived.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.QuantityReceived.label}"
-                               id="c25">
-                      <af:inputText value="#{row.bindings.QuantityReceived.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.QuantityReceived.label}"
-                                    required="#{bindings.XxInspectionData.hints.QuantityReceived.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.QuantityReceived.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.QuantityReceived.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.QuantityReceived.tooltip}"
-                                    id="it22">
-                        <f:validator binding="#{row.bindings.QuantityReceived.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.deptline.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.deptline.label}"
-                               id="c2">
-                      <af:inputText value="#{row.bindings.deptline.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.deptline.label}"
-                                    required="#{bindings.XxInspectionData.hints.deptline.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.deptline.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.deptline.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.deptline.tooltip}"
-                                    id="it5">
-                        <f:validator binding="#{row.bindings.deptline.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.remarks.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.remarks.label}"
-                               id="c18">
-                      <af:inputText value="#{row.bindings.remarks.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.remarks.label}"
-                                    required="#{bindings.XxInspectionData.hints.remarks.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.remarks.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.remarks.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.remarks.tooltip}"
-                                    id="it3">
-                        <f:validator binding="#{row.bindings.remarks.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.SupplierName.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.SupplierName.label}"
-                               id="c46">
-                      <af:inputText value="#{row.bindings.SupplierName.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.SupplierName.label}"
-                                    required="#{bindings.XxInspectionData.hints.SupplierName.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.SupplierName.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.SupplierName.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.SupplierName.tooltip}"
-                                    id="it1">
-                        <f:validator binding="#{row.bindings.SupplierName.validator}"/>
-                      </af:inputText>
+                    <af:column id="c12"
+                               headerText="Quantity Received"
+                               width="93" align="center">
+                      <af:outputText value="#{row.quantityreceived}" id="ot10"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.comments.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.comments.label}"
-                               id="c23">
-                      <af:inputText value="#{row.bindings.comments.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.comments.label}"
-                                    required="#{bindings.XxInspectionData.hints.comments.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.comments.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.comments.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.comments.tooltip}"
-                                    id="it13">
-                        <f:validator binding="#{row.bindings.comments.validator}"/>
-                      </af:inputText>
+                               id="c10" width="1074" align="center">
+                      <af:outputText value="#{row.comments}" id="ot22"/>
+                    </af:column>
+                    <af:column id="c16"
+                               headerText="#{bindings.XxInspectionData.hints.suppliername.label}"
+                               width="1123" align="center">
+                      <af:outputText value="#{row.suppliername}" id="ot16"/>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxInspectionData.hints.department.name}"
                                sortable="false"
                                headerText="#{bindings.XxInspectionData.hints.department.label}"
-                               id="c30">
-                      <af:inputText value="#{row.bindings.department.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.department.label}"
-                                    required="#{bindings.XxInspectionData.hints.department.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.department.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.department.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.department.tooltip}"
-                                    id="it8">
-                        <f:validator binding="#{row.bindings.department.validator}"/>
-                      </af:inputText>
-                    </af:column>
-                    <af:column sortProperty="#{bindings.XxInspectionData.hints.noteToReceiver.name}"
-                               sortable="false"
-                               headerText="#{bindings.XxInspectionData.hints.noteToReceiver.label}"
-                               id="c10">
-                      <af:inputText value="#{row.bindings.noteToReceiver.inputValue}"
-                                    label="#{bindings.XxInspectionData.hints.noteToReceiver.label}"
-                                    required="#{bindings.XxInspectionData.hints.noteToReceiver.mandatory}"
-                                    columns="#{bindings.XxInspectionData.hints.noteToReceiver.displayWidth}"
-                                    maximumLength="#{bindings.XxInspectionData.hints.noteToReceiver.precision}"
-                                    shortDesc="#{bindings.XxInspectionData.hints.noteToReceiver.tooltip}"
-                                    id="it30">
-                        <f:validator binding="#{row.bindings.noteToReceiver.validator}"/>
-                      </af:inputText>
+                               id="c19" width="486" align="center">
+                      <af:outputText value="#{row.department}" id="ot19"/>
                     </af:column>
                   </af:table>
                 </af:panelGroupLayout>

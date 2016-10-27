@@ -22,18 +22,36 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="userid" IsUpdateable="2" Type="java.lang.String">
+  <Attribute Name="userid" IsUpdateable="0" Type="java.lang.String">
     <Properties>
       <CustomProperties>
         <Property Name="fractionDigits" Value="0"/>
         <Property Name="maxInclusive" Value="2147483647"/>
         <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="nextSibling" Value="test"/>
         <Property Name="minOccurs" Value="1"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Userid"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nillable" Value="false"/>
         <Property Name="originalName" Value="userid"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="test" IsUpdateable="0" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Test"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="test"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
         <Property Name="type" Value="java.lang.String"/>

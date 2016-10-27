@@ -4,24 +4,6 @@
           Package="UIInspectionApproval_InspectionApproverTask"
           BeanClass="UIInspectionApproval_InspectionApproverTask.XxInspectionData"
           isJavaBased="false">
-  <Attribute Name="GRNNo" IsUpdateable="0" Type="java.math.BigDecimal">
-    <Properties>
-      <CustomProperties>
-        <Property Name="nextSiblingNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="nextSibling" Value="organizationName"/>
-        <Property Name="minOccurs" Value="0"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="GRN No"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
-        <Property Name="originalName" Value="GRNNo"/>
-        <Property Name="targetNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="type" Value="java.math.BigDecimal"/>
-      </CustomProperties>
-    </Properties>
-  </Attribute>
   <Attribute Name="organizationName" IsUpdateable="0" Type="java.lang.String">
     <Properties>
       <CustomProperties>
@@ -459,50 +441,13 @@
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
         <Property Name="maxLength" Value="150"/>
-        <Property Name="nextSibling" Value="Item_Code"/>
+        <Property Name="nextSibling" Value="itemCode"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Carrier"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nillable" Value="true"/>
         <Property Name="originalName" Value="carrier"/>
-        <Property Name="targetNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="type" Value="java.lang.String"/>
-      </CustomProperties>
-    </Properties>
-  </Attribute>
-  <Attribute Name="Item_Code" IsUpdateable="0" Type="java.lang.String">
-    <Properties>
-      <CustomProperties>
-        <Property Name="nextSiblingNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="maxLength" Value="163"/>
-        <Property Name="nextSibling" Value="desc"/>
-        <Property Name="minOccurs" Value="0"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Item Code"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
-        <Property Name="originalName" Value="Item_Code"/>
-        <Property Name="targetNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="type" Value="java.lang.String"/>
-      </CustomProperties>
-    </Properties>
-  </Attribute>
-  <Attribute Name="desc" IsUpdateable="0" Type="java.lang.String">
-    <Properties>
-      <CustomProperties>
-        <Property Name="nextSiblingNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="nextSibling" Value="itmid"/>
-        <Property Name="minOccurs" Value="0"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Desc"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
-        <Property Name="originalName" Value="desc"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
         <Property Name="type" Value="java.lang.String"/>
@@ -532,32 +477,13 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="nextSibling" Value="QuantityReceived"/>
+        <Property Name="nextSibling" Value="quantityreceived"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Orgid"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nillable" Value="false"/>
         <Property Name="originalName" Value="orgid"/>
-        <Property Name="targetNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="type" Value="java.math.BigDecimal"/>
-      </CustomProperties>
-    </Properties>
-  </Attribute>
-  <Attribute Name="QuantityReceived" IsUpdateable="0"
-             Type="java.math.BigDecimal">
-    <Properties>
-      <CustomProperties>
-        <Property Name="nextSiblingNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="nextSibling" Value="primaryUomCode"/>
-        <Property Name="minOccurs" Value="0"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Quantity Received"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
-        <Property Name="originalName" Value="QuantityReceived"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
         <Property Name="type" Value="java.math.BigDecimal"/>
@@ -663,7 +589,7 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="nextSibling" Value="SupplierName"/>
+        <Property Name="nextSibling" Value="suppliername"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Po Line Id"/>
@@ -673,25 +599,6 @@
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
         <Property Name="type" Value="java.math.BigDecimal"/>
-      </CustomProperties>
-    </Properties>
-  </Attribute>
-  <Attribute Name="SupplierName" IsUpdateable="0" Type="java.lang.String">
-    <Properties>
-      <CustomProperties>
-        <Property Name="nextSiblingNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="maxLength" Value="240"/>
-        <Property Name="nextSibling" Value="dept"/>
-        <Property Name="minOccurs" Value="0"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Supplier Name"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
-        <Property Name="originalName" Value="SupplierName"/>
-        <Property Name="targetNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
-        <Property Name="type" Value="java.lang.String"/>
       </CustomProperties>
     </Properties>
   </Attribute>
@@ -801,6 +708,100 @@
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nillable" Value="true"/>
         <Property Name="originalName" Value="noteToReceiver"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="grnno" IsUpdateable="0" Type="java.math.BigDecimal">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="nextSibling" Value="organizationName"/>
+        <Property Name="minOccurs" Value="0"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Grnno"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="grnno"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="type" Value="java.math.BigDecimal"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="itemCode" IsUpdateable="0" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="maxLength" Value="163"/>
+        <Property Name="nextSibling" Value="descr"/>
+        <Property Name="minOccurs" Value="0"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Item Code"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="itemCode"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="descr" IsUpdateable="0" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="maxLength" Value="40"/>
+        <Property Name="nextSibling" Value="itmid"/>
+        <Property Name="minOccurs" Value="0"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Descr"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="descr"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="quantityreceived" IsUpdateable="0"
+             Type="java.math.BigDecimal">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="nextSibling" Value="primaryUomCode"/>
+        <Property Name="minOccurs" Value="0"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Quantityreceived"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="quantityreceived"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="type" Value="java.math.BigDecimal"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="suppliername" IsUpdateable="0" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
+        <Property Name="maxLength" Value="240"/>
+        <Property Name="nextSibling" Value="dept"/>
+        <Property Name="minOccurs" Value="0"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Suppliername"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="suppliername"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"/>
         <Property Name="type" Value="java.lang.String"/>

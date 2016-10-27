@@ -45,11 +45,6 @@
                       DataControl="UIInspectionApproval_InspectionApproverTask"
                       BeanClass="UIInspectionApproval_InspectionApproverTask.XxInspectionDataCollection"
                       id="XxInspectionDataCollectionIterator"/>
-    <accessorIterator MasterBinding="XxInspectionDataCollectionIterator"
-                      Binds="XxInspectionData" RangeSize="25"
-                      DataControl="UIInspectionApproval_InspectionApproverTask"
-                      BeanClass="UIInspectionApproval_InspectionApproverTask.XxInspectionData"
-                      id="XxInspectionDataIterator"/>
     <accessorIterator MasterBinding="taskIterator" Binds="userComment"
                       RangeSize="25"
                       DataControl="UIInspectionApproval_InspectionApproverTask"
@@ -70,6 +65,11 @@
                       DataControl="UIInspectionApproval_InspectionApproverTask"
                       BeanClass="UIInspectionApproval_InspectionApproverTask.ucmMetadataItemType"
                       id="ucmMetadataItemIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="XxInspectionDataCollectionIterator"
+                      Binds="XxInspectionData" RangeSize="25"
+                      DataControl="UIInspectionApproval_InspectionApproverTask"
+                      BeanClass="UIInspectionApproval_InspectionApproverTask.XxInspectionData"
+                      id="XxInspectionDataIterator"/>
   </executables>
   <bindings>
     <methodAction id="getTaskDetails" RequiresUpdateModel="true"
@@ -213,56 +213,6 @@
         <Item Value="displayName"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="XxInspectionDataIterator" id="XxInspectionData">
-      <nodeDefinition DefName="UIInspectionApproval_InspectionApproverTask.XxInspectionData"
-                      Name="XxInspectionData0">
-        <AttrNames>
-          <Item Value="GRNNo"/>
-          <Item Value="organizationName"/>
-          <Item Value="orgId"/>
-          <Item Value="org"/>
-          <Item Value="attribute3"/>
-          <Item Value="userName"/>
-          <Item Value="emailAddress"/>
-          <Item Value="transactionId"/>
-          <Item Value="shipmentHeaderId"/>
-          <Item Value="dcNo"/>
-          <Item Value="dcDate"/>
-          <Item Value="igpNo"/>
-          <Item Value="igpDate"/>
-          <Item Value="noOfCartons"/>
-          <Item Value="builtyNo"/>
-          <Item Value="packingSlip"/>
-          <Item Value="waybillAirbillNum"/>
-          <Item Value="grnDate"/>
-          <Item Value="poNum"/>
-          <Item Value="vehNo"/>
-          <Item Value="vendorSiteCode"/>
-          <Item Value="creationDate"/>
-          <Item Value="description"/>
-          <Item Value="uom"/>
-          <Item Value="carrier"/>
-          <Item Value="Item_Code"/>
-          <Item Value="desc"/>
-          <Item Value="itmid"/>
-          <Item Value="orgid"/>
-          <Item Value="QuantityReceived"/>
-          <Item Value="primaryUomCode"/>
-          <Item Value="deptline"/>
-          <Item Value="gatepassNo"/>
-          <Item Value="poHeaderId"/>
-          <Item Value="remarks"/>
-          <Item Value="poLineId"/>
-          <Item Value="SupplierName"/>
-          <Item Value="dept"/>
-          <Item Value="comments"/>
-          <Item Value="shipmentLineId"/>
-          <Item Value="department"/>
-          <Item Value="setOfBooksId"/>
-          <Item Value="noteToReceiver"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action IterBinding="userCommentIterator" id="CreateInsert1"
             RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="userCommentIterator" id="Delete1"
@@ -480,5 +430,37 @@
         <Item Value="userid"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="XxInspectionDataIterator" id="XxInspectionData">
+      <nodeDefinition DefName="UIInspectionApproval_InspectionApproverTask.XxInspectionData"
+                      Name="XxInspectionData0">
+        <AttrNames>
+          <Item Value="organizationName"/>
+          <Item Value="org"/>
+          <Item Value="userName"/>
+          <Item Value="dcNo"/>
+          <Item Value="dcDate"/>
+          <Item Value="igpNo"/>
+          <Item Value="igpDate"/>
+          <Item Value="noOfCartons"/>
+          <Item Value="grnDate"/>
+          <Item Value="vendorSiteCode"/>
+          <Item Value="creationDate"/>
+          <Item Value="description"/>
+          <Item Value="uom"/>
+          <Item Value="carrier"/>
+          <Item Value="desc"/>
+          <Item Value="QuantityReceived"/>
+          <Item Value="remarks"/>
+          <Item Value="SupplierName"/>
+          <Item Value="dept"/>
+          <Item Value="comments"/>
+          <Item Value="department"/>
+          <Item Value="setOfBooksId"/>
+          <Item Value="noteToReceiver"/>
+          <Item Value="quantityreceived"/>
+          <Item Value="suppliername"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
