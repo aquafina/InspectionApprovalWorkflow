@@ -34,8 +34,6 @@
   <import namespace="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient"
           location="http://fmw.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl"
           importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData"
-          location="GetInspectionData.wsdl" importType="wsdl"/>
   <service name="InspectionApproval" ui:wsdlLocation="InspectionApproval.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.interface(execute_ptt)"
                     callbackInterface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.interface(callback_ptt)"/>
@@ -155,17 +153,6 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
-  <reference name="GetInspectionData" ui:wsdlLocation="GetInspectionData.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
-    <binding.jca config="GetInspectionData_db.jca"/>
-    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
-    <property name="jca.retry.interval" type="xs:int" many="false"
-              override="may">1</property>
-    <property name="jca.retry.backoff" type="xs:int" many="false"
-              override="may">2</property>
-    <property name="jca.retry.maxInterval" type="xs:string" many="false"
-              override="may">120</property>
-  </reference>
   <wire>
     <source.uri>InspectionApprovalProcess/HumanTasks.InspectionApproverTask.reference</source.uri>
     <target.uri>InspectionApproverTask/TaskService</target.uri>
@@ -213,9 +200,5 @@
   <wire>
     <source.uri>InspectionApprovalProcess/Services.Externals.UpdateBPMReadyFlag.reference</source.uri>
     <target.uri>UpdateBPMReadyFlag</target.uri>
-  </wire>
-  <wire>
-    <source.uri>InspectionApprovalProcess/Services.Externals.GetInspectionData.reference</source.uri>
-    <target.uri>GetInspectionData</target.uri>
   </wire>
 </composite>
