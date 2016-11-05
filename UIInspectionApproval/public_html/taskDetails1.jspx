@@ -54,7 +54,7 @@
                                                   type="action"/>
                         </af:commandToolbarButton>
                       </af:panelGroupLayout>
-                      <af:commandButton text="test btn" id="cb1">
+                      <af:commandButton text="#{UserWLProfileBean.userID}" id="cb1">
                         <af:setPropertyListener from="#{UserWLProfileBean.userID}"
                                                 to="#{bindings.userid.inputValue}"
                                                 type="action"/>
