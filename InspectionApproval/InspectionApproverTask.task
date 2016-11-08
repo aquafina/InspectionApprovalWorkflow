@@ -54,7 +54,7 @@
          <messageAttribute name="XxInspectionDataCollection"
                            attributeType="ELEMENT"
                            type="ns0:XxInspectionDataCollection"
-                           updatable="false" external="false"/>
+                           updatable="true" external="false"/>
       </payload>
       <bpelEventListener>false</bpelEventListener>
       <bpelNoCallbacks>false</bpelNoCallbacks>

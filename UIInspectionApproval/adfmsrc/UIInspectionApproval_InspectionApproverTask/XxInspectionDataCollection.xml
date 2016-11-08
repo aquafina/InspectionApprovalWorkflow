@@ -22,7 +22,8 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="userid" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="userid" Type="java.lang.String" PrecisionRule="false"
+             Precision="0" Scale="0">
     <Properties>
       <CustomProperties>
         <Property Name="fractionDigits" Value="0"/>
