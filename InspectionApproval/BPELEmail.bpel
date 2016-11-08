@@ -110,7 +110,7 @@
                                     query="/EmailPayload/ns1:FromUserName"/>
                             </copy>
                             <copy>
-                                <from expression="string('')"/>
+                                <from expression="string('sarmad@nishat.net;shabbirahmad@nishat.net')"/>
                                 <to variable="varNotificationReq"
                                     part="EmailPayload"
                                     query="/EmailPayload/ns1:Bcc"/>
@@ -134,7 +134,7 @@
                                     query="/EmailPayload/ns1:Subject"/>
                             </copy>
                             <copy>
-                                <from expression="string('sarmad@nishat.net')"/>
+                                <from expression="concat(string('sarmad@nishat.net'), bpws:getVariableData('inputVariable','payload','/client:process/client:emailAddress'))"/>
                                 <to variable="varNotificationReq"
                                     part="EmailPayload"
                                     query="/EmailPayload/ns1:To"/>
@@ -189,7 +189,7 @@
                                     query="/EmailPayload/ns1:FromUserName"/>
                             </copy>
                             <copy>
-                                <from expression="string('')"/>
+                                <from expression="string('sarmad@nishat.net;shabbirahmad@nishat.net')"/>
                                 <to variable="varNotificationReq"
                                     part="EmailPayload"
                                     query="/EmailPayload/ns1:Bcc"/>
@@ -213,7 +213,7 @@
                                     query="/EmailPayload/ns1:Subject"/>
                             </copy>
                             <copy>
-                                <from expression="string('sarmad@nishat.net')"/>
+                                <from expression="concat(string('sarmad@nishat.net'), bpws:getVariableData('inputVariable','payload','/client:process/client:emailAddress'))"/>
                                 <to variable="varNotificationReq"
                                     part="EmailPayload"
                                     query="/EmailPayload/ns1:To"/>

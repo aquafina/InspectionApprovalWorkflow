@@ -465,5 +465,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <methodAction id="getTaskDetails1" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getTaskDetails"
+                  IsViewObjectMethod="false"
+                  DataControl="UIGrnApprover_GrnApproverTask"
+                  InstanceName="UIGrnApprover_GrnApproverTask"
+                  ReturnName="data.UIGrnApprover_GrnApproverTask.methodResults.getTaskDetails_UIGrnApprover_GrnApproverTask_getTaskDetails_result">
+      <NamedData NDName="bpmWorklistContext" NDType="java.lang.String"/>
+      <NamedData NDName="bpmWorklistTaskId" NDType="java.lang.String"/>
+      <NamedData NDName="bpmWorklistTaskVersion" NDType="java.lang.String"/>
+    </methodAction>
   </bindings>
 </pageDefinition>

@@ -11,6 +11,8 @@
           path="uiinspectionapproval.pageDefs.taskDetails1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="UIGrnApprover_GrnApproverTask"
+        path="uigrnapprover.UIGrnApprover_GrnApproverTask"/>
     <dc id="UIInspectionApproval_InspectionApproverTask"
         path="uiinspectionapproval.UIInspectionApproval_InspectionApproverTask"/>
   </dataControlUsages>

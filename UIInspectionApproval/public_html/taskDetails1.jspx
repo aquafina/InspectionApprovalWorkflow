@@ -59,16 +59,15 @@
                                                 to="#{bindings.userid.inputValue}"
                                                 type="action"/>
                       </af:commandButton>
-                      <af:inputText label="#{bindings.userid.hints.label}" id="it2"
-                                    value="#{bindings.userid.inputValue}"
+                      <af:inputText value="#{bindings.userid.inputValue}"
+                                    label="#{bindings.userid.hints.label}"
                                     required="#{bindings.userid.hints.mandatory}"
                                     columns="#{bindings.userid.hints.displayWidth}"
                                     maximumLength="#{bindings.userid.hints.precision}"
-                                    partialTriggers="cb1">
+                                    shortDesc="#{bindings.userid.hints.tooltip}"
+                                    id="it1">
                         <f:validator binding="#{bindings.userid.validator}"/>
                       </af:inputText>
-                      <af:outputText value="#{bindings.userid.inputValue}"
-                                     id="ot1"/>
                     </af:group>
                   </f:facet>
                 </af:switcher>

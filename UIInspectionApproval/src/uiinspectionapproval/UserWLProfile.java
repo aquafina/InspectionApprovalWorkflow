@@ -6,6 +6,7 @@ import oracle.adf.view.rich.component.rich.input.RichInputText;
 
 public class UserWLProfile {
     private String userID;
+    private RichInputText userIdInputText;
 
     public UserWLProfile() {
         super();
@@ -21,5 +22,13 @@ public class UserWLProfile {
         String userid = sc.getUserProfile().getProperty("employeenumber").toString();
         System.out.println("User Id = "+userid);
         return userid;
+    }
+
+    public void setUserIdInputText(RichInputText userIdInputText) {
+        this.userIdInputText = userIdInputText;
+    }
+
+    public RichInputText getUserIdInputText() {
+        return userIdInputText;
     }
 }
