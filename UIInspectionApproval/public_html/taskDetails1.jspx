@@ -54,7 +54,8 @@
                                                   type="action"/>
                         </af:commandToolbarButton>
                       </af:panelGroupLayout>
-                      <af:commandButton text="#{UserWLProfileBean.userID}" id="cb1">
+                      <af:commandButton text="#{UserWLProfileBean.userID}" id="cb1"
+                                        visible="false">
                         <af:setPropertyListener from="#{UserWLProfileBean.userID}"
                                                 to="#{bindings.userid.inputValue}"
                                                 type="action"/>
@@ -65,7 +66,7 @@
                                     columns="#{bindings.userid.hints.displayWidth}"
                                     maximumLength="#{bindings.userid.hints.precision}"
                                     shortDesc="#{bindings.userid.hints.tooltip}"
-                                    id="it1">
+                                    id="it1" visible="false">
                         <f:validator binding="#{bindings.userid.validator}"/>
                       </af:inputText>
                     </af:group>
