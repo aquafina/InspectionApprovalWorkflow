@@ -2,6 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
    <entry key="XX_INSPECTION_DATA.QUANTITYRECEIVED:db_column_type">NUMBER</entry>
+   <entry key="XX_INSPECTION_DATA.INSP_APPROVED_FLAG:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.DEPTLINE:db_column_size">150</entry>
    <entry key="XX_INSPECTION_DATA.ORG_ID:db_column_precision">0</entry>
    <entry key="XX_INSPECTION_DATA.TRANSACTION_ID:db_column_not_null">true</entry>
@@ -10,13 +11,16 @@
    <entry key="XX_INSPECTION_DATA.SHIPMENT_HEADER_ID:db_column_type">NUMBER</entry>
    <entry key="XX_INSPECTION_DATA.WAYBILL_AIRBILL_NUM:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.SUPPLIERNAME:db_column_type">VARCHAR2</entry>
+   <entry key="XX_INSPECTION_DATA.INSP_SENT_FOR_APPROVAL:db_column_type">VARCHAR2</entry>
    <entry key="XX_INSPECTION_DATA.WAYBILL_AIRBILL_NUM:db_column_type">VARCHAR2</entry>
    <entry key="XX_INSPECTION_DATA.SHIPMENT_LINE_ID:db_column_type">NUMBER</entry>
    <entry key="XX_INSPECTION_DATA.CREATION_DATE:db_column_not_null">true</entry>
    <entry key="XX_INSPECTION_DATA.ITMID:db_column_precision">0</entry>
    <entry key="XX_INSPECTION_DATA.PO_NUM:db_column_type">VARCHAR2</entry>
+   <entry key="XX_INSPECTION_DATA:db_column_46">INSP_APPROVED_FLAG</entry>
    <entry key="XX_INSPECTION_DATA.DEPTLINE:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.EMAIL_ADDRESS:db_column_type">VARCHAR2</entry>
+   <entry key="XX_INSPECTION_DATA:db_column_45">INSP_SENT_FOR_APPROVAL</entry>
    <entry key="XX_INSPECTION_DATA:db_column_44">NOTE_TO_RECEIVER</entry>
    <entry key="XX_INSPECTION_DATA:db_column_43">SET_OF_BOOKS_ID</entry>
    <entry key="XX_INSPECTION_DATA:db_column_42">DEPARTMENT</entry>
@@ -26,6 +30,7 @@
    <entry key="XX_INSPECTION_DATA.GRN_DATE:db_column_type">DATE</entry>
    <entry key="XX_INSPECTION_DATA.ORG_ID:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.SUPPLIERNAME:db_column_size">240</entry>
+   <entry key="XX_INSPECTION_DATA.INSP_SENT_FOR_APPROVAL:db_column_size">150</entry>
    <entry key="XX_INSPECTION_DATA.IGP_DATE:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.WAYBILL_AIRBILL_NUM:db_column_size">30</entry>
    <entry key="XX_INSPECTION_DATA.ITEM_CODE:db_column_type">VARCHAR2</entry>
@@ -82,6 +87,7 @@
    <entry key="XX_INSPECTION_DATA.REMARKS:db_column_size">4000</entry>
    <entry key="XX_INSPECTION_DATA.DC_DATE:db_column_type">DATE</entry>
    <entry key="XX_INSPECTION_DATA.UOM:db_column_size">25</entry>
+   <entry key="XX_INSPECTION_DATA.INSP_APPROVED_FLAG:db_column_type">VARCHAR2</entry>
    <entry key="XX_INSPECTION_DATA:db_column_19">VEH_NO</entry>
    <entry key="XX_INSPECTION_DATA:db_column_18">PO_NUM</entry>
    <entry key="XX_INSPECTION_DATA:db_column_17">GRN_DATE</entry>
@@ -97,6 +103,7 @@
    <entry key="XX_INSPECTION_DATA:db_column_10">DC_DATE</entry>
    <entry key="XX_INSPECTION_DATA.PRIMARY_UOM_CODE:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.DESCR:db_column_not_null">false</entry>
+   <entry key="XX_INSPECTION_DATA.INSP_SENT_FOR_APPROVAL:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.BUILTY_NO:db_column_size">25</entry>
    <entry key="XX_INSPECTION_DATA.PACKING_SLIP:db_column_type">VARCHAR2</entry>
    <entry key="XX_INSPECTION_DATA:db_table_type">TABLE</entry>
@@ -105,6 +112,7 @@
    <entry key="XX_INSPECTION_DATA.DESCR:db_column_type">VARCHAR2</entry>
    <entry key="XX_INSPECTION_DATA.ORG_ID:db_column_type">NUMBER</entry>
    <entry key="XX_INSPECTION_DATA.QUANTITYACCEPTED:db_column_not_null">false</entry>
+   <entry key="XX_INSPECTION_DATA.INSP_APPROVED_FLAG:db_column_size">150</entry>
    <entry key="XX_INSPECTION_DATA.CARRIER:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.DESCRIPTION:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_DATA.DEPT:db_column_size">150</entry>

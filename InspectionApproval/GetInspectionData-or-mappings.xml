@@ -6,20 +6,38 @@
          <class>GetInspectionData.XxInspectionData</class>
          <alias>XX_INSPECTION_DATA</alias>
          <primary-key>
-            <field table="XX_INSPECTION_DATA" name="SHIPMENT_HEADER_ID" xsi:type="column"/>
             <field table="XX_INSPECTION_DATA" name="TRANSACTION_ID" xsi:type="column"/>
+            <field table="XX_INSPECTION_DATA" name="SHIPMENT_HEADER_ID" xsi:type="column"/>
             <field table="XX_INSPECTION_DATA" name="SHIPMENT_LINE_ID" xsi:type="column"/>
          </primary-key>
          <events/>
          <querying>
             <queries>
                <query name="GetInspectionDataSelect" xsi:type="read-all-query">
-                  <criteria operator="equal" xsi:type="relation-expression">
-                     <left name="shipmentHeaderId" xsi:type="query-key-expression">
-                        <base xsi:type="base-expression"/>
+                  <criteria operator="and" xsi:type="logic-expression">
+                     <left operator="and" xsi:type="logic-expression">
+                        <left operator="equal" xsi:type="relation-expression">
+                           <left name="shipmentHeaderId" xsi:type="query-key-expression">
+                              <base xsi:type="base-expression"/>
+                           </left>
+                           <right xsi:type="parameter-expression">
+                              <parameter name="shid" xsi:type="column"/>
+                           </right>
+                        </left>
+                        <right function="isNull" xsi:type="function-expression">
+                           <arguments>
+                              <argument name="inspSentForApproval" xsi:type="query-key-expression">
+                                 <base xsi:type="base-expression"/>
+                              </argument>
+                           </arguments>
+                        </right>
                      </left>
-                     <right xsi:type="parameter-expression">
-                        <parameter name="shid" xsi:type="column"/>
+                     <right function="isNull" xsi:type="function-expression">
+                        <arguments>
+                           <argument name="inspApprovedFlag" xsi:type="query-key-expression">
+                              <base xsi:type="base-expression"/>
+                           </argument>
+                        </arguments>
                      </right>
                   </criteria>
                   <arguments>
@@ -258,6 +276,16 @@
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>noteToReceiver</attribute-name>
                <field table="XX_INSPECTION_DATA" name="NOTE_TO_RECEIVER" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>inspSentForApproval</attribute-name>
+               <field table="XX_INSPECTION_DATA" name="INSP_SENT_FOR_APPROVAL" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>inspApprovedFlag</attribute-name>
+               <field table="XX_INSPECTION_DATA" name="INSP_APPROVED_FLAG" xsi:type="column"/>
                <attribute-classification>java.lang.String</attribute-classification>
             </attribute-mapping>
          </attribute-mappings>
