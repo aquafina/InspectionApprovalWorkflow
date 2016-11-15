@@ -1,0 +1,86 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Thu Nov 10 09:12:29 PKT 2016
+  Author:  sarmad
+  Type: BPEL 1.1 Process
+  Purpose: Asynchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="BPEL_SetSentForApproval"
+         targetNamespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetSentForApproval"
+         xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:client="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetSentForApproval"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/UpdateIsSentForApproval"
+         xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    --> 
+    <partnerLinks>
+        <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+        <partnerLink name="bpel_setsentforapproval_client" partnerLinkType="client:BPEL_SetSentForApproval" myRole="BPEL_SetSentForApprovalProvider" partnerRole="BPEL_SetSentForApprovalRequester"/>
+        <partnerLink name="UpdateIsSentForApproval"
+                     partnerLinkType="ns1:UpdateIsSentForApproval_plt"
+                     partnerRole="UpdateIsSentForApproval_role"/>
+    </partnerLinks>
+
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        VARIABLES                                                        
+        List of messages and XML documents used within this BPEL process 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <variables>
+        <!-- Reference to the message passed as input during initiation -->
+        <variable name="inputVariable" messageType="client:BPEL_SetSentForApprovalRequestMessage"/>
+
+        <!-- Reference to the message that will be sent back to the requester during callback -->
+        <variable name="outputVariable" messageType="client:BPEL_SetSentForApprovalResponseMessage"/>
+        <variable name="invoke_set_sent_for_approval_merge_InputVariable"
+                  messageType="ns1:RcvTransactionsCollection_msg"/>
+    </variables>
+
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       ORCHESTRATION LOGIC                                               
+       Set of activities coordinating the flow of messages across the    
+       services integrated within this business process                  
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    -->
+    <sequence name="main">
+        <!-- Receive input from requestor. (Note: This maps to operation defined in BPEL_SetSentForApproval.wsdl) -->
+        <receive name="receiveInput" partnerLink="bpel_setsentforapproval_client" portType="client:BPEL_SetSentForApproval" operation="process" variable="inputVariable" createInstance="yes"/>
+        <assign name="Transform1">
+            <bpelx:annotation>
+                <bpelx:pattern>transformation</bpelx:pattern>
+            </bpelx:annotation>
+            <copy>
+                <from expression="ora:doXSLTransformForDoc('xsl/Transformation_1.xsl', $inputVariable.payload)"/>
+                <to variable="invoke_set_sent_for_approval_merge_InputVariable"
+                    part="RcvTransactionsCollection"/>
+            </copy>
+        </assign>
+        <invoke name="invoke_set_sent_for_approval"
+                inputVariable="invoke_set_sent_for_approval_merge_InputVariable"
+                partnerLink="UpdateIsSentForApproval"
+                portType="ns1:UpdateIsSentForApproval_ptt" operation="merge"
+                bpelx:invokeAsDetail="no"/>
+        <!-- 
+          Asynchronous callback to the requester. (Note: the callback location and correlation id is transparently handled using WS-addressing.)
+        -->
+        <invoke name="callbackClient" partnerLink="bpel_setsentforapproval_client" portType="client:BPEL_SetSentForApprovalCallback" operation="processResponse" inputVariable="outputVariable"/>
+    </sequence>
+</process>

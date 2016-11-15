@@ -10,6 +10,7 @@
       <xs:sequence>
          <xs:element name="transactionId" type="xs:decimal"/>
          <xs:element name="shipmentHeaderId" type="xs:decimal"/>
+         <xs:element name="shipmentLineId" type="xs:decimal"/>
          <xs:element name="attribute5" minOccurs="0" nillable="true">
             <xs:simpleType>
                <xs:restriction base="xs:string">

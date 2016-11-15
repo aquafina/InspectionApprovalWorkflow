@@ -14,10 +14,6 @@
     <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
                     callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
   </reference>
-  <reference name="Services.Externals.SetApprovedStatus.reference"
-             ui:wsdlLocation="SetApprovedStatus.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SetApprovedStatus#wsdl.interface(SetApprovedStatus_ptt)"/>
-  </reference>
   <reference name="Services.Externals.CallGRNApprovalProcess.reference"
              ui:wsdlLocation="http://fmw.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
@@ -30,10 +26,6 @@
   <reference name="Services.Externals.SaveApproverHistory.reference"
              ui:wsdlLocation="SaveApproverHistory.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SaveApproverHistory#wsdl.interface(SaveApproverHistory_ptt)"/>
-  </reference>
-  <reference name="Services.Externals.UpdateIsSentForApproval.reference"
-             ui:wsdlLocation="UpdateIsSentForApproval.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/UpdateIsSentForApproval#wsdl.interface(UpdateIsSentForApproval_ptt)"/>
   </reference>
   <reference name="Services.Externals.SaveSHID.reference"
              ui:wsdlLocation="SaveSHID.wsdl">
@@ -51,5 +43,15 @@
   <reference name="Services.Externals.GetInspectionData.reference"
              ui:wsdlLocation="GetInspectionData.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/GetInspectionData#wsdl.interface(GetInspectionData_ptt)"/>
+  </reference>
+  <reference name="Services.BPEL.BPEL_SetSentForApproval.Bpel_setsentforapproval_client.reference"
+             ui:wsdlLocation="BPEL_SetSentForApproval.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetSentForApproval#wsdl.interface(BPEL_SetSentForApproval)"
+                    callbackInterface="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetSentForApproval#wsdl.interface(BPEL_SetSentForApprovalCallback)"/>
+  </reference>
+  <reference name="Services.BPEL.BPEL_SetApprovedStatus.Bpel_setapprovedstatus_client.reference"
+             ui:wsdlLocation="BPEL_SetApprovedStatus.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetApprovedStatus#wsdl.interface(BPEL_SetApprovedStatus)"
+                    callbackInterface="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetApprovedStatus#wsdl.interface(BPEL_SetApprovedStatusCallback)"/>
   </reference>
 </componentType>

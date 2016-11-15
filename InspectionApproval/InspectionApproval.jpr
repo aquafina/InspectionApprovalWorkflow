@@ -1,5 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <url n="BPEL_SetApprovedStatus_bpelFileURL" path="BPEL_SetApprovedStatus.bpel"/>
+   <value n="BPEL_SetApprovedStatus_Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetApprovedStatus"/>
+   <value n="BPEL_SetApprovedStatus_ProcessName" v="BPEL_SetApprovedStatus"/>
+   <value n="BPEL_SetApprovedStatus_Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="BPEL_SetApprovedStatus_wsdl" v="BPEL_SetApprovedStatus.wsdl"/>
+   <url n="BPEL_SetSentForApproval_bpelFileURL" path="BPEL_SetSentForApproval.bpel"/>
+   <value n="BPEL_SetSentForApproval_Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetSentForApproval"/>
+   <value n="BPEL_SetSentForApproval_ProcessName" v="BPEL_SetSentForApproval"/>
+   <value n="BPEL_SetSentForApproval_Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="BPEL_SetSentForApproval_wsdl" v="BPEL_SetSentForApproval.wsdl"/>
    <url n="BPELEmail_bpelFileURL" path="BPELEmail.bpel"/>
    <value n="BPELEmail_Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail"/>
    <value n="BPELEmail_ProcessName" v="BPELEmail"/>
@@ -66,7 +76,7 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetApprovedStatus"/>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
          <list n="url-path"/>
@@ -370,6 +380,11 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BPELEmail"/>
+   <value n="ProcessName" v="BPEL_SetApprovedStatus"/>
    <value n="Template" v="BPEL_ASYNC_PROCESS"/>
+   <url n="UpdateSentForApproval_bpelFileURL" path="UpdateSentForApproval.bpel"/>
+   <value n="UpdateSentForApproval_Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/UpdateSentForApproval"/>
+   <value n="UpdateSentForApproval_ProcessName" v="UpdateSentForApproval"/>
+   <value n="UpdateSentForApproval_Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="UpdateSentForApproval_wsdl" v="UpdateSentForApproval.wsdl"/>
 </jpr:project>

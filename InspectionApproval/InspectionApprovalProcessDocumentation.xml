@@ -188,7 +188,9 @@
             <topicDocumentation name="sf125"/>
             <topicDocumentation name="sf21"/>
             <topicDocumentation name="sf74"/>
-            <topicDocumentation name="sf23">
+            <topicDocumentation name="sf25"/>
+            <topicDocumentation name="sf94"/>
+            <topicDocumentation name="sf28">
                 <labels>
                     <label locale="en">Yes</label>
                 </labels>
@@ -196,8 +198,6 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="sf25"/>
-            <topicDocumentation name="sf94"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

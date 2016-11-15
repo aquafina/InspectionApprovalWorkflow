@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BPEL_SetSentForApproval"
+             targetNamespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetSentForApproval"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:client="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetSentForApproval"
+             xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData"
+             xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/">
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this BPEL process
+	The default output of the BPEL designer uses strings as input and 
+	output to the BPEL Process. But you can define or import any XML 
+	Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->   
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetSentForApproval" schemaLocation="xsd/BPEL_SetSentForApproval.xsd" />
+		</schema>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" schemaLocation="xsd/GetInspectionData_table.xsd" />
+		</schema>
+	</wsdl:types>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->      
+	<wsdl:message name="BPEL_SetSentForApprovalRequestMessage">
+		<wsdl:part name="payload" element="ns1:XxInspectionDataCollection" />
+	</wsdl:message>
+
+	<wsdl:message name="BPEL_SetSentForApprovalResponseMessage">
+		<wsdl:part name="payload" element="client:processResponse"/>
+	</wsdl:message>
+
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- portType implemented by the BPEL_SetSentForApproval BPEL process -->
+	<wsdl:portType name="BPEL_SetSentForApproval">
+		<wsdl:operation name="process">
+			<wsdl:input message="client:BPEL_SetSentForApprovalRequestMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<!-- portType implemented by the requester of BPEL_SetSentForApproval BPEL process
+	for asynchronous callback purposes
+	-->
+	<wsdl:portType name="BPEL_SetSentForApprovalCallback">
+		<wsdl:operation name="processResponse">
+			<wsdl:input message="client:BPEL_SetSentForApprovalResponseMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PARTNER LINK TYPE DEFINITION
+	the BPEL_SetSentForApproval partnerLinkType binds the provider and
+	requester portType into an asynchronous conversation.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<plnk:partnerLinkType name="BPEL_SetSentForApproval">
+		<plnk:role name="BPEL_SetSentForApprovalProvider">
+			<plnk:portType name="client:BPEL_SetSentForApproval"/>
+		</plnk:role>
+		<plnk:role name="BPEL_SetSentForApprovalRequester">
+			<plnk:portType name="client:BPEL_SetSentForApprovalCallback"/>
+		</plnk:role>
+	</plnk:partnerLinkType>
+</wsdl:definitions>
