@@ -76,7 +76,7 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetApprovedStatus"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPELEmail"/>
    <hash n="oracle.ide.model.ResourcePaths">
       <hash n="resourcesContentSet">
          <list n="url-path"/>
@@ -380,7 +380,7 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BPEL_SetApprovedStatus"/>
+   <value n="ProcessName" v="BPELEmail"/>
    <value n="Template" v="BPEL_ASYNC_PROCESS"/>
    <url n="UpdateSentForApproval_bpelFileURL" path="UpdateSentForApproval.bpel"/>
    <value n="UpdateSentForApproval_Namespace" v="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/UpdateSentForApproval"/>

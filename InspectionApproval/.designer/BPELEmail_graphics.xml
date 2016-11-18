@@ -5,10 +5,10 @@
    <iconize/>
    <partnerlink_locations>
       <partnerlink name="bpelemail_client" x="12" y="264" side="left"/>
-      <partnerlink name="NotificationService1" x="551" y="18" side="right"/>
-      <partnerlink name="NotificationService2" x="551" y="75" side="right"/>
+      <partnerlink name="NotificationService1" x="746" y="18" side="right"/>
+      <partnerlink name="NotificationService2" x="746" y="75" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,680,290" show_swimlanes="true">
+   <graph_layout viewport="0,0,875,299" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/switch" type="switch"/>

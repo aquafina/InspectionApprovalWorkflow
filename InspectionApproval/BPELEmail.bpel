@@ -134,7 +134,7 @@
                                     query="/EmailPayload/ns1:Subject"/>
                             </copy>
                             <copy>
-                                <from expression="concat(string('sarmad@nishat.net'), bpws:getVariableData('inputVariable','payload','/client:process/client:emailAddress'))"/>
+                                <from expression="bpws:getVariableData('inputVariable','payload','/client:process/client:emailAddress')"/>
                                 <to variable="varNotificationReq"
                                     part="EmailPayload"
                                     query="/EmailPayload/ns1:To"/>
@@ -213,7 +213,7 @@
                                     query="/EmailPayload/ns1:Subject"/>
                             </copy>
                             <copy>
-                                <from expression="concat(string('sarmad@nishat.net'), bpws:getVariableData('inputVariable','payload','/client:process/client:emailAddress'))"/>
+                                <from expression="bpws:getVariableData('inputVariable','payload','/client:process/client:emailAddress')"/>
                                 <to variable="varNotificationReq"
                                     part="EmailPayload"
                                     query="/EmailPayload/ns1:To"/>
