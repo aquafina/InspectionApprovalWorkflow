@@ -1,6 +1,6 @@
 <adapter-config name="SaveApproverHistory" adapter="Database Adapter" wsdlLocation="SaveApproverHistory.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/PROD" UIConnectionName="WLConn" adapterRef=""/>
+  <connection-factory location="eis/DB/erp9" UIConnectionName="erp9" adapterRef=""/>
   <endpoint-interaction portType="SaveApproverHistory_ptt" operation="merge">
     <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
       <property name="DescriptorName" value="SaveApproverHistory.XxInspectionApproverHistory"/>

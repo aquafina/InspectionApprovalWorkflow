@@ -11,8 +11,8 @@
    <entry key="XX_INSPECTION_APPROVERS.APPROVERS:db_column_type">VARCHAR2</entry>
    <entry key="return_single_result_set">false</entry>
    <entry key="XX_INSPECTION_APPROVERS.APPROVERS:db_column_size">100</entry>
-   <entry key="XX_INSPECTION_APPROVERS.ENTITY_ID:db_column_not_null">false</entry>
    <entry key="root_descriptor_alias">XX_INSPECTION_APPROVERS</entry>
+   <entry key="XX_INSPECTION_APPROVERS.ENTITY_ID:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_APPROVERS:db_table_type">TABLE</entry>
    <entry key="XX_INSPECTION_APPROVERS.ENTITY:db_column_not_null">false</entry>
    <entry key="XX_INSPECTION_APPROVERS.ENTITY:db_column_type">VARCHAR2</entry>
