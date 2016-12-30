@@ -144,6 +144,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="GTW18134798934935">
+                <labels>
+                    <label locale="en">isHTD</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf66"/>
             <topicDocumentation name="sf7"/>
@@ -191,6 +199,15 @@
             <topicDocumentation name="sf25"/>
             <topicDocumentation name="sf94"/>
             <topicDocumentation name="sf28">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf88"/>
+            <topicDocumentation name="sf35">
                 <labels>
                     <label locale="en">Yes</label>
                 </labels>
