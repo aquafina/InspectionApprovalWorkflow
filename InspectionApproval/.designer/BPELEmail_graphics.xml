@@ -4,15 +4,15 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="bpelemail_client" x="12" y="264" side="left"/>
-      <partnerlink name="NotificationService1" x="746" y="18" side="right"/>
-      <partnerlink name="NotificationService2" x="746" y="75" side="right"/>
+      <partnerlink name="bpelemail_client" x="12" y="358" side="left"/>
+      <partnerlink name="NotificationService1" x="812" y="423" side="right"/>
+      <partnerlink name="NotificationService2" x="812" y="18" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,875,299" show_swimlanes="true">
+   <graph_layout viewport="0,0,941,526" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
       <layout_item collapsed="false" xpath="/process/sequence/switch" type="switch"/>
-      <layout_item collapsed="true" xpath="/process/sequence/switch/case/scope" type="email" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/switch/case/scope" type="email" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence/switch/case/scope/sequence" type="sequence"/>
       <layout_item collapsed="true" xpath="/process/sequence/switch/otherwise/scope" type="email" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence/switch/otherwise/scope/sequence" type="sequence"/>

@@ -1,52 +1,52 @@
-Dec 29, 2016 8:07:36 PM oracle.mds
+Dec 30, 2016 8:08:23 PM oracle.mds
 NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Dec 29, 2016 8:07:36 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+Dec 30, 2016 8:08:23 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
 SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Dec 29, 2016 8:07:36 PM oracle.mds
+Dec 30, 2016 8:08:23 PM oracle.mds
 NOTIFICATION: Auditing is disabled for component MDS.
-Dec 29, 2016 8:07:37 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
+Dec 30, 2016 8:08:23 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
 WARNING: Ignoring composite local workflow schema of file:/D:/Sarmad%20Data/Projects/BPM/GRNApproval/Paperless/InspectionApprovalWorkflow/InspectionApproval/NotificationService.xsd as there is an MDS shared version of the schema used by workflow engine oramds:/soa/shared/workflow/NotificationService.xsd
-Dec 29, 2016 8:07:37 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Dec 30, 2016 8:08:23 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
-Dec 29, 2016 8:07:41 PM com.collaxa.cube.CubeLogger info
+Dec 30, 2016 8:08:27 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BPELEmail.bpel" ...
-Dec 29, 2016 8:07:41 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+Dec 30, 2016 8:08:27 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Dec 29, 2016 8:07:41 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+Dec 30, 2016 8:08:27 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Dec 29, 2016 8:07:41 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
+Dec 30, 2016 8:08:27 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
 WARNING: Ignoring composite local workflow schema of file:/D:/Sarmad%20Data/Projects/BPM/GRNApproval/Paperless/InspectionApprovalWorkflow/InspectionApproval/NotificationService.xsd as there is an MDS shared version of the schema used by workflow engine oramds:/soa/shared/workflow/NotificationService.xsd
-Dec 29, 2016 8:07:41 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPELEmail" in 64.9 milliseconds [nodes 21=2+19, 323.6 nodes/sec]
-Dec 29, 2016 8:07:45 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPELEmail" in 3.725 seconds
-Dec 29, 2016 8:07:45 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 6 files in 1.9 milliseconds
+Dec 30, 2016 8:08:27 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BPELEmail" in 50.3 milliseconds [nodes 21=2+19, 417.9 nodes/sec]
+Dec 30, 2016 8:08:31 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BPELEmail" in 3.620 seconds
+Dec 30, 2016 8:08:31 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 6 files in 2.2 milliseconds
 
-Dec 29, 2016 8:07:45 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPELEmail" in 10.8 milliseconds
+Dec 30, 2016 8:08:31 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BPELEmail" in 11.4 milliseconds
 
-Dec 29, 2016 8:07:45 PM com.collaxa.cube.CubeLogger info
+Dec 30, 2016 8:08:31 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BPEL_SetApprovedStatus.bpel" ...
-Dec 29, 2016 8:07:45 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPEL_SetApprovedStatus" in 7.4 milliseconds [nodes 7=0+7, 943.7 nodes/sec]
-Dec 29, 2016 8:07:48 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPEL_SetApprovedStatus" in 2.990 seconds
-Dec 29, 2016 8:07:48 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 1.6 milliseconds
-
-Dec 29, 2016 8:07:48 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPEL_SetApprovedStatus" in 6.4 milliseconds
-
-Dec 29, 2016 8:07:48 PM com.collaxa.cube.CubeLogger info
-INFO: validating "BPEL_SetSentForApproval.bpel" ...
-Dec 29, 2016 8:07:48 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPEL_SetSentForApproval" in 9.2 milliseconds [nodes 7=0+7, 763.9 nodes/sec]
-Dec 29, 2016 8:07:51 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPEL_SetSentForApproval" in 2.897 seconds
-Dec 29, 2016 8:07:51 PM com.collaxa.cube.CubeLogger info
+Dec 30, 2016 8:08:31 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BPEL_SetApprovedStatus" in 7.3 milliseconds [nodes 7=0+7, 965.0 nodes/sec]
+Dec 30, 2016 8:08:34 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BPEL_SetApprovedStatus" in 2.922 seconds
+Dec 30, 2016 8:08:34 PM com.collaxa.cube.CubeLogger info
 INFO: Gathered 3 files in 1.4 milliseconds
 
-Dec 29, 2016 8:07:51 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPEL_SetSentForApproval" in 5.9 milliseconds
+Dec 30, 2016 8:08:34 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BPEL_SetApprovedStatus" in 5.9 milliseconds
+
+Dec 30, 2016 8:08:34 PM com.collaxa.cube.CubeLogger info
+INFO: validating "BPEL_SetSentForApproval.bpel" ...
+Dec 30, 2016 8:08:34 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BPEL_SetSentForApproval" in 6.8 milliseconds [nodes 7=0+7, 1,028.5 nodes/sec]
+Dec 30, 2016 8:08:37 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BPEL_SetSentForApproval" in 2.900 seconds
+Dec 30, 2016 8:08:37 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 1.4 milliseconds
+
+Dec 30, 2016 8:08:37 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BPEL_SetSentForApproval" in 6.2 milliseconds
 

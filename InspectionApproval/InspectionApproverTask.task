@@ -26,7 +26,7 @@
             <parallel collaboration="false" name="default.DefaultPerformer">
                <vote>
                   <defaultOutcome type="STATIC">APPROVE</defaultOutcome>
-                  <outcomePercentage type="STATIC">100</outcomePercentage>
+                  <outcomePercentage type="STATIC">33</outcomePercentage>
                </vote>
                <resource type="XPATH" identityType="user">/task:task/task:payload/ns1:XxInspectionDataCollection/ns1:Approver</resource>
             </parallel>
