@@ -1336,39 +1336,6 @@
             </extensionElements>
             <inputSet/>
         </endEvent>
-        <intermediateCatchEvent name="Wait" id="EVT16810758033940">
-            <extensionElements>
-                <ns5:OracleExtensions>
-                    <ns5:GraphicsAttributes>
-                        <ns5:Position y="105" x="134"/>
-                    </ns5:GraphicsAttributes>
-                    <ns5:FeatureSet>
-                        <ns5:BooleanFeature value="false" name="isDraft"/>
-                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
-                        <ns5:StringFeature value="Begin Level" name="level"/>
-                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
-                    </ns5:FeatureSet>
-                </ns5:OracleExtensions>
-            </extensionElements>
-            <timerEventDefinition>
-                <extensionElements>
-                    <ns5:OracleExtensions>
-                        <ns5:OptionalTimerEventFeatures>
-                            <ns5:useCalendar>false</ns5:useCalendar>
-                            <ns5:outOfCalendarPolicy>NO_RESCHEDULE</ns5:outOfCalendarPolicy>
-                            <ns5:rescheduleRestrictionsPolicy>EACH_ENTRY_AS_DIFFERENT_EVENT</ns5:rescheduleRestrictionsPolicy>
-                        </ns5:OptionalTimerEventFeatures>
-                    </ns5:OracleExtensions>
-                </extensionElements>
-                <timeCycle xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath">'PT15S'
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:Expression mode="xpath"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                </timeCycle>
-            </timerEventDefinition>
-        </intermediateCatchEvent>
         <exclusiveGateway gatewayDirection="Unspecified" name="doesRecordExist" id="GTW16810030670527">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -1425,7 +1392,7 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </exclusiveGateway>
-        <sequenceFlow targetRef="EVT16810758033940" sourceRef="EVT16707813096572" name="sf65" id="sf65">
+        <sequenceFlow targetRef="ACT16811260874781" sourceRef="EVT16707813096572" name="sf65" id="sf65">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1509,18 +1476,6 @@
                         <ns5:StringFeature value="756,174" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                         <ns5:StringFeature value="No" name="userName"/>
-                    </ns5:FeatureSet>
-                </ns5:OracleExtensions>
-            </extensionElements>
-        </sequenceFlow>
-        <sequenceFlow targetRef="ACT16811260874781" sourceRef="EVT16810758033940" name="sf141" id="sf141">
-            <extensionElements>
-                <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes/>
-                    <ns5:FeatureSet>
-                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>

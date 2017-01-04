@@ -112,14 +112,6 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="EVT16810758033940">
-                <labels>
-                    <label locale="en">Wait</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
             <topicDocumentation name="GTW16810030670527">
                 <labels>
                     <label locale="en">doesRecordExist</label>
@@ -172,7 +164,6 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="sf141"/>
             <topicDocumentation name="sf142"/>
             <topicDocumentation name="sf14"/>
             <topicDocumentation name="sf67"/>
