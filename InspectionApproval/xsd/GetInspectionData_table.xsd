@@ -4,9 +4,9 @@
    <xs:complexType name="XxInspectionDataCollection">
       <xs:sequence>
          <xs:element name="XxInspectionData" type="XxInspectionData" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:element name="Approver" type="xs:string"/>
-         <xs:element name="userid" type="xs:string"/>
+         <xs:element name="approver" type="xs:string"/>
          <xs:element name="outcome" type="xs:string"/>
+         <xs:element name="userid" type="xs:string"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="XxInspectionData">

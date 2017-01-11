@@ -38,7 +38,7 @@
   <import namespace="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetApprovedStatus"
           location="BPEL_SetApprovedStatus.wsdl" importType="wsdl"/>
   <import namespace="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient"
-          location="http://fmwdev.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl"
+          location="http://fmw.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl"
           importType="wsdl"/>
   <service name="InspectionApproval" ui:wsdlLocation="InspectionApproval.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/InspectionApprovalWorkflow/InspectionApproval/InspectionApproval#wsdl.interface(execute_ptt)"
@@ -85,11 +85,11 @@
               override="may">120</property>
   </reference>
   <reference name="CallGRNApprovalProcess"
-             ui:wsdlLocation="http://fmwdev.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl">
+             ui:wsdlLocation="http://fmw.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
                     callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
     <binding.ws port="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.endpoint(ProcessClient/process_client_pt)"
-                location="http://fmwdev.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient?WSDL"
+                location="http://fmw.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient?WSDL"
                 soapVersion="1.1">
       <property name="weblogic.wsee.wsat.transaction.flowOption"
                 type="xs:string" many="false">WSDLDriven</property>

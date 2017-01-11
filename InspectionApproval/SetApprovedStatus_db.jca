@@ -1,6 +1,6 @@
 <adapter-config name="SetApprovedStatus" adapter="Database Adapter" wsdlLocation="SetApprovedStatus.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
-  <connection-factory location="eis/DB/erp9" UIConnectionName="erp9" adapterRef=""/>
+  <connection-factory location="eis/DB/PROD" UIConnectionName="WLConn" adapterRef=""/>
   <endpoint-interaction portType="SetApprovedStatus_ptt" operation="merge">
     <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
       <property name="DescriptorName" value="SetApprovedStatus.RcvTransactions"/>
