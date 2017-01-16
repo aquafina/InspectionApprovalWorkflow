@@ -49,4 +49,9 @@
     <interface.wsdl interface="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetApprovedStatus#wsdl.interface(BPEL_SetApprovedStatus)"
                     callbackInterface="http://xmlns.oracle.com/InspectionApprovalWorkflow/InspectionApproval/BPEL_SetApprovedStatus#wsdl.interface(BPEL_SetApprovedStatusCallback)"/>
   </reference>
+  <reference name="Services.Externals.CallGRNApprovalProcess.reference"
+             ui:wsdlLocation="http://fmw.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
+                    callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
+  </reference>
 </componentType>
