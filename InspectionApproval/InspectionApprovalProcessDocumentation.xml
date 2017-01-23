@@ -48,14 +48,6 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT16931789259863">
-                <labels>
-                    <label locale="en">SaveApproverHistory</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
             <topicDocumentation name="ACT16942100587377">
                 <labels>
                     <label locale="en">SetIsSentForApproval</label>
@@ -144,6 +136,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT18358522029594">
+                <labels>
+                    <label locale="en">SetApproverHistory</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf66"/>
             <topicDocumentation name="sf7"/>
@@ -166,7 +166,6 @@
             </topicDocumentation>
             <topicDocumentation name="sf142"/>
             <topicDocumentation name="sf14"/>
-            <topicDocumentation name="sf67"/>
             <topicDocumentation name="sf210"/>
             <topicDocumentation name="sf120">
                 <labels>
@@ -206,6 +205,7 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="sf30"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

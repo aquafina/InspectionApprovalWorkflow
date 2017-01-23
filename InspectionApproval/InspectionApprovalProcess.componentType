@@ -18,10 +18,6 @@
              ui:wsdlLocation="Get_Entity_Approvers.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/Get_Entity_Approvers#wsdl.interface(Get_Entity_Approvers_ptt)"/>
   </reference>
-  <reference name="Services.Externals.SaveApproverHistory.reference"
-             ui:wsdlLocation="SaveApproverHistory.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SaveApproverHistory#wsdl.interface(SaveApproverHistory_ptt)"/>
-  </reference>
   <reference name="Services.Externals.SaveSHID.reference"
              ui:wsdlLocation="SaveSHID.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SaveSHID#wsdl.interface(SaveSHID_ptt)"/>
@@ -53,5 +49,9 @@
              ui:wsdlLocation="http://fmw.nishat.net:8001/soa-infra/services/default/GrnApproval/ProcessClient.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(process_client_ptt)"
                     callbackInterface="http://oracle.com/sca/soapservice/GrnApprovalWorkflow/GrnApproval/ProcessClient#wsdl.interface(callback_ptt_iceman)"/>
+  </reference>
+  <reference name="Services.Externals.SaveApproverHistory.reference"
+             ui:wsdlLocation="SaveApproverHistory.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/InspectionApprovalWorkflow/InspectionApproval/SaveApproverHistory#wsdl.interface(SaveApproverHistory_ptt)"/>
   </reference>
 </componentType>

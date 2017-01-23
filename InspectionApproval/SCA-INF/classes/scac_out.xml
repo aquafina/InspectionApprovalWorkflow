@@ -2,16 +2,6 @@
 <Faults>
    <Fault>
       <severity>warning</severity>
-      <loc>/ns:composite/ns:reference[@name='CallGRNApprovalProcess']</loc>
-      <line>88</line>
-      <col>117</col>
-      <file>D:\Sarmad Data\Projects\BPM\GRNApproval\Paperless\InspectionApprovalWorkflow\InspectionApproval\composite.xml</file>
-      <name>D:\Sarmad Data\Projects\BPM\GRNApproval\Paperless\InspectionApprovalWorkflow\InspectionApproval\composite.xml</name>
-      <fix/>
-      <msg>Reference CallGRNApprovalProcess does not exist as wire target</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
       <loc/>
       <line/>
       <col/>
