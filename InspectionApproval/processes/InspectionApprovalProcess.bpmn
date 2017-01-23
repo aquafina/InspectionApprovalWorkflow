@@ -1682,7 +1682,7 @@
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
-            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_InspectionData')/ns:XxInspectionData[1]/ns:organizationName = "Home Textile Division"
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetInspectionData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_InspectionData')/ns:XxInspectionData[1]/ns:orgId=84
                 <extensionElements>
                     <ns5:OracleExtensions>
                         <ns5:Expression mode="xpath"/>
