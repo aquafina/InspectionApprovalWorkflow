@@ -88,6 +88,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT18358522029594">
+                <labels>
+                    <label locale="en">SetApproverHistory</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT16707813096572">
                 <labels>
                     <label locale="en">Start</label>
@@ -131,14 +139,6 @@
             <topicDocumentation name="GTW18134798934935">
                 <labels>
                     <label locale="en">isHTD</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT18358522029594">
-                <labels>
-                    <label locale="en">SetApproverHistory</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
